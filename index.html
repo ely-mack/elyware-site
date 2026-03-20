@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELYWARE — Creative Tools for Mac</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">ELY<span>WARE</span></a>
+            <div class="nav-links">
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="nav-cta" id="shop-link">Shop</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="nav-cta" id="shop-link-mobile">Shop</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Creative software<br><span class="gradient-text">built different.</span></h1>
+            <p class="hero-sub">Professional-grade tools for creators, performers, and artists. Built for Mac.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">See Products</a>
+                <a href="#" class="btn btn-secondary" id="hero-shop-link">Visit Shop</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Featured Product: Video Mixer -->
+    <section id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PRODUCTS</span>
+                <h2>Tools that move at the speed of your ideas</h2>
+            </div>
+
+            <div class="product-card featured">
+                <div class="product-visual">
+                    <div class="product-mockup">
+                        <div class="mockup-window">
+                            <div class="mockup-titlebar">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="mockup-title">Video Mixer</span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-deck">
+                                    <div class="mockup-label">DECK A</div>
+                                    <div class="mockup-preview deck-a"></div>
+                                    <div class="mockup-controls">
+                                        <span class="ctrl-btn">&#x23EE;</span>
+                                        <span class="ctrl-btn play">&#x25B6;</span>
+                                        <span class="ctrl-btn">&#x23ED;</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-center">
+                                    <div class="mockup-fader">
+                                        <span>A</span>
+                                        <div class="fader-track"><div class="fader-thumb"></div></div>
+                                        <span>B</span>
+                                    </div>
+                                    <div class="mockup-mix-preview"></div>
+                                    <div class="mockup-transitions">
+                                        <span class="trans-chip active">Crossfade</span>
+                                        <span class="trans-chip">Wipe</span>
+                                        <span class="trans-chip">Iris</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-deck">
+                                    <div class="mockup-label">DECK B</div>
+                                    <div class="mockup-preview deck-b"></div>
+                                    <div class="mockup-controls">
+                                        <span class="ctrl-btn">&#x23EE;</span>
+                                        <span class="ctrl-btn play">&#x25B6;</span>
+                                        <span class="ctrl-btn">&#x23ED;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-badge">NEW</span>
+                    <h3>Video Mixer</h3>
+                    <p class="product-tagline">Live 2-channel video mixing for Mac. Like a DJ deck — but for visuals.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">&#x25A0;</span>
+                            <div>
+                                <strong>Dual Deck Interface</strong>
+                                <span>Load videos and images from any folder. Rotate, shuffle, and cue media on two independent decks.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">&#x25A0;</span>
+                            <div>
+                                <strong>22+ Transitions</strong>
+                                <span>Crossfade, wipes, iris, diamond, clock, spin, pixelate, dissolve, and more. Plus load your own custom effects.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">&#x25A0;</span>
+                            <div>
+                                <strong>Dual Monitor Output</strong>
+                                <span>Mix on one screen, pop out a clean fullscreen output to a projector or second monitor.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">&#x25A0;</span>
+                            <div>
+                                <strong>Autopilot Mode</strong>
+                                <span>Set it and forget it — intelligent auto-rotation between files with configurable hold and fade times.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">&#x25A0;</span>
+                            <div>
+                                <strong>Works on Any Mac</strong>
+                                <span>Native .app for Apple Silicon. Portable version for Intel Macs. No complicated setup.</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="product-pricing">
+                        <span class="price">$20</span>
+                        <span class="price-note">One-time purchase. Free updates.</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="https://payhip.com/b/CU9QK" class="btn btn-primary btn-lg" id="buy-video-mixer">Buy Now</a>
+                        <a href="#" class="btn btn-ghost" id="download-demo">Download Free Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Placeholder -->
+            <div class="coming-soon-section">
+                <h3>More tools coming soon</h3>
+                <p>Join the mailing list to be first to know when new products launch.</p>
+                <form class="email-form" id="email-form">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit" class="btn btn-primary">Notify Me</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag">ABOUT</span>
+                    <h2>Software by a creator,<br>for creators.</h2>
+                    <p>ELYWARE builds focused, no-nonsense tools for people who make things. No subscriptions, no bloat, no telemetry. Just software that works.</p>
+                    <p>Every product is designed for real-world creative work — live events, performances, content production. If it doesn't solve a real problem, it doesn't ship.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-card">
+                        <span class="value-icon">&#x26A1;</span>
+                        <h4>Fast & Focused</h4>
+                        <p>Lightweight tools that do one thing exceptionally well.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">&#x1F4B0;</span>
+                        <h4>Buy Once, Own It</h4>
+                        <p>No subscriptions. Pay once, use forever, get free updates.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">&#x1F34E;</span>
+                        <h4>Mac Native</h4>
+                        <p>Built specifically for macOS. Apple Silicon optimized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="nav-logo footer-logo">ELY<span>WARE</span></span>
+                    <p>Creative tools for Mac.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <a href="#products">Video Mixer</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="mailto:hello@elyware.net">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="mailto:support@elyware.net">Email Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ELYWARE. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
