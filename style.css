@@ -318,20 +318,18 @@ a:hover { opacity: 0.8; }
 /* Featured Product Card */
 .product-card.featured {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr;
+    gap: 48px;
     background: var(--bg-2);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 48px;
-    align-items: center;
 }
 
 @media (max-width: 900px) {
     .product-card.featured {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 32px;
+        gap: 32px;
+        padding: 24px;
     }
 }
 
@@ -341,157 +339,18 @@ a:hover { opacity: 0.8; }
     justify-content: center;
 }
 
-.mockup-window {
-    background: #0d0d14;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-    overflow: hidden;
+.product-screenshot {
     width: 100%;
-    max-width: 480px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(108, 92, 231, 0.15);
 }
 
-.mockup-titlebar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.dot { width: 10px; height: 10px; border-radius: 50%; }
-.dot.red { background: #ff5f57; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #28ca41; }
-.mockup-title {
-    margin-left: auto;
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 1px;
-}
-
-.mockup-body {
-    display: flex;
-    gap: 8px;
-    padding: 12px;
-    min-height: 200px;
-}
-
-.mockup-deck {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.mockup-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--text-dim);
-    text-align: center;
-}
-.mockup-preview {
-    flex: 1;
-    border-radius: 6px;
-    min-height: 80px;
-}
-.mockup-preview.deck-a {
-    background: linear-gradient(135deg, #00b894, #00cec9);
-    animation: shimmerA 4s ease-in-out infinite;
-}
-.mockup-preview.deck-b {
-    background: linear-gradient(135deg, #e17055, #fd79a8);
-    animation: shimmerB 5s ease-in-out infinite;
-}
-@keyframes shimmerA { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
-@keyframes shimmerB { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-
-.mockup-controls {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-.ctrl-btn {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 4px;
-    color: var(--text-dim);
-}
-.ctrl-btn.play { background: var(--accent); color: #fff; }
-
-.mockup-center {
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.mockup-fader {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 8px;
-    color: var(--text-dim);
-    font-weight: 700;
-}
-.fader-track {
-    width: 40px;
-    height: 4px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 2px;
-    position: relative;
-}
-.fader-thumb {
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: faderMove 6s ease-in-out infinite;
-}
-@keyframes faderMove {
-    0%, 100% { left: 30%; }
-    50% { left: 70%; }
-}
-
-.mockup-mix-preview {
-    width: 48px;
-    height: 32px;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #00cec9, #fd79a8);
-    animation: mixShift 6s ease-in-out infinite;
-}
-@keyframes mixShift {
-    0%, 100% { background: linear-gradient(135deg, #00cec9 60%, #fd79a8 100%); }
-    50% { background: linear-gradient(135deg, #00cec9 0%, #fd79a8 40%); }
-}
-
-.mockup-transitions {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-.trans-chip {
-    font-size: 7px;
-    padding: 2px 6px;
-    border-radius: 3px;
-    background: rgba(255,255,255,0.05);
-    color: var(--text-dim);
-    text-align: center;
-}
-.trans-chip.active {
-    background: var(--accent);
-    color: #fff;
+.product-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Product Info */
