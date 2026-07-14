@@ -1,0 +1,24 @@
+# ELYWARE
+
+> ELYWARE makes focused creative software for performers, artists and makers. Its main product is a free public beta live video mixer.
+
+## Main product
+
+- [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ tool for local videos and images.
+- Current release: Video Mixer v4.1, released July 13, 2026.
+- Core capabilities: two playback decks, 31 transitions, Pixabay stock video browser with local caching, playlist tools, crossfader, autopilot, tap tempo, color effects, session save/load, and a separate 720p or 1080p projector output.
+- Brand: v4.1 introduces the dual-channel aperture mark across the app, macOS and Windows packages, browser icons and public product pages.
+- Platforms: self-contained universal app for macOS 11 or later; Python 3 local-browser packages for Windows and Linux.
+- Privacy: the user's own media stays on the computer; the mixer has no account system, media uploads or app telemetry. Stock searches contact Pixabay and selected clips cache locally.
+- Scope: the current beta mixes and outputs media live. It does not record, export or stream the finished mix.
+
+## Downloads
+
+- [Mac universal app](https://elyware.net/downloads/Video-Mixer-v4.1-Mac-universal.zip)
+- [Windows Python edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
+- [Linux/local web edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
+
+## Policies and contact
+
+- [Privacy](https://elyware.net/privacy/)
+- Beta feedback and support: hello@elyware.net

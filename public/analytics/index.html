@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | ELYWARE</title>
+    <meta name="description" content="Private aggregate site and download analytics for ELYWARE.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a0a0e">
+    <link rel="icon" type="image/png" sizes="256x256" href="/images/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/theme.js"></script>
+</head>
+<body class="legal-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="/" class="logo" aria-label="ELYWARE home">ELY<span>WARE</span></a>
+            <div class="nav-links"><a href="/video-mixer/">Video Mixer</a><a href="/privacy/">Privacy</a></div>
+            <div class="nav-right">
+                <button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1.5v2M9 14.5v2M1.5 9h2M14.5 9h2M3.7 3.7l1.4 1.4M12.9 12.9l1.4 1.4M3.7 14.3l1.4-1.4M12.9 5.1l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15 10.5A6.5 6.5 0 017.5 3 6.5 6.5 0 1015 10.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="analytics-shell">
+        <div class="container">
+            <div class="analytics-intro">
+                <p class="eyebrow">PRIVATE REPORT</p>
+                <h1>Site analytics</h1>
+                <p>Anonymous aggregate page views, browser-tab visits and Video Mixer download clicks. Enter the private key to load the report.</p>
+            </div>
+
+            <form id="analytics-login" class="analytics-login">
+                <label for="analytics-key">Analytics key
+                    <input id="analytics-key" name="key" type="password" autocomplete="current-password" required>
+                </label>
+                <button class="btn btn-primary" type="submit">Load report</button>
+            </form>
+            <p id="analytics-status" class="analytics-status" role="status" aria-live="polite"></p>
+
+            <section id="analytics-dashboard" class="analytics-dashboard" hidden>
+                <p id="analytics-last-events" class="analytics-note"></p>
+                <h2 class="analytics-period">Last 30 days</h2>
+                <div class="metric-grid">
+                    <div class="metric-card"><span>Visits</span><strong id="month-visits">0</strong></div>
+                    <div class="metric-card"><span>Page views</span><strong id="month-page-views">0</strong></div>
+                    <div class="metric-card"><span>Download clicks</span><strong id="month-downloads">0</strong></div>
+                </div>
+
+                <h2 class="analytics-period">Since <span id="tracking-start">tracking began</span></h2>
+                <div class="metric-grid">
+                    <div class="metric-card"><span>All visits</span><strong id="all-visits">0</strong></div>
+                    <div class="metric-card"><span>All page views</span><strong id="all-page-views">0</strong></div>
+                    <div class="metric-card"><span>All download clicks</span><strong id="all-downloads">0</strong></div>
+                </div>
+
+                <h2 class="analytics-period">Downloads by platform</h2>
+                <div class="metric-grid">
+                    <div class="metric-card"><span>Mac</span><strong id="download-mac">0</strong></div>
+                    <div class="metric-card"><span>Windows</span><strong id="download-windows">0</strong></div>
+                    <div class="metric-card"><span>Linux / Web</span><strong id="download-linux-web">0</strong></div>
+                </div>
+
+                <h2 class="analytics-period">Daily activity</h2>
+                <div class="analytics-table-wrap">
+                    <table class="analytics-table">
+                        <thead><tr><th>Date</th><th>Visits</th><th>Page views</th><th>Download clicks</th></tr></thead>
+                        <tbody id="analytics-days"></tbody>
+                    </table>
+                </div>
+                <p class="analytics-note">Visits are approximate browser-tab sessions. Downloads are link clicks, not proof of a completed transfer or install. People using Global Privacy Control or Do Not Track are not counted.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer><div class="container"><p class="copyright">&copy; 2026 ELYWARE</p></div></footer>
+    <script src="/main.js" defer></script>
+    <script src="/analytics/dashboard.js" defer></script>
+</body>
+</html>
