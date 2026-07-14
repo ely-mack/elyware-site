@@ -1,6 +1,12 @@
 # Video Mixer UI Analysis and Improvement Prototype
 
-The Video Mixer app source is not in this repo. This analysis works from the full-app screenshot at `images/video-mixer-screenshot.jpg`. The prototype at `prototype/video-mixer-ui.html` is a working, dependency-free mock of the improved layout. Open it in any browser. The layout engine is written to port directly into the real app.
+## Status: shipped
+
+The adjustable layout described below is now in the real product. Video Mixer v2.0 (2026-07-13, per the in-app changelog) shipped "Resizable layout: drag the bars between panels to resize deck/center widths, drag under the preview to resize preview height. Double-click a bar to reset, toolbar button resets everything. Layout persists." The v4.1 packages in `public/downloads/` carry the same engine (`static/js/mixer.js`, Resizable Layout section). This folder remains as the original analysis and design reference.
+
+## Original analysis
+
+The Video Mixer app source was not in this repo when this was written. This analysis works from the app screenshot that shipped with the earlier site (now at `public/images/video-mixer-screenshot.jpg`). The prototype at `prototype/video-mixer-ui.html` is a working, dependency-free mock of the improved layout. Open it in any browser. The layout engine was written to port directly into the real app.
 
 ## Current UI: what works
 
