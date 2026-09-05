@@ -1,16 +1,33 @@
 # ELYWARE
 
-> ELYWARE makes focused creative software for performers, artists and makers. Its main product is a free public beta live video mixer.
+> ELYWARE makes focused creative software for performers, artists and makers. Its main product is ELYWARE Video Mixer, a free public beta live video mixer whose output can be sent to a projector or cast wirelessly to screens running ScreenFolk players.
 
 ## Main product
 
-- [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ tool for local videos and images.
+- [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ tool for local videos, images and royalty-free stock clips.
 - Current release: Video Mixer v4.1, released July 13, 2026.
-- Core capabilities: two playback decks, 31 transitions, Pixabay stock video browser with local caching, playlist tools, crossfader, autopilot, tap tempo, color effects, session save/load, and a separate 720p or 1080p projector output.
-- Brand: v4.1 introduces the dual-channel aperture mark across the app, macOS and Windows packages, browser icons and public product pages.
+- Core capabilities: two playback decks, 31 transitions, Pixabay stock video browser with local caching, playlist tools, crossfader, autopilot, tap tempo, color effects, session save/load, and a separate 720p or 1080p output window.
+- Output options: move the output window to a projector, TV or second display over a cable, or cast it wirelessly to a screen running a ScreenFolk player.
 - Platforms: self-contained universal app for macOS 11 or later; Python 3 local-browser packages for Windows and Linux.
-- Privacy: the user's own media stays on the computer; the mixer has no account system, media uploads or app telemetry. Stock searches contact Pixabay and selected clips cache locally.
-- Scope: the current beta mixes and outputs media live. It does not record, export or stream the finished mix.
+- Price: free. No account, subscription, watermark or app telemetry.
+- Privacy: the user's own media stays on the computer. Stock searches contact Pixabay and selected clips cache locally.
+- Scope: the current beta mixes and outputs media live. It does not record, export or stream the finished mix to the internet. Casting to a ScreenFolk player is local display output, not a public stream.
+
+## Wireless output (ScreenFolk partnership)
+
+- ELYWARE has partnered with ScreenFolk so Video Mixer output can reach screens wirelessly.
+- How it works: put the mixer laptop and the ScreenFolk player on the same network, open the Video Mixer Output Window, and cast that window to the ScreenFolk player. The screen shows only the finished mix.
+- What it removes: HDMI cable runs, capture cards and extra hardware between the mixer and a mounted TV, projector or video wall.
+- Typical uses: bars, music venues, galleries, lobbies and events where a screen is already mounted and running cable is impractical.
+- Details: https://elyware.net/video-mixer/#wireless
+
+## Frequently asked questions
+
+- Is Video Mixer free? Yes. v4.1 is a free public beta with no account, watermark or telemetry.
+- Can I send the video mix to a TV wirelessly? Yes, to any screen running a ScreenFolk player on the same network.
+- Does Video Mixer work on Mac, Windows and Linux? Yes. Mac gets a self-contained universal app. Windows and Linux use Python 3 and a modern browser.
+- Does Video Mixer upload my media? No. Media is read locally. Only stock search queries go to Pixabay.
+- Can it record or stream? Not in v4.1. It is a live playback, mixing and output tool.
 
 ## Downloads
 
@@ -18,7 +35,12 @@
 - [Windows Python edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
 - [Linux/local web edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
 
+## Other projects
+
+- [Stick Figure Army](https://elyware.net/games/stick-figure-army/): free notebook-paper strategy game in the browser.
+- [AutomouTown](https://elyware.net/games/automotown/): free autonomous city builder in the browser.
+
 ## Policies and contact
 
 - [Privacy](https://elyware.net/privacy/)
-- Beta feedback and support: hello@elyware.net
+- Beta feedback, partnerships and support: hello@elyware.net

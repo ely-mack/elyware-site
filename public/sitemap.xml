@@ -1,23 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://elyware.net/</loc>
-        <lastmod>2026-07-13</lastmod>
+        <lastmod>2026-09-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://elyware.net/images/video-mixer-screenshot-v4.1.jpg</image:loc>
+            <image:title>ELYWARE Video Mixer v4.1 two-deck interface</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://elyware.net/images/video-mixer-og-v4.1.png</image:loc>
+            <image:title>ELYWARE Video Mixer v4.1 free live visual mixing software</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://elyware.net/video-mixer/</loc>
-        <lastmod>2026-07-13</lastmod>
+        <lastmod>2026-09-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://elyware.net/images/video-mixer-screenshot-v4.1.jpg</image:loc>
+            <image:title>Video Mixer v4.1 interface with Deck A, Deck B, transition picker and output controls</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://elyware.net/privacy/</loc>
-        <lastmod>2026-07-12</lastmod>
+        <lastmod>2026-09-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://elyware.net/games/stick-figure-army/</loc>
-        <lastmod>2026-07-12</lastmod>
+        <lastmod>2026-09-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+        <image:image>
+            <image:loc>https://elyware.net/images/Stick-figure-Army.jpg</image:loc>
+            <image:title>Stick Figure Army notebook-paper strategy game</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://elyware.net/games/automotown/</loc>
-        <lastmod>2026-07-12</lastmod>
+        <lastmod>2026-09-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+        <image:image>
+            <image:loc>https://elyware.net/games/automotown/og.png</image:loc>
+            <image:title>AutomouTown autonomous settlement in a river valley</image:title>
+        </image:image>
     </url>
 </urlset>

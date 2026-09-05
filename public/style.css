@@ -1,4 +1,4 @@
-/* ELYWARE — focused product site */
+/* ELYWARE: focused product site */
 
 :root {
     --font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1358,6 +1358,72 @@ footer {
 
 /* Responsive */
 
+/* Partnership / wireless output */
+.partner-section {
+    border-block: 1px solid var(--border);
+    background:
+        radial-gradient(circle at 88% 20%, var(--accent-soft), transparent 40%),
+        var(--bg);
+}
+.partner-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    align-items: center;
+    gap: 64px;
+    padding: 46px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+}
+.partner-copy .section-title { margin-bottom: 20px; }
+.partner-copy .answer-lead { margin-bottom: 16px; }
+.partner-copy > p:not(.label):not(.answer-lead) {
+    color: var(--text-2);
+    font-size: 15px;
+}
+.partner-copy .text-link {
+    display: inline-block;
+    margin-top: 22px;
+}
+.partner-steps {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+    counter-reset: none;
+}
+.partner-steps li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-2);
+}
+.partner-steps li > span {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 800;
+}
+.partner-steps strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+.partner-steps small {
+    display: block;
+    color: var(--text-2);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 @media (max-width: 1000px) {
     .hero-layout,
     .detail-hero-grid {
@@ -1391,7 +1457,8 @@ footer {
     .beta-layout,
     .feature-split,
     .requirement-grid,
-    .release-card {
+    .release-card,
+    .partner-card {
         grid-template-columns: 1fr;
         gap: 26px;
     }
@@ -1403,6 +1470,7 @@ footer {
     .feature-number { margin-bottom: 24px; }
     .beta-layout { gap: 38px; }
     .release-card { padding: 30px; }
+    .partner-card { padding: 30px; }
     .detail-hero { padding-top: 96px; }
     .breadcrumbs { margin-bottom: 32px; }
     .metric-grid { grid-template-columns: 1fr; }
@@ -1421,6 +1489,8 @@ footer {
     .window-bar { height: 24px; }
     .download-intro { margin-bottom: 30px; }
     .download-card, .download-panel, .feature-card, .step-card, .install-card, .signup-card, .feature-list-block { padding: 22px; }
+    .partner-card { padding: 22px; }
+    .partner-steps li { padding: 14px 16px; }
     .email-form { flex-direction: column; }
     .email-form .btn { width: 100%; }
     .mini-product { grid-template-columns: 72px 1fr; gap: 14px; }
