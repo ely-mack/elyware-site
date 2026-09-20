@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Mixer — UI Prototype (Adjustable Previews)</title>
+<style>
+:root {
+    --bg: #0b0b0f;
+    --panel: #131318;
+    --panel-2: #17171d;
+    --panel-3: #1d1d24;
+    --line: #26262e;
+    --text: #e8e8ee;
+    --text-dim: #8b8b98;
+    --text-faint: #5c5c68;
+    --cyan: #22c9f5;
+    --pink: #ff3d9e;
+    --purple: #a78bfa;
+    --green: #3ddc84;
+    --red: #ff5252;
+    --radius: 6px;
+    --splitter: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+/* ---------- Top bar ---------- */
+#topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    flex: 0 0 auto;
+}
+.logo { display: flex; gap: 2px; font-weight: 700; letter-spacing: 2px; }
+.logo span { padding: 2px 6px; }
+.logo .v { background: var(--cyan); color: #00222e; }
+.logo .m { background: var(--pink); color: #33001a; }
+.topbar-spacer { flex: 1; }
+.topbar-hint { color: var(--text-faint); font-size: 11px; }
+.tb-btn {
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font: inherit;
+}
+.tb-btn:hover { border-color: var(--text-dim); }
+.tb-label { color: var(--text-dim); }
+select {
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 4px 6px;
+    border-radius: var(--radius);
+    font: inherit;
+}
+
+/* ---------- Main 3-column grid ---------- */
+#main {
+    flex: 1;
+    display: grid;
+    /* column template set by JS: Afr 8px Cfr 8px Bfr */
+    min-height: 0;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    background: var(--panel);
+    overflow: hidden;
+}
+
+/* Vertical splitters between columns */
+.vsplit {
+    cursor: col-resize;
+    background: var(--bg);
+    position: relative;
+}
+.vsplit::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 2px; height: 36px;
+    transform: translate(-50%, -50%);
+    background: var(--line);
+    border-radius: 2px;
+}
+.vsplit:hover::after, .vsplit.dragging::after { background: var(--purple); }
+
+/* Horizontal splitters under previews */
+.hsplit {
+    flex: 0 0 var(--splitter);
+    cursor: row-resize;
+    position: relative;
+}
+.hsplit::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    height: 2px; width: 36px;
+    transform: translate(-50%, -50%);
+    background: var(--line);
+    border-radius: 2px;
+}
+.hsplit:hover::after, .hsplit.dragging::after { background: var(--purple); }
+
+/* ---------- Deck panels ---------- */
+.deck-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    flex: 0 0 auto;
+}
+.deck-name { font-weight: 700; letter-spacing: 2px; }
+#deckA .deck-name { color: var(--cyan); }
+#deckB .deck-name { color: var(--pink); }
+.onair {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--panel-3);
+    color: var(--text-faint);
+}
+.onair.live { background: var(--red); color: #fff; }
+.deck-file {
+    flex: 1;
+    text-align: right;
+    color: var(--text-dim);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.max-btn {
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    border-radius: 4px;
+    width: 24px; height: 22px;
+    cursor: pointer;
+    font: inherit;
+}
+.max-btn:hover { color: var(--text); border-color: var(--text-dim); }
+.max-btn.active { color: var(--purple); border-color: var(--purple); }
+
+.preview {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+.preview .frame {
+    position: absolute;
+    inset: 0;
+    background-size: 300% 300%;
+    animation: drift 14s ease-in-out infinite alternate;
+}
+#deckA .frame { background-image: linear-gradient(125deg, #05303c, #0b6b86, #123, #0a4b5e); }
+#deckB .frame { background-image: linear-gradient(305deg, #3c0526, #86104f, #201, #5e0a38); }
+#mixPreviewBox .frame {
+    background-image: linear-gradient(215deg, #05303c, #4b0a30, #123, #3c1a5e);
+    animation-duration: 20s;
+}
+@keyframes drift {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+.preview .time {
+    position: absolute;
+    right: 8px; bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,.8);
+}
+.preview .tag {
+    position: absolute;
+    left: 8px; bottom: 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,.55);
+}
+
+.transport {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    flex: 0 0 auto;
+}
+.t-btn {
+    width: 40px; height: 32px;
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+}
+.t-btn:hover { border-color: var(--text-dim); }
+#deckA .t-play { background: var(--cyan); border-color: var(--cyan); color: #00222e; }
+#deckB .t-play { background: var(--pink); border-color: var(--pink); color: #33001a; }
+
+.sliders { padding: 2px 10px 8px; flex: 0 0 auto; }
+.srow {
+    display: grid;
+    grid-template-columns: 58px 1fr 44px;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0;
+    color: var(--text-dim);
+}
+.srow output { text-align: right; color: var(--text); }
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 18px;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--panel-3);
+    border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    margin-top: -5px;
+}
+input[type="range"]:hover::-webkit-slider-thumb { background: var(--text); }
+
+/* ---------- File browser ---------- */
+.browser {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-top: 1px solid var(--line);
+}
+.pathbar {
+    display: flex;
+    gap: 6px;
+    padding: 6px 8px;
+    align-items: center;
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--line);
+}
+.pathbar button {
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    border-radius: 4px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font: inherit;
+}
+.pathbar input {
+    flex: 1;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font: inherit;
+    min-width: 0;
+}
+.filelist { flex: 1; overflow-y: auto; }
+.file {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.file:hover { background: var(--panel-2); }
+.file.loaded { background: var(--panel-3); }
+#deckA .file.loaded { border-left-color: var(--cyan); }
+#deckB .file.loaded { border-left-color: var(--pink); }
+.thumb {
+    flex: 0 0 auto;
+    width: 34px; height: 20px;
+    border-radius: 3px;
+    background: linear-gradient(120deg, #223, #345);
+}
+.thumb.img { background: linear-gradient(120deg, #443, #675); }
+.thumb.dir {
+    background: var(--panel-3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-dim); font-size: 11px;
+}
+.load-all {
+    flex: 0 0 auto;
+    padding: 8px;
+    text-align: center;
+    background: var(--panel-2);
+    border-top: 1px solid var(--line);
+    color: var(--text-dim);
+    cursor: pointer;
+}
+.load-all:hover { color: var(--text); }
+
+/* ---------- Center column ---------- */
+#center { background: var(--panel-2); }
+.center-scroll {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding: 0 10px 10px;
+}
+#mixPreviewBox {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    flex: 0 0 auto;
+    margin: 10px 10px 0;
+    border-radius: 4px;
+}
+.section-label {
+    color: var(--purple);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 11px;
+    margin: 14px 0 6px;
+}
+.group-label {
+    color: var(--text-faint);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 8px 0 4px;
+}
+.tgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 4px;
+}
+.tbtn {
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    border-radius: 4px;
+    padding: 7px 4px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 11px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tbtn:hover { color: var(--text); border-color: var(--text-dim); }
+.tbtn.selected {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: #1a1030;
+    font-weight: 700;
+}
+
+/* Crossfader */
+.xfader { margin-top: 12px; }
+.xfader-row {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    align-items: center;
+    gap: 8px;
+}
+.xfader-row .a { color: var(--cyan); font-weight: 700; }
+.xfader-row .b { color: var(--pink); font-weight: 700; text-align: right; }
+#xfade::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--cyan), var(--pink));
+}
+#xfade::-webkit-slider-thumb {
+    width: 22px; height: 22px;
+    margin-top: -7px;
+    background: #fff;
+    border: 2px solid var(--bg);
+}
+#xfade { height: 26px; }
+
+.automix {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(90deg, var(--cyan), var(--pink));
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.automix:active { filter: brightness(1.2); }
+
+.pill-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font: inherit;
+    background: var(--panel-3);
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.pill-btn:hover { border-color: var(--text-dim); }
+.pill-btn.on {
+    background: var(--green);
+    border-color: var(--green);
+    color: #06301a;
+    font-weight: 700;
+}
+.note { color: var(--text-faint); font-style: italic; margin-top: 6px; line-height: 1.5; }
+
+/* ---------- Hint banner ---------- */
+#hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    background: #1c1530;
+    border-bottom: 1px solid #322659;
+    color: #c9bdf5;
+    font-size: 11px;
+    flex: 0 0 auto;
+}
+#hint button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #c9bdf5;
+    cursor: pointer;
+    font: inherit;
+}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+    <div class="logo"><span class="v">VIDEO</span><span class="m">MIXER</span></div>
+    <div class="topbar-spacer"></div>
+    <span class="topbar-hint" id="layoutHint"></span>
+    <button class="tb-btn" id="resetLayout" title="Reset panel sizes to defaults">Reset Layout</button>
+    <button class="tb-btn">&#x25A3; Output Window</button>
+    <span class="tb-label">Output: ---</span>
+    <span class="tb-label">Res:</span>
+    <select><option>1080p</option><option>720p</option><option>4K</option></select>
+    <button class="tb-btn" title="Help">?</button>
+</div>
+
+<div id="hint">
+    <strong>NEW</strong>
+    <span>Adjustable previews. Drag the dividers between columns to resize decks. Drag the handle under any preview to change its height. Double-click a divider to reset it. Use &#x26F6; to focus one deck. Sizes are remembered.</span>
+    <button id="hintClose" title="Dismiss">&#x2715;</button>
+</div>
+
+<div id="main">
+
+    <!-- ===== DECK A ===== -->
+    <div class="col" id="deckA">
+        <div class="deck-head">
+            <span class="deck-name">DECK A</span>
+            <span class="onair" id="onairA">ON AIR</span>
+            <span class="deck-file">neon-cityscape-loop.mp4</span>
+            <button class="max-btn" data-deck="A" title="Focus this deck">&#x26F6;</button>
+        </div>
+        <div class="preview" data-panel="a">
+            <div class="frame"></div>
+            <span class="tag">DECK A MONITOR</span>
+            <span class="time">1:23 / 4:07</span>
+        </div>
+        <div class="hsplit" data-panel="a" title="Drag to resize preview. Double-click to reset."></div>
+        <div class="transport">
+            <button class="t-btn" title="Previous">&#x23EE;</button>
+            <button class="t-btn t-play" title="Play/Pause">&#x23F8;</button>
+            <button class="t-btn" title="Next">&#x23ED;</button>
+            <button class="t-btn" title="Loop">&#x27F2;</button>
+            <button class="t-btn" title="Shuffle">&#x1F500;</button>
+        </div>
+        <div class="sliders">
+            <div class="srow"><span>Vol</span><input type="range" min="0" max="100" value="80"><output>80%</output></div>
+            <div class="srow"><span>Speed</span><input type="range" min="25" max="200" value="100"><output>1.0x</output></div>
+            <div class="srow"><span>Slide</span><input type="range" min="1" max="30" value="5"><output>5s</output></div>
+        </div>
+        <div class="browser">
+            <div class="pathbar">
+                <button>&#x2191; Up</button><button>&#x2302; Home</button>
+                <input value="/Users/ely/Visuals" readonly><button>Go</button>
+            </div>
+            <div class="filelist">
+                <div class="file loaded"><span class="thumb"></span>neon-cityscape-loop.mp4</div>
+                <div class="file"><span class="thumb"></span>abstract-gold-particles.mp4</div>
+                <div class="file"><span class="thumb"></span>retro-vj-background.mp4</div>
+                <div class="file"><span class="thumb img"></span>EDISON-poster-11x17.jpg</div>
+                <div class="file"><span class="thumb"></span>glitter-rain-pink-4k.mp4</div>
+                <div class="file"><span class="thumb"></span>wizard-of-oz-clip.mp4</div>
+                <div class="file"><span class="thumb dir">&#x1F4C1;</span>Custom Transitions</div>
+            </div>
+            <div class="load-all">Load All to Deck A</div>
+        </div>
+    </div>
+
+    <div class="vsplit" data-split="left" title="Drag to resize. Double-click to reset."></div>
+
+    <!-- ===== CENTER ===== -->
+    <div class="col" id="center">
+        <div class="preview" id="mixPreviewBox" data-panel="mix">
+            <div class="frame"></div>
+            <span class="tag">MIX PREVIEW</span>
+        </div>
+        <div class="hsplit" data-panel="mix" title="Drag to resize preview. Double-click to reset."></div>
+        <div class="center-scroll">
+            <div class="xfader">
+                <div class="xfader-row">
+                    <span class="a">A</span>
+                    <input type="range" id="xfade" min="0" max="100" value="30">
+                    <span class="b">B</span>
+                </div>
+            </div>
+
+            <div class="section-label">TRANSITION</div>
+            <div class="group-label">MOTION</div>
+            <div class="tgrid">
+                <button class="tbtn">Slide Left</button>
+                <button class="tbtn">Slide Right</button>
+                <button class="tbtn">Zoom In</button>
+                <button class="tbtn">Zoom Out</button>
+                <button class="tbtn">Spin</button>
+            </div>
+            <div class="group-label">STYLIZED</div>
+            <div class="tgrid">
+                <button class="tbtn">Pixelate</button>
+                <button class="tbtn">Dissolve</button>
+                <button class="tbtn">Burn</button>
+                <button class="tbtn selected">Luma Fade</button>
+                <button class="tbtn">Blinds H</button>
+                <button class="tbtn">Blinds V</button>
+            </div>
+            <div class="group-label">COMPOSITE</div>
+            <div class="tgrid">
+                <button class="tbtn">Additive</button>
+                <button class="tbtn">Multiply</button>
+                <button class="tbtn">Screen</button>
+                <button class="tbtn">Difference</button>
+            </div>
+
+            <button class="automix">AUTO MIX</button>
+            <div class="srow" style="margin-top:6px;">
+                <span>Duration</span><input type="range" min="5" max="80" value="20" id="dur"><output id="durOut">2.0s</output>
+            </div>
+
+            <div class="section-label">AUTOPILOT</div>
+            <button class="pill-btn" id="autopilot">Autopilot: OFF</button>
+            <div class="srow" style="margin-top:6px;"><span>Hold</span><input type="range" min="1" max="60" value="8"><output>8s</output></div>
+            <div class="srow"><span>Fade</span><input type="range" min="1" max="50" value="15"><output>1.5s</output></div>
+
+            <div class="section-label">FX</div>
+            <div class="srow"><span>Bright</span><input type="range" min="0" max="200" value="100"><output>100</output></div>
+            <div class="srow"><span>Contrast</span><input type="range" min="0" max="200" value="100"><output>100</output></div>
+            <div class="srow"><span>Saturate</span><input type="range" min="0" max="200" value="100"><output>100</output></div>
+            <div class="srow"><span>Hue</span><input type="range" min="0" max="360" value="0"><output>0&deg;</output></div>
+            <button class="pill-btn" style="margin-top:6px;">Reset FX</button>
+
+            <div class="section-label">CUSTOM FX</div>
+            <button class="pill-btn">Reload Custom</button>
+            <p class="note">No custom transitions. Add .js files to effects/</p>
+        </div>
+    </div>
+
+    <div class="vsplit" data-split="right" title="Drag to resize. Double-click to reset."></div>
+
+    <!-- ===== DECK B ===== -->
+    <div class="col" id="deckB">
+        <div class="deck-head">
+            <span class="deck-name">DECK B</span>
+            <span class="onair" id="onairB">ON AIR</span>
+            <span class="deck-file">abstract-gold-particles.mp4</span>
+            <button class="max-btn" data-deck="B" title="Focus this deck">&#x26F6;</button>
+        </div>
+        <div class="preview" data-panel="b">
+            <div class="frame"></div>
+            <span class="tag">DECK B MONITOR</span>
+            <span class="time">2:45 / 4:07</span>
+        </div>
+        <div class="hsplit" data-panel="b" title="Drag to resize preview. Double-click to reset."></div>
+        <div class="transport">
+            <button class="t-btn" title="Previous">&#x23EE;</button>
+            <button class="t-btn t-play" title="Play/Pause">&#x23F8;</button>
+            <button class="t-btn" title="Next">&#x23ED;</button>
+            <button class="t-btn" title="Loop">&#x27F2;</button>
+            <button class="t-btn" title="Shuffle">&#x1F500;</button>
+        </div>
+        <div class="sliders">
+            <div class="srow"><span>Vol</span><input type="range" min="0" max="100" value="80"><output>80%</output></div>
+            <div class="srow"><span>Speed</span><input type="range" min="25" max="200" value="100"><output>1.0x</output></div>
+            <div class="srow"><span>Slide</span><input type="range" min="1" max="30" value="5"><output>5s</output></div>
+        </div>
+        <div class="browser">
+            <div class="pathbar">
+                <button>&#x2191; Up</button><button>&#x2302; Home</button>
+                <input value="/Users/ely/Visuals" readonly><button>Go</button>
+            </div>
+            <div class="filelist">
+                <div class="file"><span class="thumb"></span>neon-cityscape-loop.mp4</div>
+                <div class="file loaded"><span class="thumb"></span>abstract-gold-particles.mp4</div>
+                <div class="file"><span class="thumb"></span>retro-vj-background.mp4</div>
+                <div class="file"><span class="thumb img"></span>EDISON-poster-11x17.jpg</div>
+                <div class="file"><span class="thumb"></span>glitter-rain-pink-4k.mp4</div>
+                <div class="file"><span class="thumb"></span>wizard-of-oz-clip.mp4</div>
+                <div class="file"><span class="thumb dir">&#x1F4C1;</span>Custom Transitions</div>
+            </div>
+            <div class="load-all">Load All to Deck B</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+/* =====================================================================
+   Adjustable layout engine.
+   Dependency-free. Ports directly into the app (Electron, WKWebView,
+   or the web build). All state lives in `layout` and persists to
+   localStorage under one key.
+   ===================================================================== */
+(function () {
+    var KEY = 'vm-layout-v1';
+    var DEFAULTS = {
+        cols: { a: 38, c: 24, b: 38 },          // column weights, sum 100
+        heights: { a: 180, b: 180, mix: 110 },  // preview heights, px
+        focused: null                            // 'A' | 'B' | null
+    };
+    var MIN_COL = 16;        // minimum column weight
+    var MIN_H = 90;          // minimum preview height, px
+    var MAX_H = 560;         // maximum preview height, px
+
+    var layout = load();
+    var main = document.getElementById('main');
+
+    function load() {
+        try {
+            var saved = JSON.parse(localStorage.getItem(KEY));
+            if (saved && saved.cols && saved.heights) return saved;
+        } catch (e) { /* corrupted state falls back to defaults */ }
+        return JSON.parse(JSON.stringify(DEFAULTS));
+    }
+    function save() { localStorage.setItem(KEY, JSON.stringify(layout)); }
+
+    function apply() {
+        var c = layout.cols;
+        main.style.gridTemplateColumns =
+            c.a + 'fr var(--splitter) ' + c.c + 'fr var(--splitter) ' + c.b + 'fr';
+        eachPreview(function (el, k) { el.style.height = layout.heights[k] + 'px'; });
+        document.querySelectorAll('.max-btn').forEach(function (btn) {
+            btn.classList.toggle('active', btn.dataset.deck === layout.focused);
+        });
+        var hint = document.getElementById('layoutHint');
+        hint.textContent = layout.focused ? 'Focus: Deck ' + layout.focused : '';
+    }
+    function eachPreview(fn) {
+        document.querySelectorAll('.preview').forEach(function (el) {
+            fn(el, el.dataset.panel);
+        });
+    }
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+    /* ----- Column splitters: shift weight between adjacent columns ----- */
+    document.querySelectorAll('.vsplit').forEach(function (sp) {
+        sp.addEventListener('pointerdown', function (e) {
+            e.preventDefault();
+            sp.setPointerCapture(e.pointerId);
+            sp.classList.add('dragging');
+            var startX = e.clientX;
+            var start = { a: layout.cols.a, c: layout.cols.c, b: layout.cols.b };
+            var totalPx = main.getBoundingClientRect().width;
+
+            function move(ev) {
+                var dw = (ev.clientX - startX) / totalPx * 100;
+                if (sp.dataset.split === 'left') {
+                    var a = clamp(start.a + dw, MIN_COL, start.a + start.c - MIN_COL);
+                    layout.cols.a = a;
+                    layout.cols.c = start.a + start.c - a;
+                } else {
+                    var c = clamp(start.c + dw, MIN_COL, start.c + start.b - MIN_COL);
+                    layout.cols.c = c;
+                    layout.cols.b = start.c + start.b - c;
+                }
+                layout.focused = null;
+                apply();
+            }
+            function up() {
+                sp.classList.remove('dragging');
+                sp.removeEventListener('pointermove', move);
+                sp.removeEventListener('pointerup', up);
+                save();
+            }
+            sp.addEventListener('pointermove', move);
+            sp.addEventListener('pointerup', up);
+        });
+        sp.addEventListener('dblclick', function () {
+            layout.cols = JSON.parse(JSON.stringify(DEFAULTS.cols));
+            layout.focused = null;
+            apply(); save();
+        });
+    });
+
+    /* ----- Preview height handles ----- */
+    document.querySelectorAll('.hsplit').forEach(function (sp) {
+        var key = sp.dataset.panel;
+        sp.addEventListener('pointerdown', function (e) {
+            e.preventDefault();
+            sp.setPointerCapture(e.pointerId);
+            sp.classList.add('dragging');
+            var startY = e.clientY;
+            var startH = layout.heights[key];
+            function move(ev) {
+                layout.heights[key] = clamp(startH + (ev.clientY - startY), MIN_H, MAX_H);
+                apply();
+            }
+            function up() {
+                sp.classList.remove('dragging');
+                sp.removeEventListener('pointermove', move);
+                sp.removeEventListener('pointerup', up);
+                save();
+            }
+            sp.addEventListener('pointermove', move);
+            sp.addEventListener('pointerup', up);
+        });
+        sp.addEventListener('dblclick', function () {
+            layout.heights[key] = DEFAULTS.heights[key];
+            apply(); save();
+        });
+    });
+
+    /* ----- Focus mode: give one deck most of the width ----- */
+    document.querySelectorAll('.max-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var deck = btn.dataset.deck;
+            if (layout.focused === deck) {
+                layout.focused = null;
+                layout.cols = JSON.parse(JSON.stringify(DEFAULTS.cols));
+                layout.heights.a = DEFAULTS.heights.a;
+                layout.heights.b = DEFAULTS.heights.b;
+            } else {
+                layout.focused = deck;
+                layout.cols = deck === 'A' ? { a: 58, c: 18, b: 24 } : { a: 24, c: 18, b: 58 };
+                layout.heights[deck.toLowerCase()] = 320;
+            }
+            apply(); save();
+        });
+    });
+
+    /* ----- Reset layout ----- */
+    document.getElementById('resetLayout').addEventListener('click', function () {
+        layout = JSON.parse(JSON.stringify(DEFAULTS));
+        apply(); save();
+    });
+
+    /* ----- Keyboard: [ and ] resize the focused-or-both previews ----- */
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== '[' && e.key !== ']') return;
+        var step = e.key === ']' ? 20 : -20;
+        ['a', 'b'].forEach(function (k) {
+            layout.heights[k] = clamp(layout.heights[k] + step, MIN_H, MAX_H);
+        });
+        apply(); save();
+    });
+
+    apply();
+})();
+
+/* ---------- Demo-only interactions (not part of the layout engine) ---------- */
+(function () {
+    // Crossfader drives ON AIR badges and monitor emphasis
+    var xf = document.getElementById('xfade');
+    function updateAir() {
+        var v = +xf.value;
+        document.getElementById('onairA').classList.toggle('live', v <= 55);
+        document.getElementById('onairB').classList.toggle('live', v >= 45);
+        document.querySelector('#deckA .frame').style.opacity = v >= 85 ? 0.35 : 1;
+        document.querySelector('#deckB .frame').style.opacity = v <= 15 ? 0.35 : 1;
+    }
+    xf.addEventListener('input', updateAir);
+    updateAir();
+
+    // Transition selection
+    document.querySelectorAll('.tbtn').forEach(function (b) {
+        b.addEventListener('click', function () {
+            document.querySelectorAll('.tbtn').forEach(function (o) { o.classList.remove('selected'); });
+            b.classList.add('selected');
+        });
+    });
+
+    // Duration readout with units
+    var dur = document.getElementById('dur');
+    dur.addEventListener('input', function () {
+        document.getElementById('durOut').textContent = (dur.value / 10).toFixed(1) + 's';
+    });
+
+    // Autopilot toggle with explicit state
+    var ap = document.getElementById('autopilot');
+    ap.addEventListener('click', function () {
+        ap.classList.toggle('on');
+        ap.textContent = ap.classList.contains('on') ? 'Autopilot: ON' : 'Autopilot: OFF';
+    });
+
+    // Hint banner dismiss, remembered
+    var hint = document.getElementById('hint');
+    if (localStorage.getItem('vm-hint-dismissed')) hint.style.display = 'none';
+    document.getElementById('hintClose').addEventListener('click', function () {
+        hint.style.display = 'none';
+        localStorage.setItem('vm-hint-dismissed', '1');
+    });
+})();
+</script>
+</body>
+</html>
