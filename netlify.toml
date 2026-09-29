@@ -12,6 +12,11 @@
   force = true
 
 [[redirects]]
+  from = "/custom-web-development"
+  to = "/custom-web-development/"
+  status = 301
+
+[[redirects]]
   from = "/video-mixer"
   to = "/video-mixer/"
   status = 301

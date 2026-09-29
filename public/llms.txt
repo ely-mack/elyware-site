@@ -2,6 +2,14 @@
 
 > ELYWARE makes focused creative software for performers, artists and makers. Its main product is ELYWARE Video Mixer, a free public beta live video mixer whose output can be sent to a projector or cast wirelessly to Screenfolk digital signage screens.
 
+## Custom websites and software
+
+- [Custom development and project portfolio](https://elyware.net/custom-web-development/): Boutique vibe-coding marketing agency building custom websites, web applications, business tools, and marketing integrations.
+- BandWagon Magazine is the public brand. Elyware is the software behind it all.
+- Work includes event and hospitality websites, Screenfolk digital signage, Crewbase workplace tools, membership experiences, and creative software.
+- Crewbase requires sign-in; Promoter Dashboard is internal; ELYWARE V-STUDIO is in development. These are not open public demos.
+- Custom projects for other companies are scoped individually. Contact hello@elyware.net.
+
 ## Main product
 
 - [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ tool for local videos, images and royalty-free stock clips.
@@ -39,7 +47,7 @@
 ## Other projects
 
 - [Stick Figure Army](https://elyware.net/games/stick-figure-army/): free notebook-paper strategy game in the browser.
-- [AutomouTown](https://elyware.net/games/automotown/): free autonomous city builder in the browser.
+- [Stella’s Tycoon](https://stellaspinball.com/arcade/stellas-tycoon): a branded arcade and bar management browser game.
 
 ## Policies and contact
 

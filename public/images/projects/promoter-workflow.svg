@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">Promoter Dashboard workflow overview</title>
+<desc id="desc">An illustration of ticket sales, show monitoring, marketing, and artist applications connected in one internal platform. No live business data.</desc>
+<rect width="1280" height="720" fill="#121320"/>
+<g font-family="Arial, sans-serif">
+<text x="70" y="78" fill="#a99eff" font-size="18" letter-spacing="3">BANDWAGON / INTERNAL TOOLS</text>
+<text x="70" y="148" fill="#ffffff" font-size="48" font-weight="700">One place to run the show.</text>
+<g stroke="#786bc7" stroke-width="3" fill="none"><path d="M410 305H530M750 305H870M410 515H530M750 515H870M640 350V470"/></g>
+<g fill="#232438" stroke="#494362" stroke-width="2"><rect x="70" y="235" width="340" height="140" rx="16"/><rect x="870" y="235" width="340" height="140" rx="16"/><rect x="70" y="445" width="340" height="140" rx="16"/><rect x="870" y="445" width="340" height="140" rx="16"/></g>
+<rect x="530" y="250" width="220" height="320" rx="20" fill="#5946d4"/>
+<g fill="#fff" font-size="29" font-weight="700"><text x="105" y="296">Ticket sales</text><text x="905" y="296">Marketing</text><text x="105" y="506">Show monitoring</text><text x="905" y="506">Artist applications</text></g>
+<g fill="#bdbbd0" font-size="20"><text x="105" y="333">Reporting &amp; sales context</text><text x="905" y="333">Campaigns &amp; coverage</text><text x="105" y="543">Upcoming shows &amp; status</text><text x="905" y="543">Submission &amp; review</text></g>
+<g fill="#fff" text-anchor="middle"><text x="640" y="378" font-size="40" font-weight="700">BW</text><text x="640" y="433" font-size="22">Promoter</text><text x="640" y="463" font-size="22">Dashboard</text></g>
+<text x="70" y="667" fill="#a6a3bd" font-size="17" letter-spacing="2">WORKFLOW OVERVIEW · ILLUSTRATION, NOT A LIVE DASHBOARD</text>
+</g></svg>
