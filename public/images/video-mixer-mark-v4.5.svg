@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">ELYWARE Video Mixer mark</title>
+  <desc id="desc">Two opposing cyan and magenta deck beams meeting at a violet crossfade point.</desc>
+  <defs>
+    <linearGradient id="surface" x1="154" y1="106" x2="842" y2="918" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171C29"/>
+      <stop offset="0.5" stop-color="#0A0C13"/>
+      <stop offset="1" stop-color="#15101D"/>
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientTransform="translate(260 344) rotate(45) scale(520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1DD8FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#1DD8FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pinkGlow" cx="0" cy="0" r="1" gradientTransform="translate(770 690) rotate(-135) scale(520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF4FB8" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FF4FB8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="deckA" x1="208" y1="276" x2="536" y2="714" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20E2FF"/>
+      <stop offset="0.52" stop-color="#2DA9FF"/>
+      <stop offset="1" stop-color="#6A6DFF"/>
+    </linearGradient>
+    <linearGradient id="deckB" x1="816" y1="276" x2="490" y2="718" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF56BC"/>
+      <stop offset="0.5" stop-color="#E34FC9"/>
+      <stop offset="1" stop-color="#8E63FF"/>
+    </linearGradient>
+    <linearGradient id="mix" x1="458" y1="438" x2="570" y2="586" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B6A0FF"/>
+      <stop offset="0.5" stop-color="#8C5CFF"/>
+      <stop offset="1" stop-color="#FF6DD0"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect x="64" y="64" width="896" height="896" rx="214"/>
+    </clipPath>
+    <filter id="markShadow" x="128" y="188" width="768" height="648" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#8167FF" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#squircle)">
+    <rect x="64" y="64" width="896" height="896" fill="url(#surface)"/>
+    <rect x="64" y="64" width="896" height="896" fill="url(#cyanGlow)"/>
+    <rect x="64" y="64" width="896" height="896" fill="url(#pinkGlow)"/>
+    <path d="M132 512H892" stroke="#C8D0E8" stroke-opacity="0.07" stroke-width="4"/>
+    <path d="M512 132V892" stroke="#C8D0E8" stroke-opacity="0.045" stroke-width="4"/>
+  </g>
+
+  <rect x="67" y="67" width="890" height="890" rx="211" fill="none" stroke="#FFFFFF" stroke-opacity="0.13" stroke-width="6"/>
+  <rect x="82" y="82" width="860" height="860" rx="198" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="3"/>
+
+  <g filter="url(#markShadow)">
+    <path d="M208 276H397L540 512L397 748H208L351 512L208 276Z" fill="url(#deckA)"/>
+    <path d="M816 276H627L484 512L627 748H816L673 512L816 276Z" fill="url(#deckB)"/>
+    <path d="M512 430L594 512L512 594L430 512L512 430Z" fill="url(#mix)" stroke="#F5F2FF" stroke-opacity="0.78" stroke-width="8"/>
+    <circle cx="512" cy="512" r="19" fill="#FAF9FF"/>
+  </g>
+</svg>

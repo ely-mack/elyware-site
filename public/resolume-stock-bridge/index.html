@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixabay Stock Footage in Resolume | Free Stock Bridge for Arena &amp; Avenue</title>
+    <meta name="description" content="Resolume has no Pixabay plugin. The free ELYWARE Stock Bridge searches Pixabay, caches the clip locally and loads it straight into a Resolume Arena or Avenue clip slot over the Resolume REST API.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0a0a0e">
+    <link rel="canonical" href="https://elyware.net/resolume-stock-bridge/">
+    <link rel="icon" type="image/svg+xml" href="/images/video-mixer-mark-v4.2.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/video-mixer-icon-v4.2-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/video-mixer-icon-v4.2-180.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ELYWARE">
+    <meta property="og:url" content="https://elyware.net/resolume-stock-bridge/">
+    <meta property="og:title" content="Stock Bridge for Resolume — Pixabay clips into Arena &amp; Avenue">
+    <meta property="og:description" content="Free companion app that searches Pixabay and sends clips straight into Resolume clip slots over the REST API.">
+    <meta property="og:image" content="https://elyware.net/images/resolume-stock-bridge-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ELYWARE Stock Bridge for Resolume searching Pixabay stock video">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stock Bridge for Resolume — Pixabay clips into Arena &amp; Avenue">
+    <meta name="twitter:description" content="Free companion app that searches Pixabay and sends clips straight into Resolume clip slots.">
+    <meta name="twitter:image" content="https://elyware.net/images/resolume-stock-bridge-og.png">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/theme.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://elyware.net/#organization",
+          "name": "ELYWARE",
+          "url": "https://elyware.net/",
+          "email": "hello@elyware.net",
+          "description": "Independent creative software for performers, artists and makers."
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://elyware.net/resolume-stock-bridge/#screenshot",
+          "url": "https://elyware.net/images/resolume-stock-bridge.jpg",
+          "contentUrl": "https://elyware.net/images/resolume-stock-bridge.jpg",
+          "width": 1400,
+          "height": 788,
+          "caption": "Stock Bridge for Resolume searching Pixabay with a layer and slot picker"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://elyware.net/resolume-stock-bridge/#software",
+          "name": "ELYWARE Stock Bridge for Resolume",
+          "alternateName": "Stock Bridge for Resolume",
+          "url": "https://elyware.net/resolume-stock-bridge/",
+          "description": "A free companion app that searches Pixabay stock video, caches each clip locally and loads it into a Resolume Arena or Avenue clip slot using the Resolume REST API.",
+          "applicationCategory": "MultimediaApplication",
+          "applicationSubCategory": "Stock footage bridge for VJ software",
+          "operatingSystem": ["macOS", "Windows", "Linux"],
+          "softwareVersion": "1.0.1",
+          "datePublished": "2026-08-08",
+          "dateModified": "2026-10-03",
+          "screenshot": { "@id": "https://elyware.net/resolume-stock-bridge/#screenshot" },
+          "featureList": [
+            "Pixabay stock video search",
+            "Sends clips into Resolume Arena and Avenue clip slots",
+            "Reads the live composition to list layers and free slots",
+            "Automatic next-free-slot targeting",
+            "Optional trigger after send",
+            "Local clip cache shared with ELYWARE Video Mixer",
+            "Works over the Resolume REST API on port 8080"
+          ],
+          "downloadUrl": "https://elyware.net/downloads/Stock-Bridge-for-Resolume-v1.0.1.zip",
+          "softwareRequirements": "Python 3, and Resolume Arena or Avenue 7.8 or later with the webserver enabled.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://elyware.net/resolume-stock-bridge/#download"
+          },
+          "isRelatedTo": { "@id": "https://elyware.net/video-mixer/#software" },
+          "publisher": { "@id": "https://elyware.net/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://elyware.net/resolume-stock-bridge/#howto",
+          "name": "How to load Pixabay stock footage into Resolume",
+          "description": "Search Pixabay and load a clip into a Resolume Arena or Avenue clip slot using the free ELYWARE Stock Bridge.",
+          "totalTime": "PT5M",
+          "tool": [
+            { "@type": "HowToTool", "name": "Resolume Arena or Avenue 7.8 or later" },
+            { "@type": "HowToTool", "name": "ELYWARE Stock Bridge for Resolume" },
+            { "@type": "HowToTool", "name": "A free Pixabay API key" }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Enable the Resolume webserver",
+              "text": "In Resolume open Preferences, choose the Webserver tab and switch the server on. It listens on port 8080 by default."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Run the bridge",
+              "text": "Unzip the Stock Bridge, then run python3 resolume_bridge.py. The interface opens at http://127.0.0.1:5566 and shows a green badge once it reaches Resolume."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Add your Pixabay key",
+              "text": "Paste a free Pixabay API key when prompted. The key is stored locally by the app and is never sent to the browser."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Search and send",
+              "text": "Search Pixabay, pick the target layer and slot or leave it on Auto, then press Send to Resolume. The clip caches locally and loads into the slot, ready to trigger."
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://elyware.net/resolume-stock-bridge/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ELYWARE", "item": "https://elyware.net/" },
+            { "@type": "ListItem", "position": 2, "name": "Stock Bridge for Resolume", "item": "https://elyware.net/resolume-stock-bridge/" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://elyware.net/resolume-stock-bridge/#webpage",
+          "url": "https://elyware.net/resolume-stock-bridge/",
+          "name": "Pixabay Stock Footage in Resolume",
+          "description": "How to get Pixabay stock footage into Resolume Arena and Avenue with the free ELYWARE Stock Bridge.",
+          "dateModified": "2026-10-03",
+          "about": { "@id": "https://elyware.net/resolume-stock-bridge/#software" },
+          "breadcrumb": { "@id": "https://elyware.net/resolume-stock-bridge/#breadcrumb" },
+          "publisher": { "@id": "https://elyware.net/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://elyware.net/resolume-stock-bridge/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is there a Pixabay plugin for Resolume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Resolume has no official Pixabay plugin, and no third-party FFGL plugin provides one. Resolume's FFGL plugin format is designed for GPU effects and generative sources, so it is the wrong tool for browsing and downloading stock footage. The ELYWARE Stock Bridge takes a different route: it runs alongside Resolume and loads clips through the Resolume REST API instead."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the Stock Bridge load clips into Resolume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It posts the cached file path to the Resolume REST API endpoint /api/v1/composition/layers/{layer}/clips/{clip}/open as a file URI. Resolume then treats the clip exactly like any other file you dragged into that slot. Optionally the bridge also calls the connect endpoint to trigger the clip immediately."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Resolume versions work with the Stock Bridge?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Resolume Arena and Avenue version 7.8 or later, because that is when the REST API and webserver were introduced. Enable the webserver under Preferences. Both Arena and Avenue work; projection mapping features are not required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the Stock Bridge cost anything?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The bridge is free, with no account and no subscription. You supply your own free Pixabay API key. Pixabay clips are covered by the Pixabay Content License."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will Pixabay clips play smoothly in Resolume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pixabay serves H.264 MP4 files, which Resolume plays but does not scrub as smoothly as its native DXV codec. For casual triggering this is fine. For heavy scrubbing or large shows, convert the cached files to DXV with Resolume Alley, which is free."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where do the downloaded clips go?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Clips cache to a folder in your home directory at VideoMixer/cache/stock/media, alongside a small metadata file recording the source page, contributor and license. ELYWARE Video Mixer shares the same cache, so a clip downloaded in one app is instantly available in the other."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="product-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a class="nav-brand" href="/">ELYWARE</a>
+            <div class="nav-links">
+                <a href="/video-mixer/">Video Mixer</a>
+                <a href="#download">Download</a>
+                <button id="theme-toggle" type="button" aria-label="Toggle colour theme">◐</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="detail-hero">
+            <div class="hero-glow"></div>
+            <div class="container">
+                <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
+                    <a href="/">ELYWARE</a><span aria-hidden="true">/</span><span>Stock Bridge for Resolume</span>
+                </nav>
+                <div class="detail-hero-grid">
+                    <div class="detail-copy">
+                        <p class="eyebrow reveal">FREE COMPANION APP <span>v1.0.1</span></p>
+                        <h1 class="reveal reveal-d1">Pixabay stock footage, straight into Resolume.</h1>
+                        <p class="hero-sub reveal reveal-d2"><strong>Resolume has no Pixabay plugin.</strong> This free bridge adds one the practical way. Search Pixabay in a browser window, pick a layer, and the clip caches locally then drops into a Resolume Arena or Avenue clip slot over the REST API. Ready to trigger.</p>
+                        <div class="hero-actions reveal reveal-d2">
+                            <a href="#download" class="btn btn-primary">Download the bridge</a>
+                            <a href="#how-it-works" class="btn btn-ghost">How it works</a>
+                        </div>
+                        <ul class="trust-list reveal reveal-d2" aria-label="Product assurances">
+                            <li>Free, no account</li>
+                            <li>Arena &amp; Avenue 7.8+</li>
+                            <li>Clips cache locally</li>
+                        </ul>
+                    </div>
+                    <div class="hero-visual reveal reveal-d2">
+                        <div class="window-frame">
+                            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                            <img src="/images/resolume-stock-bridge.jpg" width="1400" height="788" alt="Stock Bridge for Resolume showing a Pixabay search grid, a connected Arena badge, and a layer and slot picker" fetchpriority="high">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="answer-section">
+            <div class="container narrow">
+                <p class="label reveal">THE SHORT ANSWER</p>
+                <h2 class="section-title reveal">Why there is no Pixabay plugin for Resolume.</h2>
+                <p class="reveal">Resolume's plugin format is FFGL. FFGL plugins are compiled GPU effects and generative sources, essentially shaders with parameters. That format has no sensible way to present a searchable stock library, download files, manage a cache or handle an API key. It is the wrong shape for the job, which is why nobody has shipped one.</p>
+                <p class="reveal">Since version 7.8, though, Resolume exposes a REST API and a local webserver. That API can open a media file into any clip slot. So the bridge does not try to be a plugin at all. It runs beside Resolume as a small local app, handles the searching and downloading itself, and hands finished files to Resolume through the door Resolume already provides.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="answer-section">
+            <div class="container">
+                <p class="label reveal">HOW IT WORKS</p>
+                <div class="section-heading reveal">
+                    <h2 class="section-title">Search, send, trigger.</h2>
+                    <p>Four steps, about five minutes for the first run.</p>
+                </div>
+                <ol class="step-cards">
+                    <li class="step-card reveal"><span>1</span><h3>Turn on the webserver</h3><p>In Resolume: Preferences, Webserver, switch it on. Default port 8080. This is what lets local tools talk to your composition.</p></li>
+                    <li class="step-card reveal"><span>2</span><h3>Run the bridge</h3><p>Run <code>python3 resolume_bridge.py</code>. The window opens at <code>127.0.0.1:5566</code> and shows a green badge with your Resolume version once connected.</p></li>
+                    <li class="step-card reveal"><span>3</span><h3>Search Pixabay</h3><p>Paste a free Pixabay key once. Then search. Results show duration, resolution and whether you already have the clip cached.</p></li>
+                    <li class="step-card reveal"><span>4</span><h3>Send to a slot</h3><p>Pick a layer, leave the slot on Auto to fill the next free one, and press Send. Tick "trigger after send" to fire it the moment it lands.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <p class="label reveal">FEATURES</p>
+                <div class="feature-split">
+                    <div class="feature-list-block reveal">
+                        <h2 class="section-title">Built for a live composition.</h2>
+                        <ul class="check-list">
+                            <li><strong>Reads your composition</strong><span>The layer picker is populated from Resolume itself, with real layer names, not guesses.</span></li>
+                            <li><strong>Finds the next free slot</strong><span>Auto mode fills the first empty clip slot on the layer so you never overwrite a cued clip by accident.</span></li>
+                            <li><strong>Trigger on arrival</strong><span>Optionally fire the clip the moment it loads, for when you are building a set live.</span></li>
+                            <li><strong>Live connection badge</strong><span>See at a glance whether Resolume is reachable, with the product name and version.</span></li>
+                        </ul>
+                    </div>
+                    <div class="feature-list-block reveal">
+                        <h2 class="section-title">Careful with your files and keys.</h2>
+                        <ul class="check-list">
+                            <li><strong>Clips cache locally</strong><span>Every clip downloads to your machine before it is sent, with the source page, contributor and license recorded beside it.</span></li>
+                            <li><strong>Shared cache</strong><span>The same cache backs <a href="/video-mixer/">ELYWARE Video Mixer</a>. Download once, use in both.</span></li>
+                            <li><strong>Your key stays local</strong><span>The Pixabay key is stored by the local app with restricted permissions and is never exposed to the browser.</span></li>
+                            <li><strong>Local only</strong><span>The bridge listens on loopback and rejects requests from anywhere but your own machine.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download-section">
+            <div class="container">
+                <p class="label reveal">DOWNLOAD</p>
+                <div class="section-heading reveal">
+                    <h2 class="section-title">Get the bridge.</h2>
+                    <p>Free. Requires Python 3 and Resolume Arena or Avenue 7.8 or later.</p>
+                </div>
+                <div class="downloads-grid download-detail-grid">
+                    <article class="download-panel featured reveal">
+                        <div class="download-panel-top">
+                            <p class="dl-kicker">STANDALONE</p>
+                            <h3>Stock Bridge for Resolume</h3>
+                            <p>Just the bridge. Runs on Mac, Windows and Linux.</p>
+                        </div>
+                        <ul>
+                            <li>Python 3 required</li>
+                            <li>Resolume 7.8 or later</li>
+                            <li>24 KB ZIP</li>
+                        </ul>
+                        <a href="/downloads/Stock-Bridge-for-Resolume-v1.0.1.zip" class="btn btn-primary btn-block" data-download="resolume-bridge" download>Download Stock Bridge v1.0.1</a>
+                        <p class="package-note">Unzip, then run <code>python3 resolume_bridge.py</code>. Mac users can double-click the included command file.</p>
+                        <details class="checksum">
+                            <summary>Verify this download</summary>
+                            <code>SHA-256 d19c68f29a4779b344afbce379d8e61aabaeda032b4e35f8e3bcdaef96df804a</code>
+                        </details>
+                    </article>
+
+                    <article class="download-panel reveal">
+                        <div class="download-panel-top">
+                            <p class="dl-kicker">ALSO INCLUDED IN</p>
+                            <h3>Video Mixer v4.2</h3>
+                            <p>The bridge ships inside the Windows and Linux packages of our free two-deck live video mixer.</p>
+                        </div>
+                        <ul>
+                            <li>Two-deck live mixing</li>
+                            <li>Clip pads and MIDI mapping</li>
+                            <li>Same Pixabay cache</li>
+                        </ul>
+                        <a href="/video-mixer/" class="btn btn-ghost btn-block">See Video Mixer</a>
+                        <p class="package-note">Use the mixer on its own, or as a scratch pad next to Resolume.</p>
+                    </article>
+                </div>
+                <aside class="beta-warning reveal">
+                    <strong>Before a live show:</strong> Test the bridge against your actual composition first. Sending a clip writes into a slot in your open Resolume project.
+                </aside>
+            </div>
+        </section>
+
+        <section class="requirements-section">
+            <div class="container">
+                <div class="req-split">
+                    <div class="reveal">
+                        <p class="label">CODEC NOTE</p>
+                        <h2 class="section-title">H.264 in, DXV if you need it.</h2>
+                        <p>Pixabay serves H.264 MP4 files. Resolume plays them, but its native DXV codec scrubs and scratches far better under load. For casual triggering, send clips as they come. For a demanding show, run the cached files through <a href="https://resolume.com/software/alley" rel="noopener">Resolume Alley</a> and convert to DXV first. Alley is free.</p>
+                    </div>
+                    <div class="reveal">
+                        <p class="label">LICENSING</p>
+                        <h2 class="section-title">Know what you are projecting.</h2>
+                        <p>Clips come from Pixabay under the <a href="https://pixabay.com/service/license-summary/" rel="noopener">Pixabay Content License</a>, which is permissive for most performance use. The bridge saves the source page and contributor name next to every cached file so you can always trace a clip back. Check the license yourself for commercial or broadcast work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container narrow">
+                <p class="label reveal">QUESTIONS &amp; ANSWERS</p>
+                <h2 class="section-title reveal">Stock Bridge FAQ</h2>
+                <div class="faq-list">
+                    <details class="reveal" open>
+                        <summary>Is there a Pixabay plugin for Resolume?</summary>
+                        <p>No. Resolume has no official Pixabay plugin and no third-party FFGL plugin provides one. FFGL is built for GPU effects and generative sources, so it cannot sensibly browse a stock library, download files or hold an API key. The Stock Bridge solves the same problem from outside Resolume, using the REST API that Arena and Avenue already expose.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>How does the bridge actually load a clip?</summary>
+                        <p>It posts the cached file path as a <code>file://</code> URI to <code>/api/v1/composition/layers/{layer}/clips/{clip}/open</code>. Resolume then treats that slot exactly as if you had dragged the file in yourself. If you tick trigger after send, the bridge also calls the matching connect endpoint.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Which Resolume versions are supported?</summary>
+                        <p>Arena and Avenue 7.8 or later, which is when Resolume added the REST API and webserver. Turn the webserver on under Preferences. Arena-only features like projection mapping are not required.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Does it cost anything?</summary>
+                        <p>No. The bridge is free with no account and no subscription. You bring your own free Pixabay API key.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Will Pixabay clips play smoothly in Resolume?</summary>
+                        <p>Pixabay serves H.264, which Resolume plays but does not scrub as cleanly as DXV. Fine for triggering. For heavy use, convert cached clips to DXV with Resolume Alley.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Where are the downloaded clips stored?</summary>
+                        <p>In your home folder under <code>VideoMixer/cache/stock/media</code>, with a small metadata file per clip recording the Pixabay page, contributor and license. ELYWARE Video Mixer uses the same cache, so anything you download is available in both apps.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Can it send to a specific slot instead of the next free one?</summary>
+                        <p>Yes. The slot dropdown lists every clip slot on the chosen layer. Auto simply picks the first empty one so you do not overwrite something you have already cued.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container narrow reveal">
+                <p class="eyebrow">FREE COMPANION APP <span>v1.0.1</span></p>
+                <h2 class="section-title">Stop hunting for footage mid-set.</h2>
+                <p>Download the bridge, point it at Resolume, and pull clips into your composition while the show runs.</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">Download the bridge</a>
+                    <a href="mailto:hello@elyware.net?subject=Stock%20Bridge%20for%20Resolume" class="btn btn-ghost">Send feedback</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ELYWARE. Independent creative software.</p>
+            <nav aria-label="Footer">
+                <a href="/">Home</a>
+                <a href="/video-mixer/">Video Mixer</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="mailto:hello@elyware.net">Contact</a>
+            </nav>
+            <p class="footer-note">Resolume is a trademark of Resolume BV. ELYWARE is not affiliated with or endorsed by Resolume.</p>
+        </div>
+    </footer>
+
+    <script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "elyware-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.1.0"
+  }
+}
