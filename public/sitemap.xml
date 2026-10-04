@@ -17,12 +17,22 @@
     </url>
     <url>
         <loc>https://elyware.net/video-mixer/</loc>
-        <lastmod>2026-09-05</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
-            <image:loc>https://elyware.net/images/video-mixer-screenshot-v4.1.jpg</image:loc>
-            <image:title>Video Mixer v4.1 interface with Deck A, Deck B, transition picker and output controls</image:title>
+            <image:loc>https://elyware.net/images/video-mixer-console.jpg</image:loc>
+            <image:title>ELYWARE Video Mixer two-deck console with clip pads, mix preview and beat sync</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://elyware.net/resolume-stock-bridge/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://elyware.net/images/resolume-stock-bridge.jpg</image:loc>
+            <image:title>ELYWARE Stock Bridge for Resolume searching Pixabay stock video</image:title>
         </image:image>
     </url>
     <url>

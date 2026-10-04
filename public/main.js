@@ -129,6 +129,7 @@ if (screenshotDialog && typeof screenshotDialog.showModal === 'function') {
     const pages = new Map([
         ['/', 'home'],
         ['/video-mixer/', 'video-mixer'],
+        ['/resolume-stock-bridge/', 'resolume-stock-bridge'],
         ['/privacy/', 'privacy'],
         ['/games/stick-figure-army/', 'stick-figure-army'],
         ['/thanks/', 'thanks']

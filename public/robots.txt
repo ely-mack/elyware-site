@@ -1,5 +1,6 @@
 # ELYWARE (elyware.net)
 # Search engines and AI answer engines are welcome to index the public site.
+# Structured summary for machine readers: https://elyware.net/llms.txt
 
 User-agent: *
 Allow: /
@@ -23,6 +24,7 @@ User-agent: Bingbot
 User-agent: DuckAssistBot
 User-agent: Amazonbot
 User-agent: meta-externalagent
+User-agent: cohere-ai
 Allow: /
 Disallow: /admin/
 Disallow: /analytics/

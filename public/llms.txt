@@ -1,6 +1,6 @@
 # ELYWARE
 
-> ELYWARE builds custom AI tools, websites and marketing campaigns for businesses, and makes free creative software. Its main software product is ELYWARE Video Mixer, a free public beta live video mixer whose output can be sent to a projector or cast wirelessly to Screenfolk digital signage screens. Based in Colorado.
+> ELYWARE builds custom AI tools, websites and marketing campaigns for businesses, and makes free creative software. Its main software product is ELYWARE Video Mixer, a free two-deck live video mixer and VJ tool whose output can go to a projector, a second screen or a Screenfolk digital signage screen. Video Mixer runs locally on the user's own computer and has no account system, subscription, watermark or application telemetry.
 
 ## Services
 
@@ -16,37 +16,82 @@
 
 ## Main product
 
-- [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ tool for local videos, images and royalty-free stock clips.
-- Current release: Video Mixer v4.1, released July 13, 2026.
-- Core capabilities: two playback decks, 31 transitions, Pixabay stock video browser with local caching, playlist tools, crossfader, autopilot, tap tempo, color effects, session save/load, and a separate 720p or 1080p output window.
-- Output options: move the output window to a projector, TV or second display over a cable, or cast it wirelessly to a TV running the Screenfolk digital signage player.
+- [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ software for local videos, images and royalty-free stock clips.
+- Current release: Video Mixer v4.6, released October 3, 2026. Frame-accurate seamless loops, full-frame deck previews, and a full-height app window. Includes the 4.5.1 fix that makes Pixabay stock search work on every Mac.
+- Price: free public beta. No account, no subscription, no watermark, no telemetry.
 - Platforms: self-contained universal app for macOS 11 or later; Python 3 local-browser packages for Windows and Linux.
-- Price: free. No account, subscription, watermark or app telemetry.
-- Privacy: the user's own media stays on the computer. Stock searches contact Pixabay and selected clips cache locally.
-- Scope: the current beta mixes and outputs media live. It does not record, export or stream the finished mix to the internet. Casting to a Screenfolk player is local display output, not a public stream.
+
+### What Video Mixer does
+
+- Two independent playback decks for videos, images and animated GIFs, each with playlist, loop, shuffle, seek, speed and volume.
+- Eight clip trigger pads per deck with automatic thumbnails. Clicking a pad hot-swaps the live clip instantly without disturbing the playlist.
+- 31 built-in transitions across seven categories, plus loadable custom transitions written in JavaScript.
+- Crossfader with Auto Mix, plus an Autopilot mode that mixes on its own using configurable hold and fade timing.
+- Tap tempo with beat quantize, so clip triggers and transitions land on the beat grid.
+- Audio-reactive master effects and an LFO that animates hue, brightness or saturation, optionally synced to one bar.
+- Logo or text overlay layer with blend modes, opacity, size and position presets.
+- Program recording to a WebM file. The recording captures mixed video only and does not include program audio. Live streaming is not supported.
+- Pixabay stock video browser with local caching, using a free API key the user supplies.
+- Separate 720p or 1080p output window for a projector, TV or second monitor, or cast wirelessly to a TV running the Screenfolk digital signage player.
+- MIDI controller mapping with a learn mode covering 30 targets, including the crossfader, transports, pads and Auto Mix. Requires a browser with Web MIDI support such as Chrome or Edge.
+- Local REST control API for Stream Deck, companion apps and scripts. GET /api/control lists the available actions; POST /api/control/<action> drives the mixer; GET /api/control/status returns a live snapshot. Requests are only accepted from the same machine.
+- Create a Slide composer (v4.5): build title cards and messages in-app with a live 16:9 preview, multiline text and twelve infinitely looping backgrounds, plus slide colors, motion, hue cycling and an opt-in strobe capped at 3 Hz.
+- Seamless video looping: looping is the default, and since v4.6 it cuts on the exact frame. A second decoder starts early by its measured start-up latency so the first frame arrives as the last frame ends: no black frame, no held frame and no dissolve, across deck previews, program canvas, recordings and the output window. (v4.4 to v4.5.1 used a 0.75 second dissolve, which visibly doubled the motion of clips made to loop.)
+- Deck previews show the whole frame at full height (v4.6); the mix preview and projector output fill the frame.
+- Screenfolk Live (v4.3): publish the composed program canvas to one selected Screenfolk player over WebRTC. Program video only; audio is not transmitted.
+- Session save and load, playlist import and export, deep recursive media search, resizable panels, dark/light/auto themes, a note panel and playlist color tags.
+
+### Limits worth knowing
+
+- Mac app builds before 4.5.1 could not reach Pixabay on Macs that do not have python.org Python installed, which is most Macs. The Stock tab showed "Could not reach Pixabay" even though the internet connection and API key were fine; the bundled Python looked for security certificates inside a python.org install. Fixed in 4.5.1, which uses the certificates macOS ships. Workaround for older builds: launch the app from Terminal with `SSL_CERT_FILE=/etc/ssl/cert.pem "/Applications/Video Mixer.app/Contents/MacOS/Video Mixer"`.
+- Pixabay rejects a wrong key with HTTP 400. From 4.5.1 the app reports that as a key problem and notes that keys are case-sensitive.
+- Recording captures video only, with no program audio, and there is no streaming output.
+- MIDI needs a Web MIDI capable browser, so it is unavailable in Safari and in the native macOS app window.
+- The macOS app is not yet signed with an Apple Developer ID or notarized, so macOS Gatekeeper warns that the developer cannot be verified. This is a missing signature, not a malware detection. On macOS 15 and later, right-click then Open no longer bypasses it: click Done, then approve the app under System Settings > Privacy & Security > Open Anyway, or run `xattr -dr com.apple.quarantine "/Applications/Video Mixer.app"`. First launch takes about 20 seconds.
+- The Windows package is Python source plus a .bat launcher, not a signed executable, so SmartScreen flags it as unrecognised. Right-click the ZIP > Properties > Unblock before extracting, then More info > Run anyway if prompted.
+- Every download has a published SHA-256 checksum on the product page for integrity verification.
 
 ## Wireless output (Screenfolk partnership)
 
-- Screenfolk (https://screenfolk.com/) is digital signage software built in Greeley, Colorado. It turns an existing TV into a remotely managed screen using a browser player or a Fire TV player, and it keeps synced content playing through temporary internet outages.
-- ELYWARE has partnered with Screenfolk so Video Mixer output can reach Screenfolk screens wirelessly. Live casting works with Screenfolk-managed screens.
-- How it works: pair the TV as a screen in the Screenfolk dashboard, keep it on the same network as the mixer laptop, open the Video Mixer Output Window, and cast that window to the screen. The audience sees only the finished mix.
+- Screenfolk (https://screenfolk.com/) is digital signage software built in Greeley, Colorado. It turns an existing TV into a remotely managed screen using a browser player or a Fire TV player.
+- ELYWARE has partnered with Screenfolk so Video Mixer output can reach Screenfolk screens wirelessly. Since v4.3 the mixer has a built-in Screenfolk button that publishes the composed program to one selected Screenfolk player over WebRTC, using a one-use pairing code. Program video only; audio is not transmitted.
 - What it removes: HDMI cable runs, capture cards and extra hardware between the mixer and a mounted TV, projector or video wall.
 - Typical uses: bars, music venues, galleries, lobbies and events where a screen is already mounted and running cable is impractical.
 - Details: https://elyware.net/video-mixer/#wireless
 
 ## Frequently asked questions
 
-- Is Video Mixer free? Yes. v4.1 is a free public beta with no account, watermark or telemetry.
-- Can I send the video mix to a TV wirelessly? Yes, to a TV running the Screenfolk digital signage player on the same network.
+- Is Video Mixer free? Yes. v4.6 is a free public beta with no account, watermark or telemetry.
+- Can I send the video mix to a TV wirelessly? Yes, to a TV running the Screenfolk digital signage player.
 - Does Video Mixer work on Mac, Windows and Linux? Yes. Mac gets a self-contained universal app. Windows and Linux use Python 3 and a modern browser.
 - Does Video Mixer upload my media? No. Media is read locally. Only stock search queries go to Pixabay.
-- Can it record or stream? Not in v4.1. It is a live playback, mixing and output tool.
+- Can it record or stream? It records the mixed program to a WebM video file (video only) since v4.2. It does not stream to the internet; casting to a Screenfolk player is local display output.
+- Is there a Pixabay plugin for Resolume? No official one. The free ELYWARE Stock Bridge for Resolume sends Pixabay clips into Resolume clip slots instead.
+
+## Companion product
+
+- [Stock Bridge for Resolume](https://elyware.net/resolume-stock-bridge/): Free companion app, version 1.0.1, that searches Pixabay and loads clips directly into Resolume Arena or Avenue clip slots.
+- Why it exists: Resolume has no Pixabay plugin, and its FFGL plugin format is designed for GPU effects and generative sources rather than stock footage browsing, downloading or cache management.
+- How it works: the bridge runs beside Resolume and posts a cached file path to the Resolume REST API endpoint /api/v1/composition/layers/{layer}/clips/{clip}/open. It can optionally trigger the clip after loading.
+- Requirements: Python 3, and Resolume Arena or Avenue 7.8 or later with the webserver enabled under Preferences, listening on port 8080 by default.
+- It reads the live composition to list real layer names and detect the next free clip slot.
+- Codec note: Pixabay serves H.264, which Resolume plays but does not scrub as smoothly as its native DXV codec. Converting cached clips with the free Resolume Alley is recommended for heavy use.
+- The bridge shares one Pixabay API key and one local cache folder with Video Mixer.
 
 ## Downloads
 
-- [Mac universal app](https://elyware.net/downloads/Video-Mixer-v4.1-Mac-universal.zip)
-- [Windows Python edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
-- [Linux/local web edition](https://elyware.net/downloads/Video-Mixer-v4.1-Web.zip)
+- [Mac universal app, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Mac-universal.zip)
+- [Windows Python edition, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Windows.zip)
+- [Linux and local web edition, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Web.zip)
+- [Stock Bridge for Resolume, v1.0.1](https://elyware.net/downloads/Stock-Bridge-for-Resolume-v1.0.1.zip)
+
+## Privacy
+
+- The user's own media is read locally and never uploaded.
+- Stock search queries go to Pixabay's public API. Selected clips download to a local cache folder.
+- Pixabay keys may be pasted as a full URL copied from Pixabay's API docs page, as a key=VALUE fragment, or as the bare key. From v4.5 the app extracts the key either way and explains precisely why a key is rejected.
+- The Pixabay API key is stored by the local app with restricted file permissions and is never written to browser storage, sessions or playlists.
+- The mixer collects no application telemetry.
 
 ## Other projects
 
@@ -58,3 +103,7 @@
 
 - [Privacy](https://elyware.net/privacy/)
 - Project inquiries, beta feedback, partnerships and support: hello@elyware.net
+
+## Attribution
+
+Resolume is a trademark of Resolume BV. ELYWARE is not affiliated with or endorsed by Resolume. Pixabay content is provided under the Pixabay Content License.
