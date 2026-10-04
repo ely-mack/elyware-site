@@ -1,45 +1,51 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code when working in this repository.
 
 ## Project overview
 
-ELYWARE's marketing site (elyware.net) — a single-page product landing site for Mac creative tools (currently just Video Mixer). It is a plain static site: no build step, no package manager, no tests, no framework. Three files do all the work:
+elyware.net: ELYWARE's site for custom AI, marketing and software services, plus the free Video Mixer app and the Stock Bridge for Resolume companion. It is a plain static site with no build step and no framework. Netlify serves `public/` and runs two functions from `netlify/functions/`.
 
-- `index.html` — all page content (nav, hero, product card, about, contact/footer)
-- `style.css` — all styling, uses CSS custom properties defined in `:root` for the dark theme
-- `main.js` — vanilla JS for mobile menu, scroll-triggered fade-ins (IntersectionObserver), navbar background swap, smooth anchor scroll, and a waitlist email form that currently stores submissions in `localStorage`
+Pages in `public/`:
 
-## Running locally
-
-Open `index.html` directly in a browser, or serve the directory with any static server (e.g. `python3 -m http.server`). There is nothing to install or build.
-
-## Content management (Decap CMS)
-
-`admin/` hosts a [Decap CMS](https://decapcms.org/) instance for non-developer editing:
-
-- `admin/index.html` loads Decap from the unpkg CDN.
-- `admin/config.yml` declares a `github` backend pointing at `ely-mack/elyware-site` on `main`, and exposes `index.html`, `style.css`, and `main.js` as editable "code" fields (full-file replace, `output_code_only: true`).
-
-Consequences to be aware of:
-
-- Editing these three files is effectively a live CMS surface. Don't split them into many new files without updating `admin/config.yml` to match, or the CMS will silently stop exposing the new content.
-- The CMS commits directly to `main` via GitHub OAuth, so anything merged there ships.
-- Media uploads go to `images/` (`media_folder: "images"`, `public_folder: "/images"`).
+- `/` home page (services, work, software). Styles: `style.css`, `agency.css`, `newsprint.css`. Scripts: `main.js`, `newsprint.js`, `portfolio.js`, `theme.js`.
+- `/video-mixer/` product page with downloads, FAQ and Screenfolk wireless casting.
+- `/resolume-stock-bridge/` companion app page.
+- `/privacy/`, `/thanks/`, `/games/stick-figure-army/`, `/games/automotown/`, `/404.html`.
+- `/analytics/` private dashboard (reads `/api/analytics`).
+- `/custom-web-development/` is retired and 301-redirects to `/` (see `netlify.toml`).
 
 ## Deployment
 
-Commits to `main` are the source of truth for the live site. There is no CI config checked in; assume static hosting serves the repo root as-is. Keep paths relative (e.g. `images/foo.jpg`, `style.css`) — absolute/host-prefixed paths will break previews.
+Netlify site `splendorous-chebakia-9e86f4` (id `a874eb4a-f569-4ca5-8a96-ca567ea6f9cc`) builds production automatically from `main`. **A push or merge to `main` is the deploy.** Pull requests get deploy previews.
+
+Do not deploy with `netlify deploy --prod` from a local folder. The next push to `main` overwrites it, and a stale local copy can roll back pages other people changed. If a CLI deploy is ever unavoidable, always pass `--site a874eb4a-f569-4ca5-8a96-ca567ea6f9cc`. A stray parent `.netlify/state.json` in the owner's Dropbox points the CLI at a different site (spotlightgreeley.com).
+
+## Downloads and checksums
+
+Release zips live in `public/downloads/` and are linked from the product pages along with published SHA-256 checksums. On every release, recompute each checksum from the actual file and update every page that shows it (`video-mixer/`, `resolume-stock-bridge/`, `llms.txt`). Keep old versioned zips, since emailed links point at them.
+
+## Analytics
+
+Self-hosted, no Google Analytics. `netlify/functions/telemetry.mjs` counts page views and download clicks into the Netlify Blobs store `elyware-analytics` (`production/daily/YYYY-MM-DD`). `netlify/functions/analytics.mjs` serves `/api/analytics` behind `Authorization: Bearer $ELYWARE_ANALYTICS_KEY`. Adding a page or a download means updating the page map in `public/main.js`, `PAGES`/`DOWNLOADS` in `telemetry.mjs`, and `PAGE_KEYS`/`DOWNLOAD_KEYS` in `analytics.mjs`.
+
+## SEO / AEO
+
+Keep these in sync with page and release changes:
+
+- `public/llms.txt`: machine-readable summary of the services and products.
+- `public/robots.txt`: explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, etc.).
+- `public/sitemap.xml`: bump `lastmod` on changed pages.
+- JSON-LD on each page (Organization, SoftwareApplication, FAQPage, HowTo).
+- IndexNow key file `public/ae4d399badbb99daedb502e86f6e968a.txt`. POST new or changed URLs to `https://api.indexnow.org/IndexNow` with that key.
 
 ## Conventions
 
-- **Single-file rule**: keep new styles in `style.css` and new behavior in `main.js` unless there's a strong reason otherwise (see CMS note above).
-- **Theme tokens**: use the CSS variables in `:root` (`--bg`, `--bg-2`, `--bg-3`, `--text`, `--text-dim`, `--accent`, `--accent-2`, `--radius*`, `--font`) rather than hard-coding colors or radii.
-- **Fade-in on scroll**: any element in the selector list at the top of `main.js` (`.product-card, .coming-soon-section, .about-text, .about-values, .value-card`) gets the `fade-in` class + IntersectionObserver treatment automatically. Add new sections to that selector instead of reimplementing.
-- **Reduced-motion**: the `@media (prefers-reduced-motion: reduce)` block in `style.css` collapses all animations. Don't introduce motion that bypasses it.
-- **Payment link**: "Buy Now" points at a Payhip URL hard-coded in `index.html` (`https://payhip.com/b/CU9QK`). The shop links and demo download are placeholders wired up in `main.js`.
-- **Waitlist form**: currently client-side only (localStorage). If wiring to a real service (Mailchimp/etc.), replace the handler in `main.js`; there is no backend.
+- Writing style: no em dashes. Short, direct sentences.
+- Theme: light and dark via `data-theme` on `<html>` (set early by `theme.js`). Use the CSS custom properties, not hard-coded colors.
+- Respect `prefers-reduced-motion`.
+- Use root-relative paths (`/images/...`, `/style.css`).
 
-## SEO / social
+## Known issue: Decap CMS
 
-`index.html` contains the canonical `<meta>` set: description, keywords, Open Graph (`og:image` → `images/og-image.jpg`, 1200×630), and Twitter Card. Update all three blocks together when changing title/description copy so previews stay consistent.
+`public/admin/` hosts a Decap CMS whose `config.yml` still points at root-level `index.html`, `style.css` and `main.js` and an `images` media folder. Those files moved under `public/`, so the CMS no longer edits the live files. Fix the paths or remove the CMS before relying on it.
