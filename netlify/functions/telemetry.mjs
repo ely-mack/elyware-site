@@ -2,8 +2,8 @@ import { getStore } from '@netlify/blobs';
 
 const STORE_NAME = 'elyware-analytics';
 const MAX_BODY_BYTES = 1024;
-const PAGES = new Set(['home', 'video-mixer', 'privacy', 'stick-figure-army', 'thanks']);
-const DOWNLOADS = new Set(['mac', 'windows', 'linux-web']);
+const PAGES = new Set(['home', 'video-mixer', 'resolume-stock-bridge', 'privacy', 'stick-figure-army', 'thanks']);
+const DOWNLOADS = new Set(['mac', 'windows', 'linux-web', 'resolume-bridge']);
 const PRODUCTION_HOSTS = new Set(['elyware.net', 'www.elyware.net']);
 const PREVIEW_SUFFIX = '--splendorous-chebakia-9e86f4.netlify.app';
 

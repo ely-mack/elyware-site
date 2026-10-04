@@ -1,8 +1,8 @@
 import { getStore } from '@netlify/blobs';
 
 const STORE_NAME = 'elyware-analytics';
-const PAGE_KEYS = ['home', 'video-mixer', 'privacy', 'stick-figure-army', 'thanks'];
-const DOWNLOAD_KEYS = ['mac', 'windows', 'linux-web'];
+const PAGE_KEYS = ['home', 'video-mixer', 'resolume-stock-bridge', 'privacy', 'stick-figure-army', 'thanks'];
+const DOWNLOAD_KEYS = ['mac', 'windows', 'linux-web', 'resolume-bridge'];
 
 const safeCount = (value) => Number.isSafeInteger(value) && value >= 0 ? value : 0;
 const safeTimestamp = (value) => typeof value === 'string' && !Number.isNaN(Date.parse(value)) ? value : null;
