@@ -17,6 +17,11 @@
   status = 301
 
 [[redirects]]
+  from = "/resolume-stock-bridge"
+  to = "/resolume-stock-bridge/"
+  status = 301
+
+[[redirects]]
   from = "/video-mixer"
   to = "/video-mixer/"
   status = 301
