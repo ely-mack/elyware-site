@@ -17,7 +17,7 @@
 ## Main product
 
 - [ELYWARE Video Mixer](https://elyware.net/video-mixer/): Free two-deck live video mixer and VJ software for local videos, images and royalty-free stock clips.
-- Current release: Video Mixer v4.6, released October 3, 2026. Frame-accurate seamless loops, full-frame deck previews, and a full-height app window. Includes the 4.5.1 fix that makes Pixabay stock search work on every Mac.
+- Current release: Video Mixer v4.6.1, released October 3, 2026. Frame-accurate seamless loops that can no longer freeze after one playback, full-frame deck previews, and a full-height app window. Includes the 4.5.1 fix that makes Pixabay stock search work on every Mac.
 - Price: free public beta. No account, no subscription, no watermark, no telemetry.
 - Platforms: self-contained universal app for macOS 11 or later; Python 3 local-browser packages for Windows and Linux.
 
@@ -61,7 +61,7 @@
 
 ## Frequently asked questions
 
-- Is Video Mixer free? Yes. v4.6 is a free public beta with no account, watermark or telemetry.
+- Is Video Mixer free? Yes. v4.6.1 is a free public beta with no account, watermark or telemetry.
 - Can I send the video mix to a TV wirelessly? Yes, to a TV running the Screenfolk digital signage player.
 - Does Video Mixer work on Mac, Windows and Linux? Yes. Mac gets a self-contained universal app. Windows and Linux use Python 3 and a modern browser.
 - Does Video Mixer upload my media? No. Media is read locally. Only stock search queries go to Pixabay.
@@ -80,9 +80,9 @@
 
 ## Downloads
 
-- [Mac universal app, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Mac-universal.zip)
-- [Windows Python edition, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Windows.zip)
-- [Linux and local web edition, v4.6](https://elyware.net/downloads/Video-Mixer-v4.6-Web.zip)
+- [Mac universal app, v4.6.1](https://elyware.net/downloads/Video-Mixer-v4.6.1-Mac-universal.zip)
+- [Windows Python edition, v4.6.1](https://elyware.net/downloads/Video-Mixer-v4.6.1-Windows.zip)
+- [Linux and local web edition, v4.6.1](https://elyware.net/downloads/Video-Mixer-v4.6.1-Web.zip)
 - [Stock Bridge for Resolume, v1.0.1](https://elyware.net/downloads/Stock-Bridge-for-Resolume-v1.0.1.zip)
 
 ## Privacy
