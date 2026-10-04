@@ -11,10 +11,18 @@
   status = 301
   force = true
 
+# The old custom development page duplicated the home page, which now carries services and work.
 [[redirects]]
   from = "/custom-web-development"
-  to = "/custom-web-development/"
+  to = "/"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/custom-web-development/*"
+  to = "/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/video-mixer"
