@@ -87,6 +87,42 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
+// Project screenshots open in a local dialog. Modified clicks still open the image directly.
+const screenshotDialog = document.getElementById('screenshot-dialog');
+
+if (screenshotDialog && typeof screenshotDialog.showModal === 'function') {
+    const title = document.getElementById('screenshot-title');
+    const caption = document.getElementById('screenshot-caption');
+    const image = document.getElementById('screenshot-full');
+    let trigger = null;
+
+    document.querySelectorAll('a[data-screenshot]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+            event.preventDefault();
+            trigger = link;
+            title.textContent = link.dataset.title || 'Project screenshot';
+            caption.textContent = link.dataset.caption || '';
+            image.src = link.getAttribute('href');
+            image.alt = `${title.textContent}, ${caption.textContent || 'screenshot'}`;
+            screenshotDialog.showModal();
+        });
+    });
+
+    screenshotDialog.querySelector('button').addEventListener('click', () => screenshotDialog.close());
+
+    screenshotDialog.addEventListener('click', (event) => {
+        if (event.target !== screenshotDialog) return;
+        const rect = screenshotDialog.getBoundingClientRect();
+        const outside = event.clientX < rect.left || event.clientX > rect.right
+            || event.clientY < rect.top || event.clientY > rect.bottom;
+        if (outside) screenshotDialog.close();
+    });
+
+    screenshotDialog.addEventListener('close', () => trigger?.focus({ preventScroll: true }));
+}
+
 // Anonymous first-party measurement. No cookies, identities, referrers or media data.
 (() => {
     const productionHosts = new Set(['elyware.net', 'www.elyware.net']);
