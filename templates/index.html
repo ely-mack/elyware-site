@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="kit.css">
+    <script src="kit.js" defer></script>
+    <style>
+        .preview { width: 100%; height: 260px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg); pointer-events: none; }
+    </style>
+</head>
+<body>
+<header class="site-nav">
+    <div class="container">
+        <span class="brand">ELY<span>WARE</span> Kit</span>
+        <div class="nav-actions">
+            <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">
+                <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="section-head stack">
+                <span class="eyebrow">Starter pages</span>
+                <h1>Pick a page. Swap the copy. Ship.</h1>
+                <p class="lead">Plain HTML and CSS. No build step. Open any file directly in a browser. See README.md for how to start a new site.</p>
+            </div>
+            <div class="grid cols-3">
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="pages/splash.html" title="Splash preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Splash</h3>
+                <p class="muted small">Coming soon page: waitlist and countdown.</p>
+                <a class="btn btn-ghost btn-sm" href="pages/splash.html">Open pages/splash.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="pages/landing.html" title="Landing preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Landing</h3>
+                <p class="muted small">Full product or service page.</p>
+                <a class="btn btn-ghost btn-sm" href="pages/landing.html">Open pages/landing.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="pages/venue.html" title="Venue preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Venue</h3>
+                <p class="muted small">Shows, presale signup, visitor FAQ.</p>
+                <a class="btn btn-ghost btn-sm" href="pages/venue.html">Open pages/venue.html</a>
+            </article>
+            </div>
+        </div>
+    </section>
+    <section class="section alt">
+        <div class="container">
+            <div class="section-head stack">
+                <span class="eyebrow">Sections</span>
+                <h2>Copy between the SECTION START and END markers.</h2>
+            </div>
+            <div class="grid cols-3">
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/nav.html" title="Sticky nav preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Sticky nav</h3>
+                <p class="muted small">Brand, links, theme toggle, mobile menu.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/nav.html">Open sections/nav.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/hero-split.html" title="Hero, split preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Hero, split</h3>
+                <p class="muted small">Headline and CTAs left, visual right.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/hero-split.html">Open sections/hero-split.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/hero-splash.html" title="Hero, splash preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Hero, splash</h3>
+                <p class="muted small">Centered headline with email capture.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/hero-splash.html">Open sections/hero-splash.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/logos.html" title="Logo strip preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Logo strip</h3>
+                <p class="muted small">Trust bar of client or partner names.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/logos.html">Open sections/logos.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/features-grid.html" title="Feature grid preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Feature grid</h3>
+                <p class="muted small">Six icon cards.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/features-grid.html">Open sections/features-grid.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/feature-rows.html" title="Feature rows preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Feature rows</h3>
+                <p class="muted small">Alternating text and screenshot.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/feature-rows.html">Open sections/feature-rows.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/stats.html" title="Stats preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Stats</h3>
+                <p class="muted small">Four big numbers.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/stats.html">Open sections/stats.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/steps.html" title="Steps preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Steps</h3>
+                <p class="muted small">Numbered how-it-works cards.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/steps.html">Open sections/steps.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/testimonials.html" title="Testimonials preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Testimonials</h3>
+                <p class="muted small">Three quote cards.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/testimonials.html">Open sections/testimonials.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/pricing.html" title="Pricing preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Pricing</h3>
+                <p class="muted small">Three tiers, middle one featured.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/pricing.html">Open sections/pricing.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/faq.html" title="FAQ preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>FAQ</h3>
+                <p class="muted small">Native accordion. Pair with FAQPage JSON-LD.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/faq.html">Open sections/faq.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/events.html" title="Events list preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Events list</h3>
+                <p class="muted small">Show listings with date block and ticket button.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/events.html">Open sections/events.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/cta-band.html" title="CTA band preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>CTA band</h3>
+                <p class="muted small">Closing call to action.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/cta-band.html">Open sections/cta-band.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/countdown.html" title="Countdown preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Countdown</h3>
+                <p class="muted small">Live timer to a launch or doors time.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/countdown.html">Open sections/countdown.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/footer.html" title="Footer preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Footer</h3>
+                <p class="muted small">Four-column footer.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/footer.html">Open sections/footer.html</a>
+            </article>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
