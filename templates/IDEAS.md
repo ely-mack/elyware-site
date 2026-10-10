@@ -12,7 +12,7 @@ Running log of what to borrow, where it came from, and whether we can reuse the 
 
 ## Sources to watch
 
-Checked 2026-10-08. Licenses are as reported by search results and still need confirming against each repo's LICENSE file before any code is copied.
+Checked 2026-10-08, extended 2026-10-10. Licenses are as reported by search results and still need confirming against each repo's LICENSE file before any code is copied.
 
 | Source | Stack | License | Use for |
 |---|---|---|---|
@@ -24,6 +24,12 @@ Checked 2026-10-08. Licenses are as reported by search results and still need co
 | Launch UI | Next.js | MIT, some sections Pro | SaaS hero and pricing ideas |
 | Cruip Open | Next.js | GPL + no redistribute | Idea only |
 | Nova Landing | Bootstrap | Free with footer credit | Idea only |
+| Tailkits UI | HTML + Tailwind | MIT free tier, rest paid | Marketing blocks |
+| Preline UI | HTML + Tailwind + JS | Open source (check repo) | Dropdowns, modals, overlays |
+| FlyonUI | Tailwind + JS plugins | MIT (reported) | Interactive component ideas |
+| Ripple UI | Tailwind | MIT (reported) | Accessible form controls |
+| daisyUI | Tailwind plugin | MIT (reported) | Theming and semantic class naming |
+| Awesome CSS Frameworks list | Index | n/a | Discovery of new libraries |
 
 ## Ideas already in the kit
 
@@ -34,17 +40,36 @@ Checked 2026-10-08. Licenses are as reported by search results and still need co
 - Countdown to doors or a launch time, with a fixed timezone offset.
 - Native `<details>` FAQ that works without JavaScript and maps directly to FAQPage JSON-LD.
 - Featured middle pricing tier with an accent border and glow.
+- Bento grid with three to four tile sizes and a hover or focus reveal. Always visible on touch screens.
+- Spotlight cards with a glow that follows the pointer.
+- Accessible tabs, used for set times by day on the festival page.
+- Monthly and yearly pricing switch.
+- Before and after slider built on a range input, so arrow keys work.
+- Scroll-snap carousel with no library.
+- Marquee of upcoming names that pauses on hover and stops under reduced motion.
+- Sticky phone ticket bar that appears after the hero scrolls away.
+- Filterable photo gallery with a native `<dialog>` lightbox.
+- Copyable promo code with a toast. Built for fan club presales.
+- Lineup grid with set times and bios on hover or focus.
+- Day-of-show timeline.
+- Video hero with a pause button (WCAG 2.2.2).
+- Scroll progress bar using CSS scroll timelines with a JS fallback.
+- Count-up stats that keep the real number for screen readers and reduced motion.
 
 ## Ideas backlog
 
 Add new finds here with the source link. Move them up once they are built.
 
-- [ ] Before and after slider for site redesign case studies.
-- [ ] Sticky mobile "Get tickets" bar that appears after scrolling past the hero.
-- [ ] Bento grid feature layout (mixed card sizes).
-- [ ] Video background hero with a poster image and a reduced-motion fallback.
-- [ ] Lineup or artist grid with hover bios for festival and venue pages.
-- [ ] Marquee strip of upcoming show names (paused under reduced motion).
+- [ ] View Transitions API for smooth page-to-page navigation on multi-page sites.
+- [ ] Scroll-driven section reveals with `animation-timeline: view()`, no JS.
+- [ ] Interactive venue map or seating chart (SVG with hoverable sections).
+- [ ] Add-to-calendar button that writes an .ics file for a show.
+- [ ] Menu and drink list section for Stella's and Spotlight style concepts.
+- [ ] Instagram-style story strip for recaps.
+- [ ] Waitlist with live position number (needs a Netlify function).
+- [ ] Command palette search for larger sites.
+
+Trend notes, 2026: bento grids are now standard. Scroll-driven animation is the pattern to watch. Scroll-jacking and generic AI imagery are fading. Keep tile sizes to three or four.
 
 ## Review checklist for a new idea
 

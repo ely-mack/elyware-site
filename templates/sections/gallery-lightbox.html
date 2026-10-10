@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Lightbox | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: gallery-lightbox -->
+<section class="section">
+    <div class="container">
+        <div class="section-head stack">
+            <span class="eyebrow">Gallery</span>
+            <h2>Filter, then tap to enlarge.</h2>
+        </div>
+        <div class="chips" data-filter-group="#photo-grid > li" aria-label="Filter photos">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="shows" aria-pressed="false">Shows</button>
+            <button class="chip" type="button" data-filter="venue" aria-pressed="false">Venue</button>
+            <button class="chip" type="button" data-filter="crowd" aria-pressed="false">Crowd</button>
+        </div>
+        <ul class="gallery" id="photo-grid">
+            <li data-tags="shows"><button type="button" data-open="lightbox" data-caption="Headliner, opening night"><div class="media"></div><span class="sr-only">Open photo: Headliner, opening night</span></button></li>
+            <li data-tags="venue"><button type="button" data-open="lightbox" data-caption="Main room from the balcony"><div class="media"></div><span class="sr-only">Open photo: Main room from the balcony</span></button></li>
+            <li data-tags="crowd"><button type="button" data-open="lightbox" data-caption="Sold-out Saturday"><div class="media"></div><span class="sr-only">Open photo: Sold-out Saturday</span></button></li>
+            <li data-tags="shows crowd"><button type="button" data-open="lightbox" data-caption="Encore"><div class="media"></div><span class="sr-only">Open photo: Encore</span></button></li>
+            <li data-tags="venue"><button type="button" data-open="lightbox" data-caption="Bar and lounge"><div class="media"></div><span class="sr-only">Open photo: Bar and lounge</span></button></li>
+            <li data-tags="shows"><button type="button" data-open="lightbox" data-caption="Support act"><div class="media"></div><span class="sr-only">Open photo: Support act</span></button></li>
+        </ul>
+        <dialog class="modal lightbox" id="lightbox" aria-label="Photo viewer">
+            <figure><div class="media" style="--ratio: 16 / 10"></div><figcaption></figcaption></figure>
+            <button class="icon-btn close" type="button" data-close aria-label="Close">&times;</button>
+        </dialog>
+    </div>
+</section>
+<!-- SECTION END: gallery-lightbox -->
+</body>
+</html>

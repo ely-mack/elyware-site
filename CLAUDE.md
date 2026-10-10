@@ -17,7 +17,7 @@ Pages in `public/`:
 
 Outside `public/` (not deployed):
 
-- `templates/` ELYWARE Kit: reusable sections, starter pages (splash, landing, venue) and a UI ideas log for new builds. Start any new site from here. See `templates/README.md`.
+- `templates/` ELYWARE Kit: reusable sections, starter pages (splash, landing, venue, festival), interactive components and a UI ideas log for new builds. Start any new site from here. See `templates/README.md`.
 - `prototype/` UI prototypes.
 
 ## Deployment

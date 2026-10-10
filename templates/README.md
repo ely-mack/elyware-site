@@ -12,9 +12,9 @@ Open `index.html` in a browser to see everything in one gallery.
 |---|---|
 | `kit.css` | Design tokens (light and dark), layout, and every component style |
 | `theme.js` | Sets `data-theme` before first paint. Load it in `<head>` |
-| `kit.js` | Theme toggle, mobile menu, scroll reveal, countdown, Netlify email signup |
-| `sections/` | 15 standalone sections. Copy the block between the `SECTION START` and `SECTION END` comments |
-| `pages/` | Three full starters: `splash` (coming soon), `landing` (product or service), `venue` (shows and tickets) |
+| `kit.js` | All behavior, driven by data attributes. See the reference below |
+| `sections/` | 30 standalone sections: 15 layout and 15 interactive. Copy the block between the `SECTION START` and `SECTION END` comments |
+| `pages/` | Four full starters: `splash` (coming soon), `landing` (product or service), `venue` (shows and tickets), `festival` (multi-day event) |
 | `IDEAS.md` | UI ideas, sources worth watching, and the license rules for borrowing |
 
 ## Start a new site
@@ -26,6 +26,31 @@ Open `index.html` in a browser to see everything in one gallery.
 5. Fix the head. Set the title, description, canonical, OG image and JSON-LD. Remove `noindex`.
 6. Add `robots.txt`, `sitemap.xml` and `llms.txt` (see elyware.net's `public/` for working examples).
 7. Connect to Netlify. Forms marked `data-netlify="true"` start collecting on the first deploy.
+
+## Interactive behavior reference
+
+Everything in `kit.js` is opt-in by markup. Copy a section and it works. No other scripts needed.
+
+| Markup | Behavior |
+|---|---|
+| `[data-theme-toggle]` | Light and dark switch, remembered per visitor |
+| `[data-menu-toggle][aria-controls]` | Mobile menu |
+| `[data-reveal]` | Fade up on scroll |
+| `[data-countdown="ISO date"]` | Live countdown |
+| `form[data-signup]` | Netlify Forms submit with inline status |
+| `[role="tablist"]` | Tabs with arrow, Home and End keys |
+| `[role="switch"][data-switch]` | Swaps text of `[data-monthly]`/`[data-yearly]` in its `[data-switch-scope]` |
+| `.compare input[type="range"]` | Before and after slider |
+| `.carousel` + `[data-carousel-prev/next]` | Scroll-snap carousel buttons |
+| `.spotlight` | Pointer-following glow |
+| `[data-open="dialog-id"]`, `[data-close]` | Native `<dialog>` modal or lightbox. `data-caption` fills a `figcaption` |
+| `[data-filter-group="selector"]` + `[data-filter]` | Filter chips. Items carry `data-tags` |
+| `[data-copy="text"]` | Copy to clipboard with a toast |
+| `[data-toast="text"]`, `kitToast("text")` | Toast message |
+| `.sticky-bar[data-sticky-after="#id"]` | Phone action bar after an element scrolls away |
+| `[data-video-toggle][aria-controls]` | Pause and play a background video |
+| `.scroll-progress` | Reading progress bar (CSS scroll timeline, JS fallback) |
+| `[data-count]`, `data-suffix` | Count-up number |
 
 ## Rules every section follows
 

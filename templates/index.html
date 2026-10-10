@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="kit.css">
     <script src="kit.js" defer></script>
     <style>
+        .card .btn { white-space: normal; overflow-wrap: anywhere; text-align: center; }
         .preview { width: 100%; height: 260px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg); pointer-events: none; }
     </style>
 </head>
@@ -51,6 +52,12 @@
                 <p class="muted small">Shows, presale signup, visitor FAQ.</p>
                 <a class="btn btn-ghost btn-sm" href="pages/venue.html">Open pages/venue.html</a>
             </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="pages/festival.html" title="Festival preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Festival</h3>
+                <p class="muted small">Video hero, lineup, set times by day, tickets, photos, sticky ticket bar.</p>
+                <a class="btn btn-ghost btn-sm" href="pages/festival.html">Open pages/festival.html</a>
+            </article>
             </div>
         </div>
     </section>
@@ -58,7 +65,7 @@
         <div class="container">
             <div class="section-head stack">
                 <span class="eyebrow">Sections</span>
-                <h2>Copy between the SECTION START and END markers.</h2>
+                <h2>Layout sections. Copy between the SECTION START and END markers.</h2>
             </div>
             <div class="grid cols-3">
             <article class="card stack" style="--stack: 10px">
@@ -150,6 +157,106 @@
                 <h3>Footer</h3>
                 <p class="muted small">Four-column footer.</p>
                 <a class="btn btn-ghost btn-sm" href="sections/footer.html">Open sections/footer.html</a>
+            </article>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-head stack">
+                <span class="eyebrow">Interactive</span>
+                <h2>Motion and behavior. Vanilla JS in kit.js, driven by data attributes.</h2>
+            </div>
+            <div class="grid cols-3">
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/bento.html" title="Bento grid preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Bento grid</h3>
+                <p class="muted small">Mixed tile sizes. Hover or focus reveals a second line.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/bento.html">Open sections/bento.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/spotlight-cards.html" title="Spotlight cards preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Spotlight cards</h3>
+                <p class="muted small">Glow follows the pointer.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/spotlight-cards.html">Open sections/spotlight-cards.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/tabs.html" title="Tabs preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Tabs</h3>
+                <p class="muted small">Accessible tabs with arrow key support.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/tabs.html">Open sections/tabs.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/pricing-toggle.html" title="Pricing toggle preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Pricing toggle</h3>
+                <p class="muted small">Monthly and yearly switch swaps every price.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/pricing-toggle.html">Open sections/pricing-toggle.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/before-after.html" title="Before and after preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Before and after</h3>
+                <p class="muted small">Drag or arrow-key slider for redesigns.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/before-after.html">Open sections/before-after.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/carousel.html" title="Carousel preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Carousel</h3>
+                <p class="muted small">Native scroll snap with arrow buttons.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/carousel.html">Open sections/carousel.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/marquee.html" title="Marquee preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Marquee</h3>
+                <p class="muted small">Endless name strip. Pauses on hover, stops under reduced motion.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/marquee.html">Open sections/marquee.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/sticky-bar.html" title="Sticky ticket bar preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Sticky ticket bar</h3>
+                <p class="muted small">Phone-only action bar after the hero scrolls away.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/sticky-bar.html">Open sections/sticky-bar.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/gallery-lightbox.html" title="Gallery and lightbox preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Gallery and lightbox</h3>
+                <p class="muted small">Filter chips plus native dialog viewer.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/gallery-lightbox.html">Open sections/gallery-lightbox.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/modal-toast.html" title="Dialog and toast preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Dialog and toast</h3>
+                <p class="muted small">Native dialog and a toast helper.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/modal-toast.html">Open sections/modal-toast.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/promo-code.html" title="Promo code preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Promo code</h3>
+                <p class="muted small">Copy-to-clipboard code with a toast.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/promo-code.html">Open sections/promo-code.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/lineup.html" title="Lineup grid preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Lineup grid</h3>
+                <p class="muted small">Artist cards with set time and bio reveal.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/lineup.html">Open sections/lineup.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/timeline.html" title="Timeline preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Timeline</h3>
+                <p class="muted small">Day-of-show schedule or roadmap.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/timeline.html">Open sections/timeline.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/video-hero.html" title="Video hero preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Video hero</h3>
+                <p class="muted small">Muted loop with a pause button.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/video-hero.html">Open sections/video-hero.html</a>
+            </article>
+            <article class="card stack" style="--stack: 10px">
+                <iframe class="preview" src="sections/scroll-progress-counters.html" title="Counters and progress preview" loading="lazy" tabindex="-1"></iframe>
+                <h3>Counters and progress</h3>
+                <p class="muted small">Count-up stats and a scroll progress bar.</p>
+                <a class="btn btn-ghost btn-sm" href="sections/scroll-progress-counters.html">Open sections/scroll-progress-counters.html</a>
             </article>
             </div>
         </div>

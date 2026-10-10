@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hero | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: video-hero -->
+<section class="video-hero">
+    <!-- Placeholder sits under the video and shows until the video has a src. -->
+    <div class="media" aria-hidden="true"></div>
+    <!-- Add src and poster. Keep the file under 4 MB: 720p, 10 to 15 seconds, no audio track. -->
+    <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster=""></video>
+    <div class="container hero-center stack">
+        <span class="eyebrow">Live in Greeley</span>
+        <h1 class="display">Feel it from the <span class="gradient-text">back row.</span></h1>
+        <p class="lead">A short loop of the room does more than any paragraph.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-lg" href="#">See shows</a></div>
+    </div>
+    <button class="icon-btn video-toggle" type="button" data-video-toggle aria-controls="hero-video" aria-label="Pause background video">&#10073;&#10073;</button>
+</section>
+<!-- SECTION END: video-hero -->
+</body>
+</html>
