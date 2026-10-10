@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Toggle | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: pricing-toggle -->
+<section class="section" id="pricing" data-switch-scope>
+    <div class="container">
+        <div class="section-head center stack">
+            <span class="eyebrow">Pricing</span>
+            <h2>Pay monthly or save yearly.</h2>
+            <div class="switch">
+                <span id="billing-label">Billed yearly</span>
+                <button type="button" role="switch" aria-checked="false" aria-labelledby="billing-label" data-switch="yearly"></button>
+                <span class="save">Save 20%</span>
+            </div>
+        </div>
+        <div class="grid cols-3">
+            <article class="card price-card"><div><h3>Starter</h3><p class="muted small">For one page.</p></div><p class="price"><span data-monthly="$19" data-yearly="$15">$19</span><small> / month</small></p><ul class="check-list"><li>One page</li><li>Email capture</li></ul><a class="btn btn-ghost" href="#">Choose Starter</a></article>
+            <article class="card price-card featured"><div class="stack" style="--stack: 12px"><span class="badge">Most popular</span><h3>Pro</h3><p class="muted small">For a full site.</p></div><p class="price"><span data-monthly="$49" data-yearly="$39">$49</span><small> / month</small></p><ul class="check-list"><li>Up to 6 pages</li><li>Analytics</li><li>Priority edits</li></ul><a class="btn btn-primary" href="#">Choose Pro</a></article>
+            <article class="card price-card"><div><h3>Team</h3><p class="muted small">For several properties.</p></div><p class="price"><span data-monthly="$99" data-yearly="$79">$99</span><small> / month</small></p><ul class="check-list"><li>Unlimited pages</li><li>Shared analytics</li></ul><a class="btn btn-ghost" href="#">Choose Team</a></article>
+        </div>
+    </div>
+</section>
+<!-- SECTION END: pricing-toggle -->
+</body>
+</html>

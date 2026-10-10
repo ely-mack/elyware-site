@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: tabs -->
+<section class="section">
+    <div class="container">
+        <div class="section-head stack">
+            <span class="eyebrow">Use cases</span>
+            <h2>Built for how you work.</h2>
+        </div>
+        <div class="tab-list" role="tablist" aria-label="Use cases">
+            <button role="tab" id="tab-venues" aria-controls="panel-venues" aria-selected="true">Venues</button>
+            <button role="tab" id="tab-artists" aria-controls="panel-artists" aria-selected="false" tabindex="-1">Artists</button>
+            <button role="tab" id="tab-brands" aria-controls="panel-brands" aria-selected="false" tabindex="-1">Brands</button>
+        </div>
+        <div role="tabpanel" id="panel-venues" aria-labelledby="tab-venues" tabindex="0">
+            <div class="feature-row"><div class="stack"><h3>For venues</h3><p class="lead">Calendar, tickets and presale signups on one fast page.</p></div><div class="media"><span class="media-label">venue screenshot</span></div></div>
+        </div>
+        <div role="tabpanel" id="panel-artists" aria-labelledby="tab-artists" tabindex="0" hidden>
+            <div class="feature-row"><div class="stack"><h3>For artists</h3><p class="lead">Tour dates, merch and a mailing list that you own.</p></div><div class="media"><span class="media-label">artist screenshot</span></div></div>
+        </div>
+        <div role="tabpanel" id="panel-brands" aria-labelledby="tab-brands" tabindex="0" hidden>
+            <div class="feature-row"><div class="stack"><h3>For brands</h3><p class="lead">Launch pages with tracking that holds up in a report.</p></div><div class="media"><span class="media-label">brand screenshot</span></div></div>
+        </div>
+    </div>
+</section>
+<!-- SECTION END: tabs -->
+</body>
+</html>
