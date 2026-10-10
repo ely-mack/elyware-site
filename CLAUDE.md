@@ -15,6 +15,11 @@ Pages in `public/`:
 - `/analytics/` private dashboard (reads `/api/analytics`).
 - `/custom-web-development/` is retired and 301-redirects to `/` (see `netlify.toml`).
 
+Outside `public/` (not deployed):
+
+- `templates/` ELYWARE Kit: reusable sections, starter pages (splash, landing, venue) and a UI ideas log for new builds. Start any new site from here. See `templates/README.md`.
+- `prototype/` UI prototypes.
+
 ## Deployment
 
 Netlify site `splendorous-chebakia-9e86f4` (id `a874eb4a-f569-4ca5-8a96-ca567ea6f9cc`) builds production automatically from `main`. **A push or merge to `main` is the deploy.** Pull requests get deploy previews.

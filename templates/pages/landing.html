@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Name | Company Name</title>
+    <meta name="description" content="What it is, who it is for, and the main result, in under 160 characters.">
+    <!-- Remove noindex when this becomes a real page. -->
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://example.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Product Name | Company Name">
+    <meta property="og:description" content="What it is, who it is for, and the main result, in under 160 characters.">
+    <meta property="og:image" content="https://example.com/images/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#09090d">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Company Name",
+                "url": "https://example.com/",
+                "logo": "https://example.com/images/logo.png"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long does a build take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A splash page takes days. A full site takes one to three weeks."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I own the code?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Plain HTML and CSS, in your repository, with no platform lock-in."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I edit it myself?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Text lives in plain HTML files that any editor can change."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+    <div class="container">
+        <a class="brand" href="/">ELY<span>WARE</span></a>
+        <nav aria-label="Primary">
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">
+                <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            </button>
+            <a class="btn btn-primary btn-sm" href="#contact">Get started</a>
+            <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+<main id="main">
+<section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-split">
+        <div class="stack">
+            <span class="badge"><span class="dot"></span> Now booking fall projects</span>
+            <h1>Software and marketing that <span class="gradient-text">ships this month.</span></h1>
+            <p class="lead">One sentence on what you do and who it is for. A second sentence with the proof.</p>
+            <div class="btn-row">
+                <a class="btn btn-primary btn-lg" href="#contact">Start a project</a>
+                <a class="btn btn-ghost btn-lg" href="#features">See how it works</a>
+            </div>
+            <p class="hero-note">No retainers. Fixed quotes in 48 hours.</p>
+        </div>
+        <div class="media" style="--ratio: 4 / 3"><span class="media-label">hero visual 4:3</span></div>
+    </div>
+</section>
+<section class="section" aria-label="Trusted by">
+    <div class="container">
+        <p class="strip-label">Trusted by teams at</p>
+        <div class="logo-strip">
+            <span>NORTHWIND</span>
+            <span>Acme Co.</span>
+            <span>HELIX</span>
+            <span>Bluebird</span>
+            <span>ORBITAL</span>
+        </div>
+    </div>
+</section>
+<section class="section" id="features">
+    <div class="container">
+        <div class="section-head center stack">
+            <span class="eyebrow">Features</span>
+            <h2>Everything the launch needs. Nothing it does not.</h2>
+            <p class="lead">Keep this to one line. The cards carry the detail.</p>
+        </div>
+        <div class="grid cols-3">
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <h3>Fast by default</h3>
+                <p class="muted">Static pages, no framework, sub-second loads on a phone.</p>
+            </article>
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"/></svg></div>
+                <h3>Found by search and AI</h3>
+                <p class="muted">JSON-LD, sitemap, llms.txt and IndexNow wired in from day one.</p>
+            </article>
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+                <h3>Measured</h3>
+                <p class="muted">Private, cookie-free analytics for views and conversions.</p>
+            </article>
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
+                <h3>Light and dark</h3>
+                <p class="muted">Follows the visitor's system setting, with a manual toggle.</p>
+            </article>
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+                <h3>Phone first</h3>
+                <p class="muted">Every section is built and checked at 360px wide.</p>
+            </article>
+            <article class="card lift" data-reveal>
+                <div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3>Accessible</h3>
+                <p class="muted">Keyboard focus, skip links, contrast and reduced motion handled.</p>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="feature-row" data-reveal>
+            <div class="stack">
+                <span class="eyebrow">Step one</span>
+                <h2>Lead with the outcome.</h2>
+                <p class="lead">Say what changes for the customer. Then back it up.</p>
+                <ul class="check-list">
+                    <li>Concrete proof point one</li>
+                    <li>Concrete proof point two</li>
+                    <li>Concrete proof point three</li>
+                </ul>
+            </div>
+            <div class="media"><span class="media-label">screenshot 16:10</span></div>
+        </div>
+        <div class="feature-row flip" data-reveal>
+            <div class="stack">
+                <span class="eyebrow">Step two</span>
+                <h2>Show it working.</h2>
+                <p class="lead">Real screenshots beat illustrations. Short captions beat paragraphs.</p>
+                <a class="btn btn-ghost" href="#">Learn more</a>
+            </div>
+            <div class="media"><span class="media-label">screenshot 16:10</span></div>
+        </div>
+    </div>
+</section>
+<section class="section alt" aria-label="By the numbers">
+    <div class="container">
+        <div class="grid cols-4">
+            <div class="stat" data-reveal><strong>120+</strong><span>Shows a year</span></div>
+            <div class="stat" data-reveal><strong>48h</strong><span>Quote turnaround</span></div>
+            <div class="stat" data-reveal><strong>0.6s</strong><span>Median page load</span></div>
+            <div class="stat" data-reveal><strong>100%</strong><span>Owned code, no lock-in</span></div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="section-head stack">
+            <span class="eyebrow">How it works</span>
+            <h2>Three steps. One week.</h2>
+        </div>
+        <ol class="grid cols-3 steps">
+            <li class="card step" data-reveal><h3>Tell us the goal</h3><p class="muted">A 20 minute call. We leave with a scope and a fixed price.</p></li>
+            <li class="card step" data-reveal><h3>We build it</h3><p class="muted">You get a live preview link to review, not a slide deck.</p></li>
+            <li class="card step" data-reveal><h3>It goes live</h3><p class="muted">Launch, measure, and adjust from real numbers.</p></li>
+        </ol>
+    </div>
+</section>
+<section class="section alt">
+    <div class="container">
+        <div class="section-head center stack">
+            <span class="eyebrow">Results</span>
+            <h2>What clients say.</h2>
+        </div>
+        <div class="grid cols-3">
+            <blockquote class="card quote" data-reveal>
+                <p>"Replace with a real quote. Specific numbers beat praise."</p>
+                <footer><span class="avatar" aria-hidden="true">JD</span><div><cite>Client Name</cite><small>Title, Company</small></div></footer>
+            </blockquote>
+            <blockquote class="card quote" data-reveal>
+                <p>"Keep each quote under 30 words. Cut the adjectives."</p>
+                <footer><span class="avatar" aria-hidden="true">AK</span><div><cite>Client Name</cite><small>Title, Company</small></div></footer>
+            </blockquote>
+            <blockquote class="card quote" data-reveal>
+                <p>"Only publish quotes you have written permission to use."</p>
+                <footer><span class="avatar" aria-hidden="true">MR</span><div><cite>Client Name</cite><small>Title, Company</small></div></footer>
+            </blockquote>
+        </div>
+    </div>
+</section>
+<section class="section" id="pricing">
+    <div class="container">
+        <div class="section-head center stack">
+            <span class="eyebrow">Pricing</span>
+            <h2>Flat prices. No surprises.</h2>
+        </div>
+        <div class="grid cols-3">
+            <article class="card price-card" data-reveal>
+                <div><h3>Splash</h3><p class="muted small">One page to start collecting interest.</p></div>
+                <p class="price">$0<small> / starter</small></p>
+                <ul class="check-list"><li>One page</li><li>Email capture</li><li>Light and dark</li></ul>
+                <a class="btn btn-ghost" href="#contact">Choose Splash</a>
+            </article>
+            <article class="card price-card featured" data-reveal>
+                <div class="stack" style="--stack: 12px"><span class="badge">Most popular</span><h3>Launch</h3><p class="muted small">Full product or venue site.</p></div>
+                <p class="price">$X<small> / project</small></p>
+                <ul class="check-list"><li>Up to 6 pages</li><li>SEO and AI search setup</li><li>Analytics dashboard</li><li>30 days of edits</li></ul>
+                <a class="btn btn-primary" href="#contact">Choose Launch</a>
+            </article>
+            <article class="card price-card" data-reveal>
+                <div><h3>Custom</h3><p class="muted small">Apps, integrations, automation.</p></div>
+                <p class="price">Quote</p>
+                <ul class="check-list"><li>Scoped to the job</li><li>Fixed price</li><li>You own the code</li></ul>
+                <a class="btn btn-ghost" href="#contact">Get a quote</a>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="section" id="faq">
+    <div class="container narrow">
+        <div class="section-head center stack">
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions, answered.</h2>
+        </div>
+        <div class="faq">
+            <details open><summary>Write the question the way a customer would ask it?</summary><div><p>Answer in two or three sentences. Mirror these Q and A pairs in FAQPage JSON-LD so search and AI answers can quote them.</p></div></details>
+            <details><summary>How long does a build take?</summary><div><p>A splash page takes days. A full site takes one to three weeks.</p></div></details>
+            <details><summary>Do I own the code?</summary><div><p>Yes. Plain HTML and CSS, in your repository, with no platform lock-in.</p></div></details>
+            <details><summary>Can I edit it myself?</summary><div><p>Yes. Text lives in plain HTML files that any editor can change.</p></div></details>
+        </div>
+    </div>
+</section>
+<section class="section" id="contact">
+    <div class="container">
+        <div class="cta-band" data-reveal>
+            <h2>Ready when you are.</h2>
+            <p class="lead">One line that removes the last objection.</p>
+            <div class="btn-row">
+                <a class="btn btn-primary btn-lg" href="mailto:hello@example.com">Email us</a>
+                <a class="btn btn-ghost btn-lg" href="#pricing">See pricing</a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="stack">
+                <a class="brand" href="/">ELY<span>WARE</span></a>
+                <p class="muted small">One line on who you are and where you are based.</p>
+            </div>
+            <div><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+            <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#contact">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>
+            <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Company Name</span><span>Made in Colorado</span></div>
+    </div>
+</footer>
+</body>
+</html>
