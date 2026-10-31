@@ -1,18 +1,23 @@
 # ELYWARE
 
-> ELYWARE builds custom AI tools, websites and marketing campaigns for businesses, and makes free creative software. Its main software product is ELYWARE Video Mixer, a free two-deck live video mixer and VJ tool whose output can go to a projector, a second screen or a Screenfolk digital signage screen. Video Mixer runs locally on the user's own computer and has no account system, subscription, watermark or application telemetry.
+> ELYWARE is a small Colorado studio. It makes free browser games and free creative software, and builds websites, platforms and dashboards for venues, festivals and local businesses. It also takes on custom AI, web and software projects. Its main software product is ELYWARE Video Mixer, a free two-deck live video mixer and VJ tool whose output can go to a projector, a second screen or a Screenfolk digital signage screen. Video Mixer runs locally on the user's own computer and has no account system, subscription, watermark or application telemetry.
 
-## Services
+## Showcase
 
-- [Services, selected work and contact](https://elyware.net/#services): custom AI, marketing, and apps and software for businesses.
+- [Home page](https://elyware.net/): a showcase of ELYWARE's games, free software and 28 web projects, with filters for venues, festivals and events, platforms and tools, local businesses and campaigns.
+- Games: Stella's Tycoon, Stick Figure Army and AutomouTown, all free in the browser.
+- Web projects include Stella's Pinball Arcade & Lounge, Moxi Theater, The Rialto Casper, The Gaslight Social, The Black Buzzard, Battle of the Bands, Greeley Blues Jam, Come As You Are Fest, My Favorite Bands, Greeley Block Party, Red, White & Vroom, BandWagon Presents, the BandWagon Fan Club, the BandWagon Concert Map, Ghost Towns of the Rockies, Casper Entertainment, Screenfolk, Crewbase, HACKERZ, a promoter dashboard, The Crew Presents KPI Dashboard, Luna's Tacos & Tequila, Tres Amigos, Spotlight Café & Creamery, All About Home Services and three ticket promotion campaigns.
+
+## Custom projects
+
+- [Contact and custom projects](https://elyware.net/contact/): custom AI, marketing, and apps and software for businesses, with process and FAQ.
 - Custom AI: assistants that answer from a company's own documents and data, automations across ticketing, POS, accounting and ad platforms, and scheduled reports and live dashboards.
 - Marketing: websites and landing pages, campaigns, promotions and launch pages, and pixel, conversion and analytics setup.
 - Apps and software: member portals and fan clubs, staff and operations tools, and maps, directories and digital signage.
-- Selected work: The Crew Presents KPI Dashboard, a promoter dashboard, Screenfolk, BandWagon Presents, The Rialto Casper, Battle of the Bands, Luna's Tacos & Tequila, All About Home Services and Ghost Towns of the Rockies.
 - The tools were built first for ELYWARE's own world of live music, venues and media, including BandWagon Presents and BandWagon Magazine. ELYWARE also builds for restaurants and local service businesses.
 - Internal dashboards are shown with sample data. Crewbase requires sign-in. These are not open public demos.
 - Process: understand the problem, ship a working version fast, refine it together, then launch and support.
-- Pricing: custom projects are scoped individually. Contact hello@elyware.net.
+- Pricing: custom projects are scoped individually. Contact hello@elyware.net or see https://elyware.net/contact/.
 
 ## Main product
 

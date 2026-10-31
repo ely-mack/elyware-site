@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELYWARE | Custom AI, Marketing &amp; Software</title>
-    <meta name="description" content="ELYWARE builds custom AI tools, websites and marketing campaigns for businesses. We also make free creative software, including ELYWARE Video Mixer. Based in Colorado.">
+    <title>ELYWARE | Games, Free Software and Web Projects</title>
+    <meta name="description" content="ELYWARE is a small Colorado studio. Play free browser games, get free live video software and browse 28 sites and dashboards built for venues, festivals and local businesses.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="google-site-verification" content="Sl6wBep8QOzF8SjKc-ckjs_OBUoQ8q6W_4lUHVh2mJA">
     <meta name="theme-color" content="#0a0a0e">
@@ -17,18 +17,20 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ELYWARE">
     <meta property="og:url" content="https://elyware.net/">
-    <meta property="og:title" content="ELYWARE | Custom AI, Marketing &amp; Software">
-    <meta property="og:description" content="Custom AI tools, websites and marketing campaigns for businesses. Built for our world of live music, venues and media. Ready for yours.">
-    <meta property="og:image" content="https://elyware.net/images/elyware-og.png">
+    <meta property="og:title" content="ELYWARE | Games, software and sites">
+    <meta property="og:description" content="Free browser games, free live video software, and the sites and dashboards behind real venues, festivals and local businesses.">
+    <meta property="og:image" content="https://elyware.net/images/elyware-showcase-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="ELYWARE: custom AI, marketing and software">
+    <meta property="og:image:alt" content="ELYWARE: we make games, tools and sites. A collage of project screenshots.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ELYWARE | Custom AI, Marketing &amp; Software">
-    <meta name="twitter:description" content="Custom AI tools, websites and marketing campaigns for businesses. Built for our world of live music, venues and media. Ready for yours.">
-    <meta name="twitter:image" content="https://elyware.net/images/elyware-og.png">
+    <meta name="twitter:title" content="ELYWARE | Games, software and sites">
+    <meta name="twitter:description" content="Free browser games, free live video software, and the sites and dashboards behind real venues, festivals and local businesses.">
+    <meta name="twitter:image" content="https://elyware.net/images/elyware-showcase-og.jpg">
 
+    <link rel="preload" as="image" href="/images/newsprint/projects/river/stellaspinball.webp" type="image/webp">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/showcase.css">
     <script src="/theme.js"></script>
     <script type="application/ld+json">
     {
@@ -41,9 +43,20 @@
           "alternateName": "Elyware",
           "url": "https://elyware.net/",
           "email": "hello@elyware.net",
-          "description": "Custom AI tools, websites, marketing campaigns and business software. Maker of ELYWARE Video Mixer. Based in Colorado.",
-          "knowsAbout": ["custom AI tools", "AI workflow automation", "business dashboards", "website development", "marketing campaigns", "conversion tracking", "digital signage", "live video mixing"],
-          "logo": { "@id": "https://elyware.net/video-mixer/#logo" }
+          "description": "A small Colorado studio making browser games, free live video software, and websites, platforms and dashboards for venues, festivals and local businesses. Maker of ELYWARE Video Mixer.",
+          "knowsAbout": [
+            "browser games",
+            "live video mixing",
+            "website development",
+            "custom AI tools",
+            "AI workflow automation",
+            "business dashboards",
+            "marketing campaigns",
+            "digital signage"
+          ],
+          "logo": {
+            "@id": "https://elyware.net/video-mixer/#logo"
+          }
         },
         {
           "@type": "ImageObject",
@@ -59,62 +72,525 @@
           "@id": "https://elyware.net/#website",
           "url": "https://elyware.net/",
           "name": "ELYWARE",
-          "description": "Custom AI, marketing and software.",
-          "publisher": { "@id": "https://elyware.net/#organization" },
+          "description": "Games, software and sites from Colorado.",
+          "publisher": {
+            "@id": "https://elyware.net/#organization"
+          },
           "inLanguage": "en-US"
         },
         {
-          "@type": "WebPage",
+          "@type": "CollectionPage",
           "@id": "https://elyware.net/#webpage",
           "url": "https://elyware.net/",
-          "name": "ELYWARE | Custom AI, Marketing & Software",
-          "description": "ELYWARE builds custom AI tools, websites and marketing campaigns for businesses, and makes free creative software including ELYWARE Video Mixer.",
-          "dateModified": "2026-10-04",
-          "isPartOf": { "@id": "https://elyware.net/#website" },
-          "about": { "@id": "https://elyware.net/#services" },
-          "publisher": { "@id": "https://elyware.net/#organization" },
+          "name": "ELYWARE | Games, Free Software and Web Projects",
+          "description": "Free browser games, free live video software, and 28 websites, platforms and dashboards built by ELYWARE.",
+          "dateModified": "2026-10-31",
+          "isPartOf": {
+            "@id": "https://elyware.net/#website"
+          },
+          "publisher": {
+            "@id": "https://elyware.net/#organization"
+          },
+          "mainEntity": {
+            "@id": "https://elyware.net/#showcase"
+          },
           "inLanguage": "en-US"
         },
         {
-          "@type": "Service",
-          "@id": "https://elyware.net/#services",
-          "name": "Custom AI, marketing and software development",
-          "url": "https://elyware.net/#services",
-          "provider": { "@id": "https://elyware.net/#organization" },
-          "serviceType": ["Custom AI tools and automation", "Websites and marketing campaigns", "Custom business apps and software"],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "ELYWARE services",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom AI", "description": "AI assistants, workflow automations, scheduled reports and live dashboards connected to the tools a business already uses." } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing", "description": "Websites, landing pages, campaigns and conversion tracking." } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Apps and software", "description": "Member portals, staff and operations tools, interactive maps and digital signage." } }
-            ]
-          }
+          "@type": "ItemList",
+          "@id": "https://elyware.net/#showcase",
+          "name": "ELYWARE games and software",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "VideoGame",
+                "name": "Stella’s Tycoon",
+                "url": "https://stellaspinball.com/arcade/stellas-tycoon",
+                "gamePlatform": "Web browser",
+                "genre": "Management simulation",
+                "isAccessibleForFree": true,
+                "author": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "VideoGame",
+                "name": "Stick Figure Army",
+                "url": "https://elyware.net/games/stick-figure-army/",
+                "gamePlatform": "Web browser",
+                "genre": "Strategy",
+                "isAccessibleForFree": true,
+                "author": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "VideoGame",
+                "name": "AutomouTown",
+                "url": "https://elyware.net/games/automotown/",
+                "gamePlatform": "Web browser",
+                "genre": "City builder",
+                "isAccessibleForFree": true,
+                "author": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://elyware.net/video-mixer/#software",
+                "name": "ELYWARE Video Mixer",
+                "url": "https://elyware.net/video-mixer/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@id": "https://elyware.net/resolume-stock-bridge/#software",
+                "name": "Stock Bridge for Resolume",
+                "url": "https://elyware.net/resolume-stock-bridge/"
+              }
+            }
+          ]
         },
         {
-          "@type": "FAQPage",
-          "@id": "https://elyware.net/#faq",
-          "mainEntity": [
+          "@type": "ItemList",
+          "@id": "https://elyware.net/#work",
+          "name": "ELYWARE web projects",
+          "numberOfItems": 28,
+          "itemListElement": [
             {
-              "@type": "Question",
-              "name": "What does ELYWARE build?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Custom AI tools and automations, websites and marketing campaigns, and business apps. ELYWARE also makes free creative software, including ELYWARE Video Mixer." }
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Stella’s Pinball Arcade & Lounge",
+                "genre": "Venue website",
+                "description": "Pinball, burgers, drinks and comedy in downtown Greeley.",
+                "image": "https://elyware.net/images/newsprint/projects/stellaspinball.jpg",
+                "url": "https://elyware.net/#p-stellaspinball",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
             },
             {
-              "@type": "Question",
-              "name": "What does custom AI mean at ELYWARE?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Practical AI inside your workflow. Assistants that answer from your own documents, automations that move data between the systems you already use, and reports that build themselves on schedule." }
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Moxi Theater",
+                "genre": "Venue website",
+                "description": "Live events, tickets and venue info in Greeley.",
+                "image": "https://elyware.net/images/newsprint/projects/moxi-theater-mockup.jpg",
+                "url": "https://elyware.net/#p-moxi-theater-mockup",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
             },
             {
-              "@type": "Question",
-              "name": "Does ELYWARE only work with music and entertainment businesses?",
-              "acceptedAnswer": { "@type": "Answer", "text": "No. Our roots are in live music, venues and hospitality. We also build for restaurants, local service businesses and any team with a problem software can solve." }
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The Rialto Casper",
+                "genre": "Venue website",
+                "description": "Live music, comedy and private events in downtown Casper.",
+                "image": "https://elyware.net/images/newsprint/projects/rialto-casper-preview.jpg",
+                "url": "https://elyware.net/#p-rialto-casper-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
             },
             {
-              "@type": "Question",
-              "name": "How is a custom project priced?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Every project is scoped individually. Email hello@elyware.net with what you want to build and your timeline, and we reply with a practical next step and a scope that fits." }
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The Gaslight Social",
+                "genre": "Venue website",
+                "description": "Live music and nightlife in Casper.",
+                "image": "https://elyware.net/images/newsprint/projects/gaslightsocialmock.jpg",
+                "url": "https://elyware.net/#p-gaslightsocialmock",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The Black Buzzard",
+                "genre": "Venue website",
+                "description": "A basement live-music club in Denver’s LoDo.",
+                "image": "https://elyware.net/images/newsprint/projects/black-buzzard-preview.jpg",
+                "url": "https://elyware.net/#p-black-buzzard-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Battle of the Bands",
+                "genre": "Event campaign",
+                "description": "Applications, prizes and promotion for a $5,000 band competition.",
+                "image": "https://elyware.net/images/newsprint/projects/bwp-battle-2026.jpg",
+                "url": "https://elyware.net/#p-bwp-battle-2026",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Greeley Blues Jam",
+                "genre": "Festival website",
+                "description": "Colorado’s camping blues festival.",
+                "image": "https://elyware.net/images/newsprint/projects/greeley-blues-jam-2026-preview.jpg",
+                "url": "https://elyware.net/#p-greeley-blues-jam-2026-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Come As You Are Fest",
+                "genre": "Festival website",
+                "description": "Lineup, festival info and the ticket link in one place.",
+                "image": "https://elyware.net/images/newsprint/projects/comeasyouarefest.jpg",
+                "url": "https://elyware.net/#p-comeasyouarefest",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "My Favorite Bands",
+                "genre": "Festival website",
+                "description": "A tribute-band music festival in Greeley.",
+                "image": "https://elyware.net/images/newsprint/projects/my-favorite-bands-fest.jpg",
+                "url": "https://elyware.net/#p-my-favorite-bands-fest",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Greeley Block Party",
+                "genre": "Festival archive",
+                "description": "An archive of the downtown Greeley Block Party, 2006 to 2025.",
+                "image": "https://elyware.net/images/newsprint/projects/greeley-block-party.jpg",
+                "url": "https://elyware.net/#p-greeley-block-party",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Red, White & Vroom",
+                "genre": "Event website",
+                "description": "A car show and street event in downtown Greeley.",
+                "image": "https://elyware.net/images/newsprint/projects/redwhiteandvroom.jpg",
+                "url": "https://elyware.net/#p-redwhiteandvroom",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "BandWagon Presents",
+                "genre": "Concert platform",
+                "description": "Live music listings and tickets across Colorado and Wyoming.",
+                "image": "https://elyware.net/images/newsprint/projects/bandwagon-presents-staging.jpg",
+                "url": "https://elyware.net/#p-bandwagon-presents-staging",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The Crew Presents KPI Dashboard",
+                "genre": "Business dashboard",
+                "description": "Sales, prime cost and margin across three venues, pulled from POS and accounting.",
+                "image": "https://elyware.net/images/newsprint/projects/crew-kpi.jpg",
+                "url": "https://elyware.net/#p-crew-kpi",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 14,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Promoter Dashboard",
+                "genre": "Promoter tool",
+                "description": "Ticket sales, ad spend and marketing checks for every upcoming show.",
+                "image": "https://elyware.net/images/newsprint/projects/bwp-promoter-dashboard.jpg",
+                "url": "https://elyware.net/#p-bwp-promoter-dashboard",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 15,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Screenfolk",
+                "genre": "Digital signage",
+                "description": "Remotely managed screens for bars, venues and businesses.",
+                "image": "https://elyware.net/images/newsprint/projects/screenfolk.jpg",
+                "url": "https://elyware.net/#p-screenfolk",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 16,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "BandWagon Fan Club",
+                "genre": "Fan platform",
+                "description": "A membership home for concert fans and ticket offers.",
+                "image": "https://elyware.net/images/newsprint/projects/bwp-fan-club-live.jpg",
+                "url": "https://elyware.net/#p-bwp-fan-club-live",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 17,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "BandWagon Concert Map",
+                "genre": "Interactive map",
+                "description": "Find live music across Colorado and Wyoming on a map.",
+                "image": "https://elyware.net/images/newsprint/projects/bandwagmag-concert-map.jpg",
+                "url": "https://elyware.net/#p-bandwagmag-concert-map",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 18,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Ghost Towns of the Rockies",
+                "genre": "Interactive map",
+                "description": "A searchable map of historic places across Colorado and Wyoming.",
+                "image": "https://elyware.net/images/newsprint/projects/ghosttownsoftherockies.jpg",
+                "url": "https://elyware.net/#p-ghosttownsoftherockies",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 19,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Casper Entertainment",
+                "genre": "City guide",
+                "description": "What’s happening around Casper, all in one guide.",
+                "image": "https://elyware.net/images/newsprint/projects/casper-entertainment-preview.jpg",
+                "url": "https://elyware.net/#p-casper-entertainment-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 20,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Crewbase",
+                "genre": "Workforce platform",
+                "description": "A workforce platform for venue teams and operations.",
+                "image": "https://elyware.net/images/newsprint/projects/crewbase.jpg",
+                "url": "https://elyware.net/#p-crewbase",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 21,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "HACKERZ",
+                "genre": "Web project",
+                "description": "The HACKERZ project at hackerz.tech.",
+                "image": "https://elyware.net/images/newsprint/projects/hackerz-tech.jpg",
+                "url": "https://elyware.net/#p-hackerz-tech",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 22,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Luna’s Tacos & Tequila",
+                "genre": "Restaurant website",
+                "description": "Menu, online ordering and reservations for the Windsor location.",
+                "image": "https://elyware.net/images/newsprint/projects/lunas-tacos-windsor-preview.jpg",
+                "url": "https://elyware.net/#p-lunas-tacos-windsor-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 23,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Tres Amigos",
+                "genre": "Restaurant website",
+                "description": "Family recipes from a Mexican kitchen and cantina.",
+                "image": "https://elyware.net/images/newsprint/projects/tres-amigos-preview.jpg",
+                "url": "https://elyware.net/#p-tres-amigos-preview",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 24,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Spotlight Café & Creamery",
+                "genre": "Café website",
+                "description": "Coffee, ice cream and a downtown Greeley gathering place.",
+                "image": "https://elyware.net/images/newsprint/projects/spotlight-cafe-greeley.jpg",
+                "url": "https://elyware.net/#p-spotlight-cafe-greeley",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 25,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "All About Home Services",
+                "genre": "Local business website",
+                "description": "Lawn care, landscaping and handyman services in Greeley.",
+                "image": "https://elyware.net/images/newsprint/projects/mrallabout.jpg",
+                "url": "https://elyware.net/#p-mrallabout",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 26,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Moxi Theater BOGO",
+                "genre": "Ticket campaign",
+                "description": "A buy-one-get-one concert ticket promotion.",
+                "image": "https://elyware.net/images/newsprint/projects/moxi-july-bogo.jpg",
+                "url": "https://elyware.net/#p-moxi-july-bogo",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 27,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "LuLu’s Downtown BOGO",
+                "genre": "Ticket campaign",
+                "description": "A buy-one-get-one concert ticket promotion.",
+                "image": "https://elyware.net/images/newsprint/projects/lulus-july-bogo.jpg",
+                "url": "https://elyware.net/#p-lulus-july-bogo",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 28,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "The Black Buzzard BOGO",
+                "genre": "Ticket campaign",
+                "description": "A buy-one-get-one concert ticket promotion.",
+                "image": "https://elyware.net/images/newsprint/projects/black-buzzard-bogo.jpg",
+                "url": "https://elyware.net/#p-black-buzzard-bogo",
+                "creator": {
+                  "@id": "https://elyware.net/#organization"
+                }
+              }
             }
           ]
         }
@@ -129,17 +605,20 @@
         <div class="nav-inner">
             <a href="/" class="logo" aria-label="ELYWARE home">ELY<span>WARE</span></a>
             <div class="nav-links">
-                <a href="#services">Services</a>
+                <a href="#games">Games</a>
+                <a href="#tools">Tools</a>
                 <a href="#work">Work</a>
-                <a href="#software">Software</a>
-                <a href="#process">How we work</a>
             </div>
             <div class="nav-right">
-                <a class="btn btn-primary nav-cta" href="#contact">Start a project</a>
+                <button class="nav-search" type="button" data-palette-open aria-label="Search projects, games and tools" title="Search (press /)">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span>Search</span><kbd>/</kbd>
+                </button>
                 <button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
                     <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1.5v2M9 14.5v2M1.5 9h2M14.5 9h2M3.7 3.7l1.4 1.4M12.9 12.9l1.4 1.4M3.7 14.3l1.4-1.4M12.9 5.1l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15 10.5A6.5 6.5 0 017.5 3 6.5 6.5 0 1015 10.5z" stroke="currentColor" stroke-width="1.5"/></svg>
                 </button>
+                <a class="btn btn-primary nav-cta" href="/contact/" data-palette-item="Contact and custom projects" data-palette-hint="Page">Contact</a>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span><span></span>
                 </button>
@@ -148,269 +627,385 @@
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-        <a href="#services">Services</a>
+        <a href="#games">Games</a>
+        <a href="#tools">Tools</a>
         <a href="#work">Work</a>
-        <a href="#software">Software</a>
-        <a href="#process">How we work</a>
-        <a href="#contact">Start a project</a>
+        <a href="/contact/">Contact</a>
     </div>
 
     <main id="main">
-        <section class="product-hero home-hero">
+        <section class="sc-hero" aria-labelledby="hero-title">
             <div class="hero-glow"></div>
-            <div class="hero-layout">
-                <div class="hero-copy">
-                    <p class="eyebrow reveal">CUSTOM AI · MARKETING · SOFTWARE</p>
-                    <h1 class="reveal reveal-d1">Custom AI and marketing, <span class="accent-text">built to work.</span></h1>
-                    <p class="hero-sub reveal reveal-d2"><strong>ELYWARE builds AI tools, websites and campaigns for businesses.</strong> Built for our world of live music, venues and media. Ready for yours.</p>
-                    <div class="hero-actions reveal reveal-d2">
-                        <a href="#contact" class="btn btn-primary">Start a project</a>
-                        <a href="#work" class="btn btn-ghost">See our work</a>
-                    </div>
-                    <ul class="trust-list reveal reveal-d2" aria-label="Why work with us">
-                        <li>One team for AI, web and marketing</li>
-                        <li>Direct line to the builder</li>
-                        <li>Based in Colorado</li>
-                    </ul>
+            <div class="container">
+                <p class="eyebrow reveal">ELYWARE · A SMALL STUDIO IN COLORADO</p>
+                <h1 id="hero-title" class="reveal reveal-d1">We make <a href="#games">games</a>, <a href="#tools">tools</a> and <a href="#work">sites</a>.</h1>
+                <p class="sc-lede reveal reveal-d2"><strong>Some you can play. Some you can download. The rest run real venues, festivals and local businesses.</strong> All of it built in-house by a small team.</p>
+                <div class="hero-actions reveal reveal-d2">
+                    <a href="#games" class="btn btn-primary">Play a game</a>
+                    <a href="#work" class="btn btn-ghost">Browse the work</a>
                 </div>
-                <div class="hero-visual reveal reveal-d2">
-                    <div class="window-frame">
-                        <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                        <img src="/images/newsprint/projects/crew-kpi.jpg" width="1440" height="985" alt="Business dashboard built by ELYWARE showing weekly sales, prime cost and revenue mix across three venues, with sample data" fetchpriority="high">
-                    </div>
+                <ul class="sc-stats reveal reveal-d2" aria-label="At a glance">
+                    <li><strong>3</strong><span>Browser games</span></li>
+                    <li><strong>2</strong><span>Free apps</span></li>
+                    <li><strong>28</strong><span>Sites and tools</span></li>
+                </ul>
+            </div>
+            <div class="river" aria-hidden="true">
+                <div class="river-row"><img src="/images/newsprint/projects/river/stellaspinball.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/bwp-battle-2026.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/rialto-casper-preview.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/ghosttownsoftherockies.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/comeasyouarefest.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/lunas-tacos-windsor-preview.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/greeley-block-party.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/screenfolk.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/my-favorite-bands-fest.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/moxi-theater-mockup.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/stellaspinball.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/bwp-battle-2026.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/rialto-casper-preview.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/ghosttownsoftherockies.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/comeasyouarefest.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/lunas-tacos-windsor-preview.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/greeley-block-party.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/screenfolk.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/my-favorite-bands-fest.webp" width="400" height="274" alt="" decoding="async"><img src="/images/newsprint/projects/river/moxi-theater-mockup.webp" width="400" height="274" alt="" decoding="async"></div>
+                <div class="river-row rev"><img src="/images/newsprint/projects/river/black-buzzard-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/crew-kpi.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/spotlight-cafe-greeley.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/redwhiteandvroom.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/gaslightsocialmock.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bandwagon-presents-staging.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/greeley-blues-jam-2026-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/mrallabout.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bwp-promoter-dashboard.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/tres-amigos-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/casper-entertainment-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bwp-fan-club-live.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/black-buzzard-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/crew-kpi.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/spotlight-cafe-greeley.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/redwhiteandvroom.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/gaslightsocialmock.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bandwagon-presents-staging.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/greeley-blues-jam-2026-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/mrallabout.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bwp-promoter-dashboard.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/tres-amigos-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/casper-entertainment-preview.webp" width="400" height="274" alt="" decoding="async" loading="lazy"><img src="/images/newsprint/projects/river/bwp-fan-club-live.webp" width="400" height="274" alt="" decoding="async" loading="lazy"></div>
+            </div>
+        </section>
+
+        <section id="games" class="sc-section" data-palette-item="Games" data-palette-hint="Section" aria-labelledby="games-title">
+            <div class="container">
+                <div class="sc-head">
+                    <p class="sc-num">01 / Play</p>
+                    <h2 id="games-title">Games you can play right now.</h2>
+                    <p>Free in the browser. No download. No account.</p>
+                </div>
+                <div class="games">
+                <a class="game lead sd-reveal" href="https://stellaspinball.com/arcade/stellas-tycoon" data-palette-item="Stella’s Tycoon" data-palette-hint="Browser game">
+                    <img src="/images/stellas-tycoon.webp" width="800" height="450" alt="Stella’s Tycoon: an isometric pinball arcade and bar full of players, machines and a long bar" loading="lazy" decoding="async">
+                    <span class="game-body">
+                        <span class="tags"><span>Management sim</span><span>Free</span></span>
+                        <h3>Stella’s Tycoon</h3>
+                        <span class="game-desc">Run a downtown pinball arcade and bar. Build it out, hire staff, book events and keep the crowd happy.</span>
+                        <span class="play">Play free <span aria-hidden="true">↗</span></span>
+                    </span>
+                </a>
+                <a class="game split sd-reveal" href="/games/stick-figure-army/" data-palette-item="Stick Figure Army" data-palette-hint="Browser game">
+                    <img src="/images/showcase/stick-figure-army.webp" width="1200" height="800" alt="Stick Figure Army: hand-drawn stick figure squads on notebook paper" loading="lazy" decoding="async">
+                    <span class="game-body">
+                        <span class="tags"><span>Strategy</span><span>Free</span></span>
+                        <h3>Stick Figure Army</h3>
+                        <span class="game-desc">Command hand-drawn squads across notebook paper.</span>
+                        <span class="play">Play free <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+                <a class="game split sd-reveal" href="/games/automotown/" data-palette-item="AutomouTown" data-palette-hint="Browser game">
+                    <img src="/images/showcase/automotown.webp" width="1200" height="800" alt="AutomouTown: a small autonomous settlement in a river valley" loading="lazy" decoding="async">
+                    <span class="game-body">
+                        <span class="tags"><span>City builder</span><span>Free</span></span>
+                        <h3>AutomouTown</h3>
+                        <span class="game-desc">Build infrastructure, guide an autonomous settlement and watch Hearthvale grow.</span>
+                        <span class="play">Play free <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services-section">
+        <section id="tools" class="sc-section alt" data-palette-item="Tools" data-palette-hint="Section" aria-labelledby="tools-title">
             <div class="container">
-                <p class="label reveal">SERVICES</p>
-                <div class="section-heading reveal">
-                    <h2 class="section-title">Three ways we help.</h2>
-                    <p>Bring a rough idea or a detailed brief. We scope it, build it and stay on for what comes next.</p>
+                <div class="sc-head">
+                    <p class="sc-num">02 / Tools</p>
+                    <h2 id="tools-title">Free software for live visuals.</h2>
+                    <p>Built for our own shows, then shared. No account. No watermark. No telemetry.</p>
                 </div>
-                <div class="feature-grid">
-                    <article class="feature-card service-card reveal">
-                        <span class="feature-number">01</span>
-                        <h3>Custom AI</h3>
-                        <p>AI that handles the busywork. Connected to the tools and data you already use.</p>
-                        <ul class="service-list">
-                            <li>Assistants that answer from your docs and data</li>
-                            <li>Automations across ticketing, POS, accounting and ad platforms</li>
-                            <li>Scheduled reports and live dashboards</li>
-                        </ul>
-                    </article>
-                    <article class="feature-card service-card reveal">
-                        <span class="feature-number">02</span>
-                        <h3>Marketing</h3>
-                        <p>Websites and campaigns built to sell. Tracking set up so you know what worked.</p>
-                        <ul class="service-list">
-                            <li>Websites and landing pages</li>
-                            <li>Campaigns, promotions and launch pages</li>
-                            <li>Pixel, conversion and analytics setup</li>
-                        </ul>
-                    </article>
-                    <article class="feature-card service-card reveal">
-                        <span class="feature-number">03</span>
-                        <h3>Apps &amp; software</h3>
-                        <p>Tools built around how your team works. Not the other way around.</p>
-                        <ul class="service-list">
-                            <li>Member portals and fan clubs</li>
-                            <li>Staff and operations tools</li>
-                            <li>Maps, directories and digital signage</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="work-section">
-            <div class="container">
-                <p class="label reveal">SELECTED WORK</p>
-                <div class="section-heading reveal">
-                    <h2 class="section-title">We use what we build.</h2>
-                    <p>Dashboards, platforms and sites running our own concerts, venues and media, plus work for local businesses. Select a screenshot to see it larger.</p>
-                </div>
-                <div class="work-grid">
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/crew-kpi.jpg" data-screenshot data-title="The Crew Presents KPI Dashboard" data-caption="Portfolio preview with sample data" aria-label="Enlarge screenshot of The Crew Presents KPI Dashboard">
-                            <img src="/images/newsprint/projects/thumbs/crew-kpi.webp" width="720" height="493" alt="KPI dashboard with sales, prime cost and revenue mix charts" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Business dashboard</p>
-                        <h3>The Crew Presents KPI Dashboard</h3>
-                        <p>Sales, prime cost and margin across three venues. Pulled straight from POS and accounting.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/bwp-promoter-dashboard.jpg" data-screenshot data-title="Promoter Dashboard" data-caption="Portfolio preview with sample data" aria-label="Enlarge screenshot of Promoter Dashboard">
-                            <img src="/images/newsprint/projects/thumbs/bwp-promoter-dashboard.webp" width="720" height="493" alt="Promoter dashboard listing upcoming shows with ticket sales, ad spend and marketing checks" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Promoter tool</p>
-                        <h3>Promoter Dashboard</h3>
-                        <p>Ticket sales, ad spend and marketing checklists for every upcoming show in one view.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/screenfolk.jpg" data-screenshot data-title="Screenfolk" data-caption="Website screenshot" aria-label="Enlarge screenshot of Screenfolk">
-                            <img src="/images/newsprint/projects/thumbs/screenfolk.webp" width="720" height="493" alt="Screenfolk digital signage website" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Software platform</p>
-                        <h3>Screenfolk</h3>
-                        <p>Digital signage for bars, venues and businesses. Every screen managed remotely.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/bandwagon-presents-staging.jpg" data-screenshot data-title="BandWagon Presents" data-caption="Website screenshot" aria-label="Enlarge screenshot of BandWagon Presents">
-                            <img src="/images/newsprint/projects/thumbs/bandwagon-presents-staging.webp" width="720" height="493" alt="BandWagon Presents concert listings website" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Concert platform</p>
-                        <h3>BandWagon Presents</h3>
-                        <p>Live music listings and ticket links across Colorado and Wyoming.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/rialto-casper-preview.jpg" data-screenshot data-title="The Rialto Casper" data-caption="Website screenshot" aria-label="Enlarge screenshot of The Rialto Casper">
-                            <img src="/images/newsprint/projects/thumbs/rialto-casper-preview.webp" width="720" height="493" alt="The Rialto Casper venue website" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Venue website</p>
-                        <h3>The Rialto Casper</h3>
-                        <p>Live music, comedy and private events in downtown Casper.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/bwp-battle-2026.jpg" data-screenshot data-title="BandWagon Battle of the Bands" data-caption="Website screenshot" aria-label="Enlarge screenshot of BandWagon Battle of the Bands">
-                            <img src="/images/newsprint/projects/thumbs/bwp-battle-2026.webp" width="720" height="493" alt="Battle of the Bands 2026 campaign page" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Event campaign</p>
-                        <h3>Battle of the Bands</h3>
-                        <p>Applications, prize details and promotion for a $5,000 band competition.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/lunas-tacos-windsor-preview.jpg" data-screenshot data-title="Luna’s Tacos &amp; Tequila" data-caption="Website screenshot" aria-label="Enlarge screenshot of Luna’s Tacos &amp; Tequila">
-                            <img src="/images/newsprint/projects/thumbs/lunas-tacos-windsor-preview.webp" width="720" height="493" alt="Luna’s Tacos &amp; Tequila restaurant website" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Restaurant website</p>
-                        <h3>Luna’s Tacos &amp; Tequila</h3>
-                        <p>Menu, online ordering and reservations for the Windsor location.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/mrallabout.jpg" data-screenshot data-title="All About Home Services" data-caption="Website screenshot" aria-label="Enlarge screenshot of All About Home Services">
-                            <img src="/images/newsprint/projects/thumbs/mrallabout.webp" width="720" height="493" alt="All About Home Services website" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Local business website</p>
-                        <h3>All About Home Services</h3>
-                        <p>Lawn care, landscaping and handyman services in Greeley.</p>
-                    </article>
-                    <article class="work-card reveal">
-                        <a class="work-shot" href="/images/newsprint/projects/ghosttownsoftherockies.jpg" data-screenshot data-title="Ghost Towns of the Rockies" data-caption="Website screenshot" aria-label="Enlarge screenshot of Ghost Towns of the Rockies">
-                            <img src="/images/newsprint/projects/thumbs/ghosttownsoftherockies.webp" width="720" height="493" alt="Ghost Towns of the Rockies interactive map" loading="lazy" decoding="async">
-                        </a>
-                        <p class="work-kind">Interactive map</p>
-                        <h3>Ghost Towns of the Rockies</h3>
-                        <p>A searchable map of historic places across Colorado and Wyoming.</p>
-                    </article>
-                </div>
-                <p class="work-more reveal">Also built: Moxi Theater, Stella’s Pinball Arcade &amp; Lounge, The Gaslight Social, Spotlight Café &amp; Creamery, Greeley Blues Jam, Come As You Are Fest, My Favorite Bands and the BandWagon Fan Club.</p>
-            </div>
-        </section>
-
-        <section id="software" class="software-section">
-            <div class="container">
-                <p class="label reveal">OUR SOFTWARE</p>
-                <div class="section-heading reveal">
-                    <h2 class="section-title">Free tools we make and use.</h2>
-                    <p>We build software for our own shows, then share it. No account. No watermark.</p>
-                </div>
-                <article class="software-card reveal">
-                    <div class="software-copy">
-                        <img class="hero-app-icon" src="/images/video-mixer-icon-v4.1-180.png" width="64" height="64" alt="" loading="lazy">
-                        <p class="eyebrow">FREE PUBLIC BETA <span>v4.1</span></p>
+                <article class="tool-feature sd-reveal">
+                    <div>
+                        <div class="tool-badge">
+                            <img src="/images/video-mixer-icon-v4.5-180.png" width="56" height="56" alt="" loading="lazy">
+                            <p class="eyebrow">FREE PUBLIC BETA <span>v4.6.1</span></p>
+                        </div>
                         <h3>ELYWARE Video Mixer</h3>
-                        <p>A two-deck live video mixer for VJs, performers and events. Mix clips, images and stock video with 31 transitions. Send a clean 1080p feed to a projector, or cast it wirelessly to a Screenfolk screen.</p>
-                        <ul class="trust-list" aria-label="Video Mixer details">
+                        <p>A two-deck live video mixer for VJs, performers and events. Mix clips, images and stock video, then send a clean 1080p feed to a projector or cast it to a Screenfolk screen.</p>
+                        <ul class="chips" aria-label="Video Mixer highlights">
+                            <li>31 transitions</li>
+                            <li>Beat-synced clip pads</li>
+                            <li>MIDI mapping</li>
+                            <li>Program recording</li>
                             <li>Mac, Windows &amp; Linux</li>
-                            <li>No account</li>
-                            <li>No app telemetry</li>
                         </ul>
                         <div class="hero-actions">
-                            <a href="/video-mixer/#download" class="btn btn-primary">Download free</a>
-                            <a href="/video-mixer/" class="btn btn-ghost">See features</a>
+                            <a href="/video-mixer/#download" class="btn btn-primary" data-palette-item="Download Video Mixer" data-palette-hint="Free app">Download free</a>
+                            <a href="/video-mixer/" class="btn btn-ghost" data-palette-item="ELYWARE Video Mixer" data-palette-hint="Free app">See features</a>
                         </div>
                     </div>
-                    <a class="software-shot" href="/video-mixer/" aria-label="Learn more about ELYWARE Video Mixer">
-                        <div class="window-frame">
-                            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <img src="/images/video-mixer-screenshot-v4.1.jpg" width="1400" height="900" alt="ELYWARE Video Mixer v4.1 with two video decks, transition controls and a crossfader" loading="lazy" decoding="async">
-                        </div>
+                    <a class="window-frame" href="/video-mixer/" aria-label="ELYWARE Video Mixer features">
+                        <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <img src="/images/showcase/video-mixer.webp" width="1400" height="900" alt="ELYWARE Video Mixer two-deck console with clip pads, mix preview and beat sync" loading="lazy" decoding="async">
                     </a>
                 </article>
-                <div class="mini-product-grid">
-                    <a class="mini-product reveal" href="/games/stick-figure-army/">
-                        <img src="/images/Stick-figure-Army.jpg" width="1536" height="1024" alt="Stick Figure Army notebook-paper strategy game" loading="lazy">
-                        <span><strong>Stick Figure Army</strong><small>Free browser strategy game</small></span>
-                        <b aria-hidden="true">Play →</b>
+                <div class="tool-row">
+                    <a class="tool-card sd-reveal" href="/resolume-stock-bridge/" data-palette-item="Stock Bridge for Resolume" data-palette-hint="Free app">
+                        <img src="/images/showcase/stock-bridge.webp" width="1000" height="563" alt="Stock Bridge for Resolume searching Pixabay stock video" loading="lazy" decoding="async">
+                        <div>
+                            <h3>Stock Bridge for Resolume</h3>
+                            <p>Search Pixabay and load clips straight into Resolume Arena or Avenue clip slots.</p>
+                            <span class="more">Get it free →</span>
+                        </div>
                     </a>
-                    <a class="mini-product reveal" href="/games/automotown/">
-                        <img src="/games/automotown/og.png" width="1536" height="1024" alt="AutomouTown autonomous settlement in a river valley" loading="lazy">
-                        <span><strong>AutomouTown</strong><small>Autonomous browser city builder</small></span>
-                        <b aria-hidden="true">Play →</b>
+                    <a class="tool-card sd-reveal" href="/video-mixer/#wireless" data-palette-item="Cast to Screenfolk" data-palette-hint="Video Mixer feature">
+                        <img src="/images/newsprint/projects/thumbs/screenfolk.webp" width="720" height="493" alt="Screenfolk digital signage website" loading="lazy" decoding="async">
+                        <div>
+                            <h3>Cast to Screenfolk</h3>
+                            <p>Send the mix wirelessly to a TV running the Screenfolk player. No HDMI run or capture card.</p>
+                            <span class="more">How it works →</span>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="process-section">
+        <section id="work" class="sc-section" data-palette-item="Work" data-palette-hint="Section" aria-labelledby="work-title">
             <div class="container">
-                <p class="label reveal">HOW WE WORK</p>
-                <h2 class="section-title reveal">A small team. A direct conversation.</h2>
-                <ol class="steps-grid">
-                    <li class="step-card reveal">
-                        <span>1</span>
-                        <h3>Tell us what’s in the way</h3>
-                        <p>We start with your business, your audience and the job the project needs to do.</p>
-                    </li>
-                    <li class="step-card reveal">
-                        <span>2</span>
-                        <h3>React to something real</h3>
-                        <p>We agree on scope and ship a working version fast. Then we refine it together.</p>
-                    </li>
-                    <li class="step-card reveal">
-                        <span>3</span>
-                        <h3>Launch and keep improving</h3>
-                        <p>We test, hand off and stay on for support if you want it.</p>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="faq" class="faq-section">
-            <div class="container narrow">
-                <p class="label reveal">QUICK ANSWERS</p>
-                <h2 class="section-title reveal">Common questions</h2>
-                <div class="faq-list">
-                    <details class="reveal">
-                        <summary>What does ELYWARE build?</summary>
-                        <p>Custom AI tools and automations, websites and marketing campaigns, and business apps. We also make free creative software, including <a class="text-link" href="/video-mixer/">ELYWARE Video Mixer</a>.</p>
-                    </details>
-                    <details class="reveal">
-                        <summary>What does custom AI mean here?</summary>
-                        <p>Practical AI inside your workflow. Assistants that answer from your own documents, automations that move data between the systems you already use, and reports that build themselves on schedule.</p>
-                    </details>
-                    <details class="reveal">
-                        <summary>Do you only work with music and entertainment businesses?</summary>
-                        <p>No. Our roots are in live music, venues and hospitality. We also build for restaurants, local service businesses and any team with a problem software can solve.</p>
-                    </details>
-                    <details class="reveal">
-                        <summary>How is a custom project priced?</summary>
-                        <p>Every project is scoped individually. Send us what you want to build and your timeline. We reply with a practical next step and a scope that fits.</p>
-                    </details>
+                <div class="sc-head">
+                    <p class="sc-num">03 / Work</p>
+                    <h2 id="work-title">Sites, platforms and dashboards.</h2>
+                    <p>For venues, festivals and local businesses, plus the tools we run our own shows on. Select any project to see it full size.</p>
                 </div>
+                <div class="filters" role="group" aria-label="Filter projects">
+                    <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>28</span></button>
+                    <button class="filter" type="button" data-filter="venues" aria-pressed="false">Venues<span>5</span></button>
+                    <button class="filter" type="button" data-filter="events" aria-pressed="false">Festivals &amp; events<span>6</span></button>
+                    <button class="filter" type="button" data-filter="platforms" aria-pressed="false">Platforms &amp; tools<span>10</span></button>
+                    <button class="filter" type="button" data-filter="local" aria-pressed="false">Local business<span>4</span></button>
+                    <button class="filter" type="button" data-filter="campaigns" aria-pressed="false">Campaigns<span>3</span></button>
+                </div>
+                <p class="sr-only" id="wall-status" aria-live="polite"></p>
+                <ul class="wall">
+                    <li class="wall-card feature sd-reveal" id="p-stellaspinball" data-tags="venues" data-palette-item="Stella’s Pinball Arcade &amp; Lounge" data-palette-hint="Venue website">
+                        <a class="wall-shot" href="/images/newsprint/projects/stellaspinball.jpg" data-screenshot data-title="Stella’s Pinball Arcade &amp; Lounge" data-caption="Website screenshot" aria-label="Enlarge screenshot of Stella’s Pinball Arcade &amp; Lounge">
+                            <img src="/images/newsprint/projects/thumbs/stellaspinball.webp" width="720" height="493" alt="Screenshot of the Stella’s Pinball Arcade &amp; Lounge venue website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Venue website</p>
+                        <h3>Stella’s Pinball Arcade &amp; Lounge</h3>
+                        <p>Pinball, burgers, drinks and comedy in downtown Greeley.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-moxi-theater-mockup" data-tags="venues" data-palette-item="Moxi Theater" data-palette-hint="Venue website">
+                        <a class="wall-shot" href="/images/newsprint/projects/moxi-theater-mockup.jpg" data-screenshot data-title="Moxi Theater" data-caption="Website screenshot" aria-label="Enlarge screenshot of Moxi Theater">
+                            <img src="/images/newsprint/projects/thumbs/moxi-theater-mockup.webp" width="720" height="493" alt="Screenshot of the Moxi Theater venue website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Venue website</p>
+                        <h3>Moxi Theater</h3>
+                        <p>Live events, tickets and venue info in Greeley.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-rialto-casper-preview" data-tags="venues" data-palette-item="The Rialto Casper" data-palette-hint="Venue website">
+                        <a class="wall-shot" href="/images/newsprint/projects/rialto-casper-preview.jpg" data-screenshot data-title="The Rialto Casper" data-caption="Website screenshot" aria-label="Enlarge screenshot of The Rialto Casper">
+                            <img src="/images/newsprint/projects/thumbs/rialto-casper-preview.webp" width="720" height="493" alt="Screenshot of the The Rialto Casper venue website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Venue website</p>
+                        <h3>The Rialto Casper</h3>
+                        <p>Live music, comedy and private events in downtown Casper.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-gaslightsocialmock" data-tags="venues" data-palette-item="The Gaslight Social" data-palette-hint="Venue website">
+                        <a class="wall-shot" href="/images/newsprint/projects/gaslightsocialmock.jpg" data-screenshot data-title="The Gaslight Social" data-caption="Website screenshot" aria-label="Enlarge screenshot of The Gaslight Social">
+                            <img src="/images/newsprint/projects/thumbs/gaslightsocialmock.webp" width="720" height="493" alt="Screenshot of the The Gaslight Social venue website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Venue website</p>
+                        <h3>The Gaslight Social</h3>
+                        <p>Live music and nightlife in Casper.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-black-buzzard-preview" data-tags="venues" data-palette-item="The Black Buzzard" data-palette-hint="Venue website">
+                        <a class="wall-shot" href="/images/newsprint/projects/black-buzzard-preview.jpg" data-screenshot data-title="The Black Buzzard" data-caption="Preview build" aria-label="Enlarge screenshot of The Black Buzzard">
+                            <img src="/images/newsprint/projects/thumbs/black-buzzard-preview.webp" width="720" height="493" alt="Screenshot of the The Black Buzzard venue website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Venue website</p>
+                        <h3>The Black Buzzard</h3>
+                        <p>A basement live-music club in Denver’s LoDo.</p>
+                    </li>
+                    <li class="wall-card feature sd-reveal" id="p-bwp-battle-2026" data-tags="events" data-palette-item="Battle of the Bands" data-palette-hint="Event campaign">
+                        <a class="wall-shot" href="/images/newsprint/projects/bwp-battle-2026.jpg" data-screenshot data-title="Battle of the Bands" data-caption="Website screenshot" aria-label="Enlarge screenshot of Battle of the Bands">
+                            <img src="/images/newsprint/projects/thumbs/bwp-battle-2026.webp" width="720" height="493" alt="Screenshot of the Battle of the Bands event campaign" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Event campaign</p>
+                        <h3>Battle of the Bands</h3>
+                        <p>Applications, prizes and promotion for a $5,000 band competition.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-greeley-blues-jam-2026-preview" data-tags="events" data-palette-item="Greeley Blues Jam" data-palette-hint="Festival website">
+                        <a class="wall-shot" href="/images/newsprint/projects/greeley-blues-jam-2026-preview.jpg" data-screenshot data-title="Greeley Blues Jam" data-caption="Website screenshot" aria-label="Enlarge screenshot of Greeley Blues Jam">
+                            <img src="/images/newsprint/projects/thumbs/greeley-blues-jam-2026-preview.webp" width="720" height="493" alt="Screenshot of the Greeley Blues Jam festival website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Festival website</p>
+                        <h3>Greeley Blues Jam</h3>
+                        <p>Colorado’s camping blues festival.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-comeasyouarefest" data-tags="events" data-palette-item="Come As You Are Fest" data-palette-hint="Festival website">
+                        <a class="wall-shot" href="/images/newsprint/projects/comeasyouarefest.jpg" data-screenshot data-title="Come As You Are Fest" data-caption="Website screenshot" aria-label="Enlarge screenshot of Come As You Are Fest">
+                            <img src="/images/newsprint/projects/thumbs/comeasyouarefest.webp" width="720" height="493" alt="Screenshot of the Come As You Are Fest festival website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Festival website</p>
+                        <h3>Come As You Are Fest</h3>
+                        <p>Lineup, festival info and the ticket link in one place.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-my-favorite-bands-fest" data-tags="events" data-palette-item="My Favorite Bands" data-palette-hint="Festival website">
+                        <a class="wall-shot" href="/images/newsprint/projects/my-favorite-bands-fest.jpg" data-screenshot data-title="My Favorite Bands" data-caption="Website screenshot" aria-label="Enlarge screenshot of My Favorite Bands">
+                            <img src="/images/newsprint/projects/thumbs/my-favorite-bands-fest.webp" width="720" height="493" alt="Screenshot of the My Favorite Bands festival website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Festival website</p>
+                        <h3>My Favorite Bands</h3>
+                        <p>A tribute-band music festival in Greeley.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-greeley-block-party" data-tags="events" data-palette-item="Greeley Block Party" data-palette-hint="Festival archive">
+                        <a class="wall-shot" href="/images/newsprint/projects/greeley-block-party.jpg" data-screenshot data-title="Greeley Block Party" data-caption="Website screenshot" aria-label="Enlarge screenshot of Greeley Block Party">
+                            <img src="/images/newsprint/projects/thumbs/greeley-block-party.webp" width="720" height="493" alt="Screenshot of the Greeley Block Party festival archive" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Festival archive</p>
+                        <h3>Greeley Block Party</h3>
+                        <p>An archive of the downtown Greeley Block Party, 2006 to 2025.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-redwhiteandvroom" data-tags="events" data-palette-item="Red, White &amp; Vroom" data-palette-hint="Event website">
+                        <a class="wall-shot" href="/images/newsprint/projects/redwhiteandvroom.jpg" data-screenshot data-title="Red, White &amp; Vroom" data-caption="Website screenshot" aria-label="Enlarge screenshot of Red, White &amp; Vroom">
+                            <img src="/images/newsprint/projects/thumbs/redwhiteandvroom.webp" width="720" height="493" alt="Screenshot of the Red, White &amp; Vroom event website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Event website</p>
+                        <h3>Red, White &amp; Vroom</h3>
+                        <p>A car show and street event in downtown Greeley.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-bandwagon-presents-staging" data-tags="platforms" data-palette-item="BandWagon Presents" data-palette-hint="Concert platform">
+                        <a class="wall-shot" href="/images/newsprint/projects/bandwagon-presents-staging.jpg" data-screenshot data-title="BandWagon Presents" data-caption="Website screenshot" aria-label="Enlarge screenshot of BandWagon Presents">
+                            <img src="/images/newsprint/projects/thumbs/bandwagon-presents-staging.webp" width="720" height="493" alt="Screenshot of the BandWagon Presents concert platform" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Concert platform</p>
+                        <h3>BandWagon Presents</h3>
+                        <p>Live music listings and tickets across Colorado and Wyoming.</p>
+                    </li>
+                    <li class="wall-card feature sd-reveal" id="p-crew-kpi" data-tags="platforms" data-palette-item="The Crew Presents KPI Dashboard" data-palette-hint="Business dashboard">
+                        <a class="wall-shot" href="/images/newsprint/projects/crew-kpi.jpg" data-screenshot data-title="The Crew Presents KPI Dashboard" data-caption="Interface preview with fictional sample data" aria-label="Enlarge screenshot of The Crew Presents KPI Dashboard">
+                            <img src="/images/newsprint/projects/thumbs/crew-kpi.webp" width="720" height="493" alt="Screenshot of the The Crew Presents KPI Dashboard business dashboard" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Business dashboard</p>
+                        <h3>The Crew Presents KPI Dashboard</h3>
+                        <p>Sales, prime cost and margin across three venues, pulled from POS and accounting.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-bwp-promoter-dashboard" data-tags="platforms" data-palette-item="Promoter Dashboard" data-palette-hint="Promoter tool">
+                        <a class="wall-shot" href="/images/newsprint/projects/bwp-promoter-dashboard.jpg" data-screenshot data-title="Promoter Dashboard" data-caption="Interface preview with fictional sample data" aria-label="Enlarge screenshot of Promoter Dashboard">
+                            <img src="/images/newsprint/projects/thumbs/bwp-promoter-dashboard.webp" width="720" height="493" alt="Screenshot of the Promoter Dashboard promoter tool" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Promoter tool</p>
+                        <h3>Promoter Dashboard</h3>
+                        <p>Ticket sales, ad spend and marketing checks for every upcoming show.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-screenfolk" data-tags="platforms" data-palette-item="Screenfolk" data-palette-hint="Digital signage">
+                        <a class="wall-shot" href="/images/newsprint/projects/screenfolk.jpg" data-screenshot data-title="Screenfolk" data-caption="Website screenshot" aria-label="Enlarge screenshot of Screenfolk">
+                            <img src="/images/newsprint/projects/thumbs/screenfolk.webp" width="720" height="493" alt="Screenshot of the Screenfolk digital signage" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Digital signage</p>
+                        <h3>Screenfolk</h3>
+                        <p>Remotely managed screens for bars, venues and businesses.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-bwp-fan-club-live" data-tags="platforms" data-palette-item="BandWagon Fan Club" data-palette-hint="Fan platform">
+                        <a class="wall-shot" href="/images/newsprint/projects/bwp-fan-club-live.jpg" data-screenshot data-title="BandWagon Fan Club" data-caption="Website screenshot" aria-label="Enlarge screenshot of BandWagon Fan Club">
+                            <img src="/images/newsprint/projects/thumbs/bwp-fan-club-live.webp" width="720" height="493" alt="Screenshot of the BandWagon Fan Club fan platform" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Fan platform</p>
+                        <h3>BandWagon Fan Club</h3>
+                        <p>A membership home for concert fans and ticket offers.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-bandwagmag-concert-map" data-tags="platforms" data-palette-item="BandWagon Concert Map" data-palette-hint="Interactive map">
+                        <a class="wall-shot" href="/images/newsprint/projects/bandwagmag-concert-map.jpg" data-screenshot data-title="BandWagon Concert Map" data-caption="Live capture, basemap unavailable" aria-label="Enlarge screenshot of BandWagon Concert Map">
+                            <img src="/images/newsprint/projects/thumbs/bandwagmag-concert-map.webp" width="720" height="493" alt="Screenshot of the BandWagon Concert Map interactive map" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Interactive map</p>
+                        <h3>BandWagon Concert Map</h3>
+                        <p>Find live music across Colorado and Wyoming on a map.</p>
+                    </li>
+                    <li class="wall-card feature sd-reveal" id="p-ghosttownsoftherockies" data-tags="platforms" data-palette-item="Ghost Towns of the Rockies" data-palette-hint="Interactive map">
+                        <a class="wall-shot" href="/images/newsprint/projects/ghosttownsoftherockies.jpg" data-screenshot data-title="Ghost Towns of the Rockies" data-caption="Website screenshot" aria-label="Enlarge screenshot of Ghost Towns of the Rockies">
+                            <img src="/images/newsprint/projects/thumbs/ghosttownsoftherockies.webp" width="720" height="493" alt="Screenshot of the Ghost Towns of the Rockies interactive map" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Interactive map</p>
+                        <h3>Ghost Towns of the Rockies</h3>
+                        <p>A searchable map of historic places across Colorado and Wyoming.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-casper-entertainment-preview" data-tags="platforms" data-palette-item="Casper Entertainment" data-palette-hint="City guide">
+                        <a class="wall-shot" href="/images/newsprint/projects/casper-entertainment-preview.jpg" data-screenshot data-title="Casper Entertainment" data-caption="Website screenshot" aria-label="Enlarge screenshot of Casper Entertainment">
+                            <img src="/images/newsprint/projects/thumbs/casper-entertainment-preview.webp" width="720" height="493" alt="Screenshot of the Casper Entertainment city guide" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">City guide</p>
+                        <h3>Casper Entertainment</h3>
+                        <p>What’s happening around Casper, all in one guide.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-crewbase" data-tags="platforms" data-palette-item="Crewbase" data-palette-hint="Workforce platform">
+                        <a class="wall-shot" href="/images/newsprint/projects/crewbase.jpg" data-screenshot data-title="Crewbase" data-caption="Public sign-in screen" aria-label="Enlarge screenshot of Crewbase">
+                            <img src="/images/newsprint/projects/thumbs/crewbase.webp" width="720" height="493" alt="Screenshot of the Crewbase workforce platform" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Workforce platform</p>
+                        <h3>Crewbase</h3>
+                        <p>A workforce platform for venue teams and operations.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-hackerz-tech" data-tags="platforms" data-palette-item="HACKERZ" data-palette-hint="Web project">
+                        <a class="wall-shot" href="/images/newsprint/projects/hackerz-tech.jpg" data-screenshot data-title="HACKERZ" data-caption="Browse interface" aria-label="Enlarge screenshot of HACKERZ">
+                            <img src="/images/newsprint/projects/thumbs/hackerz-tech.webp" width="720" height="493" alt="Screenshot of the HACKERZ web project" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Web project</p>
+                        <h3>HACKERZ</h3>
+                        <p>The HACKERZ project at hackerz.tech.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-lunas-tacos-windsor-preview" data-tags="local" data-palette-item="Luna’s Tacos &amp; Tequila" data-palette-hint="Restaurant website">
+                        <a class="wall-shot" href="/images/newsprint/projects/lunas-tacos-windsor-preview.jpg" data-screenshot data-title="Luna’s Tacos &amp; Tequila" data-caption="Preview build" aria-label="Enlarge screenshot of Luna’s Tacos &amp; Tequila">
+                            <img src="/images/newsprint/projects/thumbs/lunas-tacos-windsor-preview.webp" width="720" height="493" alt="Screenshot of the Luna’s Tacos &amp; Tequila restaurant website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Restaurant website</p>
+                        <h3>Luna’s Tacos &amp; Tequila</h3>
+                        <p>Menu, online ordering and reservations for the Windsor location.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-tres-amigos-preview" data-tags="local" data-palette-item="Tres Amigos" data-palette-hint="Restaurant website">
+                        <a class="wall-shot" href="/images/newsprint/projects/tres-amigos-preview.jpg" data-screenshot data-title="Tres Amigos" data-caption="Preview build" aria-label="Enlarge screenshot of Tres Amigos">
+                            <img src="/images/newsprint/projects/thumbs/tres-amigos-preview.webp" width="720" height="493" alt="Screenshot of the Tres Amigos restaurant website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Restaurant website</p>
+                        <h3>Tres Amigos</h3>
+                        <p>Family recipes from a Mexican kitchen and cantina.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-spotlight-cafe-greeley" data-tags="local" data-palette-item="Spotlight Café &amp; Creamery" data-palette-hint="Café website">
+                        <a class="wall-shot" href="/images/newsprint/projects/spotlight-cafe-greeley.jpg" data-screenshot data-title="Spotlight Café &amp; Creamery" data-caption="Website screenshot" aria-label="Enlarge screenshot of Spotlight Café &amp; Creamery">
+                            <img src="/images/newsprint/projects/thumbs/spotlight-cafe-greeley.webp" width="720" height="493" alt="Screenshot of the Spotlight Café &amp; Creamery café website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Café website</p>
+                        <h3>Spotlight Café &amp; Creamery</h3>
+                        <p>Coffee, ice cream and a downtown Greeley gathering place.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-mrallabout" data-tags="local" data-palette-item="All About Home Services" data-palette-hint="Local business website">
+                        <a class="wall-shot" href="/images/newsprint/projects/mrallabout.jpg" data-screenshot data-title="All About Home Services" data-caption="Website screenshot" aria-label="Enlarge screenshot of All About Home Services">
+                            <img src="/images/newsprint/projects/thumbs/mrallabout.webp" width="720" height="493" alt="Screenshot of the All About Home Services local business website" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Local business website</p>
+                        <h3>All About Home Services</h3>
+                        <p>Lawn care, landscaping and handyman services in Greeley.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-moxi-july-bogo" data-tags="campaigns" data-palette-item="Moxi Theater BOGO" data-palette-hint="Ticket campaign">
+                        <a class="wall-shot" href="/images/newsprint/projects/moxi-july-bogo.jpg" data-screenshot data-title="Moxi Theater BOGO" data-caption="Website screenshot" aria-label="Enlarge screenshot of Moxi Theater BOGO">
+                            <img src="/images/newsprint/projects/thumbs/moxi-july-bogo.webp" width="720" height="493" alt="Screenshot of the Moxi Theater BOGO ticket campaign" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Ticket campaign</p>
+                        <h3>Moxi Theater BOGO</h3>
+                        <p>A buy-one-get-one concert ticket promotion.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-lulus-july-bogo" data-tags="campaigns" data-palette-item="LuLu’s Downtown BOGO" data-palette-hint="Ticket campaign">
+                        <a class="wall-shot" href="/images/newsprint/projects/lulus-july-bogo.jpg" data-screenshot data-title="LuLu’s Downtown BOGO" data-caption="Website screenshot" aria-label="Enlarge screenshot of LuLu’s Downtown BOGO">
+                            <img src="/images/newsprint/projects/thumbs/lulus-july-bogo.webp" width="720" height="493" alt="Screenshot of the LuLu’s Downtown BOGO ticket campaign" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Ticket campaign</p>
+                        <h3>LuLu’s Downtown BOGO</h3>
+                        <p>A buy-one-get-one concert ticket promotion.</p>
+                    </li>
+                    <li class="wall-card sd-reveal" id="p-black-buzzard-bogo" data-tags="campaigns" data-palette-item="The Black Buzzard BOGO" data-palette-hint="Ticket campaign">
+                        <a class="wall-shot" href="/images/newsprint/projects/black-buzzard-bogo.jpg" data-screenshot data-title="The Black Buzzard BOGO" data-caption="Website screenshot" aria-label="Enlarge screenshot of The Black Buzzard BOGO">
+                            <img src="/images/newsprint/projects/thumbs/black-buzzard-bogo.webp" width="720" height="493" alt="Screenshot of the The Black Buzzard BOGO ticket campaign" loading="lazy" decoding="async">
+                        </a>
+                        <p class="wall-kind">Ticket campaign</p>
+                        <h3>The Black Buzzard BOGO</h3>
+                        <p>A buy-one-get-one concert ticket promotion.</p>
+                    </li>
+                </ul>
+                <p class="wall-note">Dashboards are shown with fictional sample data. Crewbase requires sign-in.</p>
             </div>
         </section>
 
-        <section id="contact" class="final-cta contact-section">
-            <div class="container narrow">
-                <p class="eyebrow reveal">START A PROJECT</p>
-                <h2 class="section-title reveal">What should we build for you?</h2>
-                <p class="reveal">Tell us about your business, what you want to build or fix, and your timeline. We reply with a practical next step.</p>
-                <div class="hero-actions reveal">
-                    <a class="btn btn-primary" href="mailto:hello@elyware.net?subject=New%20project%20inquiry&amp;body=Company%3A%20%0AWhat%20we%20want%20to%20build%20or%20fix%3A%20%0ATools%20we%20use%20today%3A%20%0AIdeal%20timeline%3A%20%0ABudget%20range%20(if%20known)%3A%20">Email us your project</a>
-                    <a class="btn btn-ghost" href="mailto:hello@elyware.net">hello@elyware.net</a>
+        <section id="contact" class="sc-section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="sc-cta sd-reveal">
+                    <div>
+                        <p class="sc-num">04 / Build</p>
+                        <h2 id="cta-title">Want something like this?</h2>
+                        <p>Most of what you see here started as a problem we wanted solved. If you have one, we build custom software, AI tools and websites too.</p>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="/contact/">Start a custom project</a>
+                        <a class="btn btn-ghost" href="/contact/#process">How it works</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -421,15 +1016,15 @@
             <div class="footer-row">
                 <a href="/" class="logo" aria-label="ELYWARE home">ELY<span>WARE</span></a>
                 <div class="footer-links">
-                    <a href="#services">Services</a>
-                    <a href="#work">Work</a>
+                    <a href="#games">Games</a>
                     <a href="/video-mixer/">Video Mixer</a>
-                    <a href="/games/stick-figure-army/">Games</a>
-                    <a href="/privacy/">Privacy</a>
-                    <a href="mailto:hello@elyware.net">Contact</a>
+                    <a href="/resolume-stock-bridge/">Stock Bridge</a>
+                    <a href="#work">Work</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/privacy/" data-palette-item="Privacy" data-palette-hint="Page">Privacy</a>
                 </div>
             </div>
-            <p class="copyright">&copy; 2026 ELYWARE · Custom AI, marketing and software from Colorado.</p>
+            <p class="copyright">&copy; 2026 ELYWARE · Games, software and sites from Colorado.</p>
         </div>
     </footer>
 
@@ -444,6 +1039,13 @@
         <img id="screenshot-full" alt="">
     </dialog>
 
+    <dialog class="palette" id="palette" aria-label="Search projects, games and tools">
+        <input type="search" placeholder="Search 28 projects, games and tools" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="palette-results" autocomplete="off">
+        <ul id="palette-results" role="listbox" aria-label="Results"></ul>
+        <footer><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></footer>
+    </dialog>
+
     <script src="/main.js" defer></script>
+    <script src="/showcase.js" defer></script>
 </body>
 </html>

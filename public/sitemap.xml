@@ -3,16 +3,30 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://elyware.net/</loc>
-        <lastmod>2026-10-04</lastmod>
+        <lastmod>2026-10-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://elyware.net/images/elyware-og.png</image:loc>
-            <image:title>ELYWARE custom AI, marketing and software</image:title>
+            <image:loc>https://elyware.net/images/elyware-showcase-og.jpg</image:loc>
+            <image:title>ELYWARE makes games, tools and sites</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://elyware.net/images/stellas-tycoon.webp</image:loc>
+            <image:title>Stella’s Tycoon, a free pinball arcade and bar management browser game</image:title>
         </image:image>
         <image:image>
             <image:loc>https://elyware.net/images/newsprint/projects/crew-kpi.jpg</image:loc>
             <image:title>Business KPI dashboard built by ELYWARE, shown with sample data</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://elyware.net/contact/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://elyware.net/images/elyware-og.png</image:loc>
+            <image:title>ELYWARE custom AI, marketing and software</image:title>
         </image:image>
     </url>
     <url>

@@ -11,18 +11,23 @@
   status = 301
   force = true
 
-# The old custom development page duplicated the home page, which now carries services and work.
+# The old custom development page now lives at /contact/, which carries services, process and FAQ.
 [[redirects]]
   from = "/custom-web-development"
-  to = "/"
+  to = "/contact/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/custom-web-development/*"
-  to = "/"
+  to = "/contact/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/"
+  status = 301
 
 [[redirects]]
   from = "/resolume-stock-bridge"
