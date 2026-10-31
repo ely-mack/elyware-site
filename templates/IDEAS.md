@@ -12,23 +12,23 @@ Running log of what to borrow, where it came from, and whether we can reuse the 
 
 ## Sources to watch
 
-Checked 2026-10-08, extended 2026-10-10. Licenses are as reported by search results and still need confirming against each repo's LICENSE file before any code is copied.
+Checked 2026-10-08, extended 2026-10-10. "Verified" means the repo's LICENSE file was read on 2026-10-31. "Reported" still needs that check before any code is copied.
 
 | Source | Stack | License | Use for |
 |---|---|---|---|
-| r/vibecoding | Mixed | Per post | New patterns and AI-built splash pages. **Not reviewed yet: Reddit is blocked in the cloud environment.** |
-| HyperUI | HTML + Tailwind | MIT (reported) | Section layouts. Convert classes to `kit.css` |
-| Flowbite Blocks | HTML + Tailwind | Free tier | Section layouts. Convert classes to `kit.css` |
-| AstroWind | Astro + Tailwind | MIT (reported) | Page structure, blog layout |
-| ScrewFast | Astro + Tailwind | MIT (reported) | Product page structure |
+| r/vibecoding | Mixed | Per post | New patterns and AI-built splash pages. Scan with `tools/reddit-scan.mjs` once Reddit API credentials are set (see `.claude/skills/ui-scan/`). |
+| HyperUI | HTML + Tailwind | MIT (verified) | Section layouts. Convert classes to `kit.css` |
+| Flowbite Blocks | HTML + Tailwind | Core library MIT (verified). Paid blocks excluded | Section layouts. Convert classes to `kit.css` |
+| AstroWind | Astro + Tailwind | MIT (verified) | Page structure, blog layout |
+| ScrewFast | Astro + Tailwind | MIT (verified) | Product page structure |
 | Launch UI | Next.js | MIT, some sections Pro | SaaS hero and pricing ideas |
-| Cruip Open | Next.js | GPL + no redistribute | Idea only |
+| Cruip Open | Next.js | No LICENSE file in repo (checked); reported GPL + no redistribute | Idea only |
 | Nova Landing | Bootstrap | Free with footer credit | Idea only |
 | Tailkits UI | HTML + Tailwind | MIT free tier, rest paid | Marketing blocks |
 | Preline UI | HTML + Tailwind + JS | Open source (check repo) | Dropdowns, modals, overlays |
 | FlyonUI | Tailwind + JS plugins | MIT (reported) | Interactive component ideas |
 | Ripple UI | Tailwind | MIT (reported) | Accessible form controls |
-| daisyUI | Tailwind plugin | MIT (reported) | Theming and semantic class naming |
+| daisyUI | Tailwind plugin | MIT (verified) | Theming and semantic class naming |
 | Awesome CSS Frameworks list | Index | n/a | Discovery of new libraries |
 
 ## Ideas already in the kit

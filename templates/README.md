@@ -16,6 +16,8 @@ Open `index.html` in a browser to see everything in one gallery.
 | `sections/` | 38 standalone sections: 15 layout, 15 interactive and 8 newer builds. Copy the block between the `SECTION START` and `SECTION END` comments |
 | `pages/` | Four full starters: `splash` (coming soon), `landing` (product or service), `venue` (shows and tickets), `festival` (multi-day event) |
 | `functions/` | Netlify function templates (waitlist). Copy into a site's `netlify/functions/` to use |
+| `tools/reddit-scan.mjs` | Scans r/vibecoding through Reddit's API for templates and UI ideas, checks linked repo licenses, writes `scans/YYYY-MM-DD.md` |
+| `scans/` | Scan digests, plus `seen.json` so each scan only reports new posts |
 | `IDEAS.md` | UI ideas, sources worth watching, and the license rules for borrowing |
 
 ## Start a new site
