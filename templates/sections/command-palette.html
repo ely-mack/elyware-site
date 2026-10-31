@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Palette | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: command-palette -->
+<section class="section">
+    <div class="container narrow stack">
+        <span class="eyebrow">Command palette</span>
+        <h2>Jump anywhere from the keyboard.</h2>
+        <p class="lead">Press <kbd>Ctrl</kbd> <kbd>K</kbd>, <kbd>&#8984;</kbd> <kbd>K</kbd> or <kbd>/</kbd>. Any link with <code>data-palette-item</code> becomes a result.</p>
+        <button class="palette-trigger" type="button" data-palette-open>Search the site <kbd>/</kbd></button>
+        <nav class="sr-only" aria-label="Palette entries">
+            <a href="#" data-palette-item="Upcoming shows" data-palette-hint="Section">Upcoming shows</a>
+            <a href="#" data-palette-item="Video Mixer" data-palette-hint="Software">Video Mixer</a>
+            <a href="#" data-palette-item="Stick Figure Army" data-palette-hint="Game">Stick Figure Army</a>
+            <a href="#" data-palette-item="Privacy policy" data-palette-hint="Page">Privacy</a>
+            <a href="#" data-palette-item="Contact" data-palette-hint="Page">Contact</a>
+        </nav>
+        <dialog class="palette" aria-label="Search">
+            <input type="search" placeholder="Search pages, projects, games" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="palette-results" autocomplete="off">
+            <ul id="palette-results" role="listbox"></ul>
+            <footer><span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></footer>
+        </dialog>
+    </div>
+</section>
+<!-- SECTION END: command-palette -->
+</body>
+</html>

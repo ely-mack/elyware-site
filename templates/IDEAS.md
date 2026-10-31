@@ -55,19 +55,24 @@ Checked 2026-10-08, extended 2026-10-10. Licenses are as reported by search resu
 - Video hero with a pause button (WCAG 2.2.2).
 - Scroll progress bar using CSS scroll timelines with a JS fallback.
 - Count-up stats that keep the real number for screen readers and reduced motion.
+- Cross-document view transitions, CSS only, off under reduced motion.
+- Scroll-driven reveals, zooms and parallax with `animation-timeline: view()`. No JS, and nothing hidden in older browsers.
+- Interactive SVG venue map with keyboard-selectable sections and a sold-out state.
+- Add-to-calendar menu: .ics download plus a Google Calendar link, with correct time zones.
+- Menu board with tabs, dotted price leaders, dietary tags and a specials badge.
+- Story strip with a tap-through viewer that waits for taps under reduced motion.
+- Waitlist that shows a live place in line, backed by a Netlify Blobs function template.
+- Command palette on Ctrl+K, Cmd+K or /.
 
 ## Ideas backlog
 
 Add new finds here with the source link. Move them up once they are built.
 
-- [ ] View Transitions API for smooth page-to-page navigation on multi-page sites.
-- [ ] Scroll-driven section reveals with `animation-timeline: view()`, no JS.
-- [ ] Interactive venue map or seating chart (SVG with hoverable sections).
-- [ ] Add-to-calendar button that writes an .ics file for a show.
-- [ ] Menu and drink list section for Stella's and Spotlight style concepts.
-- [ ] Instagram-style story strip for recaps.
-- [ ] Waitlist with live position number (needs a Netlify function).
-- [ ] Command palette search for larger sites.
+- [ ] Seat-level picking inside a venue map section (individual seats, not zones).
+- [ ] Live "now playing" set time banner driven by the timeline data.
+- [ ] Merch grid with variant pickers that hands off to Square or Shopify checkout.
+- [ ] Photo booth style gallery uploads from fans (needs storage and moderation).
+- [ ] Multi-language toggle for venue info pages.
 
 Trend notes, 2026: bento grids are now standard. Scroll-driven animation is the pattern to watch. Scroll-jacking and generic AI imagery are fading. Keep tile sizes to three or four.
 

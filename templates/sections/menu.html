@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: menu -->
+<section class="section" id="menu">
+    <div class="container">
+        <div class="section-head stack">
+            <span class="eyebrow">Menu</span>
+            <h2>Eat. Drink. Play.</h2>
+        </div>
+        <div class="tab-list" role="tablist" aria-label="Menu">
+            <button role="tab" id="tab-food" aria-controls="panel-food" aria-selected="true">Food</button>
+            <button role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="false" tabindex="-1">Drinks</button>
+        </div>
+        <div role="tabpanel" id="panel-food" aria-labelledby="tab-food" tabindex="0">
+            <div class="menu-board">
+                <div class="menu-group">
+                    <h3>Shareables</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item"><strong>Loaded Fries<span class="menu-tags"><abbr title="Vegetarian">V</abbr></span></strong><span class="leader"></span><span class="cost">$9</span><p>Cheese sauce, green chile, scallions.</p></li>
+                        <li class="menu-item special"><strong>Pretzel Board</strong><span class="leader"></span><span class="cost">$12</span><p>Beer cheese and spicy mustard.</p></li>
+                        <li class="menu-item"><strong>Wings<span class="menu-tags"><abbr title="Gluten free">GF</abbr></span></strong><span class="leader"></span><span class="cost">$14</span><p>Buffalo, BBQ or dry rub. Ten pieces.</p></li>
+                    </ul>
+                </div>
+                <div class="menu-group">
+                    <h3>Sweets</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item"><strong>Scoop<span class="menu-tags"><abbr title="Gluten free">GF</abbr></span></strong><span class="leader"></span><span class="cost">$5</span><p>Rotating flavors. Ask what is in the case.</p></li>
+                        <li class="menu-item"><strong>Affogato</strong><span class="leader"></span><span class="cost">$7</span><p>Vanilla bean and a double shot.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" tabindex="0" hidden>
+            <div class="menu-board">
+                <div class="menu-group">
+                    <h3>On tap</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item"><strong>Local Lager</strong><span class="leader"></span><span class="cost">$6</span><p>4.8% &middot; Brewed down the street.</p></li>
+                        <li class="menu-item"><strong>Hazy IPA</strong><span class="leader"></span><span class="cost">$7</span><p>6.5% &middot; Rotating.</p></li>
+                    </ul>
+                </div>
+                <div class="menu-group">
+                    <h3>Cocktails</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item special"><strong>Tilt</strong><span class="leader"></span><span class="cost">$11</span><p>Tequila, grapefruit, lime, salt.</p></li>
+                        <li class="menu-item"><strong>Zero Proof Mule<span class="menu-tags"><abbr title="Non-alcoholic">NA</abbr></span></strong><span class="leader"></span><span class="cost">$6</span><p>Ginger beer, lime, mint.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECTION END: menu -->
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To Calendar | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: add-to-calendar -->
+<section class="section">
+    <div class="container narrow">
+        <ul class="event-list">
+            <li class="event" data-cal-title="Headliner Name at Venue Name" data-cal-start="2026-11-14T19:00:00-07:00" data-cal-end="2026-11-14T23:00:00-07:00" data-cal-location="Venue Name, 123 Main St, City, CO" data-cal-details="Doors 7pm. Tickets: https://example.com/tickets">
+                <time class="event-date" datetime="2026-11-14"><span class="mon">Nov</span><span class="day">14</span><span class="dow">Sat</span></time>
+                <div><h3>Headliner Name</h3><p class="event-meta">Venue Name, City &middot; Doors 7pm</p></div>
+                <div class="btn-row">
+                    <details class="cal-menu">
+                        <summary class="btn btn-ghost btn-sm">Add to calendar</summary>
+                        <div class="cal-options">
+                            <button type="button" data-cal-ics>Apple, Outlook (.ics)</button>
+                            <a href="#" data-cal-google target="_blank" rel="noopener">Google Calendar</a>
+                        </div>
+                    </details>
+                    <a class="btn btn-primary btn-sm" href="#">Tickets</a>
+                </div>
+            </li>
+        </ul>
+        <p class="note">Set data-cal-start and data-cal-end with a time zone offset so the event lands at the right hour everywhere.</p>
+    </div>
+</section>
+<!-- SECTION END: add-to-calendar -->
+</body>
+</html>

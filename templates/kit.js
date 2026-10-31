@@ -290,4 +290,219 @@
             counterObserver.observe(el);
         });
     }
+
+    // Venue map: <g data-zone="Floor" data-price="$35" data-note="Standing room" tabindex="0" role="button">
+    // inside .venue-map. The panel's [data-zone-name], [data-zone-price] and [data-zone-note] fill in on select.
+    document.querySelectorAll('.venue-map').forEach((map) => {
+        const zones = [...map.querySelectorAll('[data-zone]')];
+        const fill = (key, value) => map.querySelectorAll(`[data-zone-${key}]`).forEach((el) => { el.textContent = value; });
+        const select = (zone) => {
+            zones.forEach((z) => z.setAttribute('aria-pressed', String(z === zone)));
+            fill('name', zone.dataset.zone);
+            fill('price', zone.classList.contains('sold') ? 'Sold out' : zone.dataset.price || '');
+            fill('note', zone.dataset.note || '');
+            const buy = map.querySelector('[data-zone-buy]');
+            if (buy) {
+                buy.hidden = zone.classList.contains('sold');
+                if (zone.dataset.href) buy.href = zone.dataset.href;
+            }
+        };
+        zones.forEach((zone) => {
+            zone.setAttribute('aria-pressed', 'false');
+            zone.addEventListener('click', () => select(zone));
+            zone.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    select(zone);
+                }
+            });
+        });
+    });
+
+    // Add to calendar: an element with data-cal-title, data-cal-start, data-cal-end (ISO with offset),
+    // data-cal-location and data-cal-details. [data-cal-ics] downloads an .ics file, [data-cal-google] gets a link.
+    const calStamp = (iso) => new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const icsEscape = (text = '') => text.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/([,;])/g, '\\$1');
+    document.querySelectorAll('[data-cal-title]').forEach((event) => {
+        const d = event.dataset;
+        const google = event.querySelector('[data-cal-google]');
+        if (google) {
+            const params = new URLSearchParams({
+                action: 'TEMPLATE',
+                text: d.calTitle,
+                dates: `${calStamp(d.calStart)}/${calStamp(d.calEnd)}`,
+                location: d.calLocation || '',
+                details: d.calDetails || '',
+            });
+            google.href = `https://calendar.google.com/calendar/render?${params}`;
+        }
+        event.querySelectorAll('[data-cal-ics]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const lines = [
+                    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ELYWARE Kit//EN', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
+                    `UID:${calStamp(d.calStart)}-${d.calTitle.replace(/\W+/g, '-').toLowerCase()}@elyware-kit`,
+                    `DTSTAMP:${calStamp(new Date().toISOString())}`,
+                    `DTSTART:${calStamp(d.calStart)}`, `DTEND:${calStamp(d.calEnd)}`,
+                    `SUMMARY:${icsEscape(d.calTitle)}`, `LOCATION:${icsEscape(d.calLocation)}`, `DESCRIPTION:${icsEscape(d.calDetails)}`,
+                    'END:VEVENT', 'END:VCALENDAR',
+                ];
+                const blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+                const link = Object.assign(document.createElement('a'), {
+                    href: URL.createObjectURL(blob),
+                    download: `${d.calTitle.replace(/[^\w ]+/g, '').trim().replace(/ +/g, '-').toLowerCase() || 'event'}.ics`,
+                });
+                link.click();
+                setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+                button.closest('details')?.removeAttribute('open');
+            });
+        });
+    });
+
+    // Story strip: [data-story="viewer-id"] buttons open a dialog.story-viewer with .frame children.
+    // Frames auto-advance every data-duration ms (default 5000). Taps on the left or right third step back or forward.
+    document.querySelectorAll('dialog.story-viewer').forEach((viewer) => {
+        const frames = [...viewer.querySelectorAll('.frame')];
+        const bars = viewer.querySelector('.story-bars');
+        bars.innerHTML = frames.map(() => '<span><i></i></span>').join('');
+        const fills = [...bars.querySelectorAll('i')];
+        const duration = Number(viewer.dataset.duration) || 5000;
+        let index = 0;
+        let started = 0;
+        let raf = 0;
+        const show = (i) => {
+            if (i < 0) i = 0;
+            if (i >= frames.length) { viewer.close(); return; }
+            index = i;
+            frames.forEach((f, n) => { f.hidden = n !== i; });
+            fills.forEach((f, n) => f.style.setProperty('--fill', n < i ? 1 : 0));
+            started = performance.now();
+        };
+        const tick = (now) => {
+            if (!viewer.open) return;
+            const t = Math.min(1, (now - started) / duration);
+            fills[index].style.setProperty('--fill', t);
+            if (t >= 1) show(index + 1);
+            raf = requestAnimationFrame(tick);
+        };
+        viewer.querySelector('[data-story-prev]')?.addEventListener('click', () => show(index - 1));
+        viewer.querySelector('[data-story-next]')?.addEventListener('click', () => show(index + 1));
+        viewer.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') show(index + 1);
+            if (event.key === 'ArrowLeft') show(index - 1);
+        });
+        viewer.addEventListener('close', () => cancelAnimationFrame(raf));
+        viewer.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => viewer.close()));
+        viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+        document.querySelectorAll(`[data-story="${viewer.id}"]`).forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                viewer.showModal();
+                show(Number(thumb.dataset.storyStart) || 0);
+                thumb.classList.add('seen');
+                // Under reduced motion the viewer waits for taps instead of auto-advancing.
+                if (!reduceMotion) raf = requestAnimationFrame(tick);
+            });
+        });
+    });
+
+    // Waitlist: form[data-waitlist] posts JSON { email } to its action (a Netlify function, see functions/waitlist.mjs)
+    // and expects { position }. The closest .waitlist gets .joined and [data-position] shows the number.
+    // Opened from a local file there is no function, so it shows a sample position and says so.
+    document.querySelectorAll('form[data-waitlist]').forEach((form) => {
+        const box = form.closest('.waitlist');
+        const status = box.querySelector('.form-status');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            let position;
+            try {
+                if (location.protocol === 'file:') throw new Error('local preview');
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: new FormData(form).get('email') }),
+                });
+                if (!response.ok) throw new Error(String(response.status));
+                ({ position } = await response.json());
+            } catch (error) {
+                if (location.protocol !== 'file:') {
+                    if (status) { status.textContent = 'That did not go through. Try again in a minute.'; status.className = 'form-status err'; }
+                    return;
+                }
+                position = 128;
+                if (status) { status.textContent = 'Local preview: sample position shown.'; status.className = 'form-status'; }
+            }
+            box.querySelectorAll('[data-position]').forEach((el) => { el.textContent = `#${Number(position).toLocaleString()}`; });
+            box.classList.add('joined');
+        });
+    });
+
+    // Command palette: dialog.palette with an <input> and <ul>. Items come from [data-palette-item] links
+    // anywhere on the page (text from data-palette-item or the link text, hint from data-palette-hint).
+    // Opens with Cmd+K, Ctrl+K, "/" or any [data-palette-open] button.
+    document.querySelectorAll('dialog.palette').forEach((palette) => {
+        const input = palette.querySelector('input');
+        const list = palette.querySelector('ul');
+        const items = [...document.querySelectorAll('[data-palette-item]')].map((a) => ({
+            label: a.dataset.paletteItem || a.textContent.trim(),
+            hint: a.dataset.paletteHint || '',
+            href: a.getAttribute('href'),
+        }));
+        let active = 0;
+        let shown = [];
+        const escape = (text) => text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+        const render = () => {
+            const q = input.value.trim().toLowerCase();
+            shown = items.filter((item) => `${item.label} ${item.hint}`.toLowerCase().includes(q));
+            active = Math.min(active, Math.max(0, shown.length - 1));
+            list.innerHTML = shown.length
+                ? shown.map((item, i) => `<li role="option" id="pal-${i}" aria-selected="${i === active}"><a href="${escape(item.href)}" tabindex="-1">${escape(item.label)}<small>${escape(item.hint)}</small></a></li>`).join('')
+                : '<li class="empty">No matches.</li>';
+            input.setAttribute('aria-activedescendant', shown.length ? `pal-${active}` : '');
+        };
+        const open = () => {
+            input.value = '';
+            active = 0;
+            render();
+            palette.showModal();
+            input.focus();
+        };
+        const go = (item) => {
+            if (!item) return;
+            palette.close();
+            if (item.href.startsWith('#')) {
+                document.querySelector(item.href)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+                history.replaceState(null, '', item.href);
+            } else {
+                window.location.href = item.href;
+            }
+        };
+        input.addEventListener('input', () => { active = 0; render(); });
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                event.preventDefault();
+                if (!shown.length) return;
+                active = (active + (event.key === 'ArrowDown' ? 1 : -1) + shown.length) % shown.length;
+                render();
+                list.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest' });
+            }
+            if (event.key === 'Enter') { event.preventDefault(); go(shown[active]); }
+            // A search field clears itself on the first Escape. Close the palette instead.
+            if (event.key === 'Escape') { event.preventDefault(); palette.close(); }
+        });
+        list.addEventListener('click', (event) => {
+            const li = event.target.closest('li[role="option"]');
+            if (!li) return;
+            event.preventDefault();
+            go(shown[Number(li.id.slice(4))]);
+        });
+        palette.addEventListener('click', (event) => { if (event.target === palette) palette.close(); });
+        document.querySelectorAll('[data-palette-open]').forEach((b) => b.addEventListener('click', open));
+        document.addEventListener('keydown', (event) => {
+            const typing = event.target.closest?.('input, textarea, select, [contenteditable="true"]');
+            if (((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') || (event.key === '/' && !typing)) {
+                if (palette.open) return;
+                event.preventDefault();
+                open();
+            }
+        });
+    });
 })();
