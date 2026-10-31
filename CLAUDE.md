@@ -4,16 +4,22 @@ Guidance for Claude Code when working in this repository.
 
 ## Project overview
 
-elyware.net: ELYWARE's site for custom AI, marketing and software services, plus the free Video Mixer app and the Stock Bridge for Resolume companion. It is a plain static site with no build step and no framework. Netlify serves `public/` and runs two functions from `netlify/functions/`.
+elyware.net: ELYWARE's studio showcase (browser games, the free Video Mixer and Stock Bridge for Resolume apps, and 28 web projects), with custom AI, marketing and software services on `/contact/`. It is a plain static site with no build step and no framework. Netlify serves `public/` and runs two functions from `netlify/functions/`.
 
 Pages in `public/`:
 
-- `/` home page (services, work, software). Styles: `style.css`, `agency.css`, `newsprint.css`. Scripts: `main.js`, `newsprint.js`, `portfolio.js`, `theme.js`.
+- `/` home page: a showcase of games, free software and the work wall (28 projects with filters, a screenshot lightbox and a `/` or Ctrl+K command palette). No sales pitch here. Styles: `style.css`, `showcase.css`. Scripts: `theme.js`, `main.js`, `showcase.js`.
+- `/contact/` custom project development: services, process, FAQ and the email call to action. Every Contact link points here. Same styles and scripts as the home page.
 - `/video-mixer/` product page with downloads, FAQ and Screenfolk wireless casting.
 - `/resolume-stock-bridge/` companion app page.
 - `/privacy/`, `/thanks/`, `/games/stick-figure-army/`, `/games/automotown/`, `/404.html`.
 - `/analytics/` private dashboard (reads `/api/analytics`).
-- `/custom-web-development/` is retired and 301-redirects to `/` (see `netlify.toml`).
+- `/custom-web-development/` is retired and 301-redirects to `/contact/` (see `netlify.toml`). Its old file and `agency.css`, `newsprint.css`, `newsprint.js` and `portfolio.js` are only used by that unreachable page.
+
+Home page notes:
+
+- Project thumbnails live in `public/images/newsprint/projects/thumbs/` (720x493 WebP) and the hero strip uses `river/` (400x274 WebP). Generate both from the full 1440x985 JPG when adding a project, and update the filter counts, the `#work` ItemList JSON-LD and the "28" counts in the page, `llms.txt` and the meta description.
+- Old home anchors `#services`, `#process` and `#faq` forward to the same anchors on `/contact/` (in `showcase.js`).
 
 Outside `public/` (not deployed):
 

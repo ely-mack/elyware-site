@@ -13,8 +13,11 @@ Open `index.html` in a browser to see everything in one gallery.
 | `kit.css` | Design tokens (light and dark), layout, and every component style |
 | `theme.js` | Sets `data-theme` before first paint. Load it in `<head>` |
 | `kit.js` | All behavior, driven by data attributes. See the reference below |
-| `sections/` | 30 standalone sections: 15 layout and 15 interactive. Copy the block between the `SECTION START` and `SECTION END` comments |
+| `sections/` | 38 standalone sections: 15 layout, 15 interactive and 8 newer builds. Copy the block between the `SECTION START` and `SECTION END` comments |
 | `pages/` | Four full starters: `splash` (coming soon), `landing` (product or service), `venue` (shows and tickets), `festival` (multi-day event) |
+| `functions/` | Netlify function templates (waitlist). Copy into a site's `netlify/functions/` to use |
+| `tools/reddit-scan.mjs` | Scans r/vibecoding through Reddit's API for templates and UI ideas, checks linked repo licenses, writes `scans/YYYY-MM-DD.md` |
+| `scans/` | Scan digests, plus `seen.json` so each scan only reports new posts |
 | `IDEAS.md` | UI ideas, sources worth watching, and the license rules for borrowing |
 
 ## Start a new site
@@ -51,6 +54,13 @@ Everything in `kit.js` is opt-in by markup. Copy a section and it works. No othe
 | `[data-video-toggle][aria-controls]` | Pause and play a background video |
 | `.scroll-progress` | Reading progress bar (CSS scroll timeline, JS fallback) |
 | `[data-count]`, `data-suffix` | Count-up number |
+| `.vt-hero` | Shared element for cross-page view transitions (transitions themselves are CSS only) |
+| `.sd-reveal`, `.sd-scale`, `.sd-parallax` | Scroll-driven animation, CSS only |
+| `.venue-map [data-zone]` | Selectable SVG sections that fill `[data-zone-name/price/note]` |
+| `[data-cal-title]` + `[data-cal-ics]` / `[data-cal-google]` | Add to calendar |
+| `[data-story="dialog-id"]` + `dialog.story-viewer` | Story viewer with progress bars and tap navigation |
+| `form[data-waitlist]` | Posts to the waitlist function and shows `[data-position]` |
+| `dialog.palette` + `[data-palette-item]` | Command palette on Ctrl+K, Cmd+K or / |
 
 ## Rules every section follows
 

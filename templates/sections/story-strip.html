@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Strip | ELYWARE Kit</title>
+    <meta name="robots" content="noindex">
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../kit.css">
+    <script src="../kit.js" defer></script>
+</head>
+<body>
+<!-- SECTION START: story-strip -->
+<section class="section">
+    <div class="container">
+        <div class="section-head stack">
+            <span class="eyebrow">Recaps</span>
+            <h2>Last weekend, in stories.</h2>
+        </div>
+        <ul class="story-strip">
+            <li><button class="story-thumb" type="button" data-story="recap" data-story-start="0"><span class="ring"><span class="media"></span></span>Friday</button></li>
+            <li><button class="story-thumb" type="button" data-story="recap" data-story-start="1"><span class="ring"><span class="media"></span></span>Saturday</button></li>
+            <li><button class="story-thumb" type="button" data-story="recap" data-story-start="2"><span class="ring"><span class="media"></span></span>Sunday</button></li>
+            <li><button class="story-thumb" type="button" data-story="recap" data-story-start="3"><span class="ring"><span class="media"></span></span>Next up</button></li>
+        </ul>
+        <dialog class="story-viewer" id="recap" aria-label="Weekend recap" data-duration="5000">
+            <div class="story-bars" aria-hidden="true"></div>
+            <div class="frames">
+                <div class="frame"><div class="media"></div><h3>Friday</h3><p>Sold-out opener. Swap in a vertical photo or video.</p></div>
+                <div class="frame" hidden><div class="media"></div><h3>Saturday</h3><p>One line per frame. Keep it short.</p></div>
+                <div class="frame" hidden><div class="media"></div><h3>Sunday</h3><p>Taps on the right go forward, on the left go back.</p></div>
+                <div class="frame" hidden><div class="media"></div><h3>Next up</h3><p>End on the next show.</p><a class="btn btn-primary" href="#">Get tickets</a></div>
+            </div>
+            <div class="story-nav"><button type="button" data-story-prev aria-label="Previous"></button><button type="button" data-story-next aria-label="Next"></button></div>
+            <button class="icon-btn close" type="button" data-close aria-label="Close">&times;</button>
+        </dialog>
+    </div>
+</section>
+<!-- SECTION END: story-strip -->
+</body>
+</html>

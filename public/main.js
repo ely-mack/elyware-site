@@ -128,6 +128,7 @@ if (screenshotDialog && typeof screenshotDialog.showModal === 'function') {
     const productionHosts = new Set(['elyware.net', 'www.elyware.net']);
     const pages = new Map([
         ['/', 'home'],
+        ['/contact/', 'contact'],
         ['/video-mixer/', 'video-mixer'],
         ['/resolume-stock-bridge/', 'resolume-stock-bridge'],
         ['/privacy/', 'privacy'],
