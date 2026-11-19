@@ -23,6 +23,7 @@ Home page notes:
 
 Outside `public/` (not deployed):
 
+- `PROJECTS.md` registry of every ELYWARE site and app: live URL, Netlify site, repo, backend, risks and lessons. Check it before starting or touching another project. Refresh it from Netlify when a site is added, retired or moves repos.
 - `templates/` ELYWARE Kit: reusable sections, starter pages (splash, landing, venue, festival), interactive components and a UI ideas log for new builds. Start any new site from here. See `templates/README.md`.
 - `prototype/` UI prototypes.
 
